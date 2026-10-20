@@ -1,0 +1,67 @@
+{
+  "verified_at": "2026-04-20",
+  "pattern": "Same as License SAMPLE-S2A02-A: SAMPLE- prefixed codes from revenue_fees.json, one fee per Tax Revenue page",
+  "samples": [
+    {
+      "page": "permit",
+      "system_name": "PERMIT-SAMPLE-S3A01-6",
+      "code": "SAMPLE-S3A01-6",
+      "article_section": "Section 3A.01(6)",
+      "description": "Mayor's Permit Fee on All Other Unenumerated Business Establishments",
+      "calculation": "Fixed Amount",
+      "amount": 120.0,
+      "api_ok": true
+    },
+    {
+      "page": "sanitary",
+      "system_name": "SANITARY-SAMPLE-S4F01",
+      "code": "SAMPLE-S4F01",
+      "article_section": "Section 4F.01",
+      "description": "Dog Vaccination Fee",
+      "calculation": "Fixed Amount",
+      "amount": 50.0,
+      "api_ok": true
+    },
+    {
+      "page": "garbage",
+      "system_name": "GARBAGE-SAMPLE-S5B01",
+      "code": "SAMPLE-S5B01",
+      "article_section": "Section 5B.01",
+      "description": "Service Charge for Garbage Collection (Manufacturers ≤100 sq.m / mo)",
+      "calculation": "Fixed Amount",
+      "amount": 420.0,
+      "note": "Full 5B.01 schedule has many floor-area / stall tiers; sample uses one clear flat tier only",
+      "api_ok": true
+    },
+    {
+      "page": "new-fixed-fees",
+      "system_name": "FIXED-SAMPLE-S4H01",
+      "code": "SAMPLE-S4H01",
+      "article_section": "Section 4H.01",
+      "description": "Clearance or Certification Fee (Other purposes)",
+      "amount": 50.0,
+      "multiplier": null,
+      "api_ok": true
+    },
+    {
+      "page": "new-other-fees",
+      "system_name": "OTHER-SAMPLE-S3X01",
+      "code": "SAMPLE-S3X01",
+      "article_section": "Section 3X.01",
+      "description": "License Fee on Acquisition of Dogs",
+      "type": "BASIC",
+      "fee_type": "COMMON_FEE",
+      "amount": 25.0,
+      "api_ok": true
+    }
+  ],
+  "also_existing": {
+    "page": "license",
+    "file": "elgu_sample.json",
+    "system_name": "LICENSE-SAMPLE-S2A02-A",
+    "code": "SAMPLE-S2A02-A",
+    "article_section": "Section 2A.02(a)",
+    "calculation": "Gross Range",
+    "ranges": 20
+  }
+}

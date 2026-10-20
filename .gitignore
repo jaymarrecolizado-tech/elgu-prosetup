@@ -1,0 +1,35 @@
+# Dependencies / tooling
+node_modules/
+playwright-report/
+test-results/
+*.log
+
+# Secrets & local env (never commit)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials*.json
+
+# Browser login profile / cookies / sessions (CRITICAL — contains auth)
+.auth/
+
+# Local agent / IDE / knowledge-graph scratch
+.cursor/
+graphify-out/
+.agent/
+.plans/
+
+# Playwright session dumps & control files
+.stop-browser
+.login-ready
+browser-status.json
+session-*.json
+_tmp_*.py
+_tmp_*.js
+_capture_*.js
+_explore_*.js
+
+# Optional: large intermediate automation dump (re-creatable)
+elgu_fee_type_samples.json

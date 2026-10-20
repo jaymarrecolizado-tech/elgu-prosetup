@@ -1,0 +1,31 @@
+{
+  "verified_at": "2026-04-20",
+  "method": "Compared live API values (elgu_sample_audit.json) field-by-field against revenue_fees.json source text",
+  "results": [
+    { "code": "LICENSE-SAMPLE-S2A02-A", "source": "Section 2A.02(a)", "type": "Gross Range (graduated amounts)", "verdict": "PASS", "evidence": "20/20 ranges exact; top 6,500,000+ amount 26812 rate 0.004125 for_excess=1" },
+    { "code": "LICENSE-SAMPLE-S2A02-D", "source": "Section 2A.02(d)", "type": "Gross Range (rate tiers)", "verdict": "PASS", "evidence": "0.01-400,000 rate 0.024 amount 0; 400,000.01+ amount 9600 rate 0.012 for_excess" },
+    { "code": "LICENSE-SAMPLE-S2A02-F", "source": "Section 2A.02(f)", "type": "Gross Rate", "verdict": "PASS", "evidence": "rate 0.005500 (=55% of 1%), amount 0" },
+    { "code": "PERMIT-SAMPLE-S3A01-6", "source": "Section 3A.01(6)", "type": "Fixed Amount", "verdict": "PASS", "evidence": "amount 120.00 = '120.00 PHP per annum'" },
+    { "code": "PERMIT-SAMPLE-S3A01-2", "source": "Section 3A.01(2)", "type": "Options (Bank Type, multiplier bank_type)", "verdict": "PASS", "evidence": "4 options: commercial_industrial_dev_banks 330, rural_thrift_savings_banks 220, universal_banks_insurance 220, pawnshops_money_shops_lending 440 (multiplier must be code-style, labels converted)" },
+    { "code": "PERMIT-SAMPLE-S3G01", "source": "Section 3G.01", "type": "Quantity (multiplier=quantity)", "verdict": "PASS", "evidence": "amount 150.00 per day/unit" },
+    { "code": "PERMIT-SAMPLE-S3A01-1C", "source": "Section 3A.01(1)", "type": "Capital Range", "verdict": "PASS", "evidence": "5 capital brackets 30/60/120/200 + top 200 rate 0.003 excess" },
+    { "code": "PERMIT-SAMPLE-S3A01-1X", "source": "Section 3A.01(1)", "type": "Gross Excess", "verdict": "PASS (type test)", "evidence": "in_excess_of 30000, for_every 5000, amount 15 — Gross Excess has no rate field; note this duplicates S3A01-1C source on a separate SAMPLE record" },
+    { "code": "SANITARY-SAMPLE-S4F01", "source": "Section 4F.01", "type": "Fixed Amount", "verdict": "PASS amount / PARTIAL semantics", "evidence": "amount 50.00 correct; 'per dog' quantity semantics not encoded (Quantity type would encode it, as in S3G01)" },
+    { "code": "SANITARY-SAMPLE-S4D01", "source": "Section 4D.01", "type": "Other Range (Sqm Range, multiplier sqm)", "verdict": "PASS (business subset)", "evidence": "7 sqm tiers 100/150/200/250/300/400/500 exact; excludes 'House for rent: 200' flat which needs its own fee/option" },
+    { "code": "GARBAGE-SAMPLE-S5B01", "source": "Section 5B.01", "type": "Fixed Amount", "verdict": "PARTIAL", "evidence": "amount 420.00 matches Manufacturers <=100 sq.m tier only; Fixed Amount does not encode sq.m/month/establishment-type — full 5B.01 needs Other Range per establishment type or Options" },
+    { "code": "FIXED-SAMPLE-S4H01", "source": "Section 4H.01", "type": "Fixed Fee", "verdict": "PASS", "evidence": "amount 50.00 = 'Other purposes: 50.00 PHP'; other purposes in 4H.01 (passport 75, firearm 100...) would be separate Fixed Fees or Options" },
+    { "code": "OTHER-SAMPLE-S3X01", "source": "Section 3X.01", "type": "Other Fee BASIC / COMMON_FEE", "verdict": "PASS amount / PARTIAL semantics", "evidence": "amount 25.00 correct; 'per dog' semantics not encoded" }
+  ],
+  "fee_types_covered": ["Gross Range", "Gross Rate", "Capital Range", "Gross Excess", "Options", "Other Range", "Quantity", "Fixed Amount", "Fixed Fee (flat)", "Other Fee BASIC"],
+  "fee_types_not_covered": [
+    { "type": "Capital Rate / Capital Excess / Other Excess", "reason": "Multiplier variants of Gross Rate/Excess; no ordinance fee in revenue_fees.json is capital-based except 3A.01(1) which is covered via Capital Range + Gross Excess" },
+    { "type": "Quantity Matrix", "reason": "No matrix-style (two-dimension) fee in revenue_fees.json" },
+    { "type": "Other Fee types RANGE/QUANTITY/OPTION/ZONING/VETERINARY/etc.", "reason": "Only BASIC sampled on Other Fees page; these reveal extra fields (percentage, column_property, ranges) and should be sampled before mass entry if any ordinance fee is assigned there" }
+  ],
+  "automation_lessons": [
+    "Calculation creation auto-creates a placeholder detail (0-1000 / 'option' / 'quantity'); edit it, do not just Add",
+    "Update/edit forms: masked amount (₱) and code fields only save with real keyboard typing (pressSequentially); locator.fill/native setter silently reverts to 0 on edit forms",
+    "Options/Other Range calculations require Multiplier code (bank_type, sqm) at calculation creation, which becomes the label (Bank Type, Sqm Range)",
+    "Options detail multiplier must be code-style (rural_thrift_savings_banks), not the display label"
+  ]
+}

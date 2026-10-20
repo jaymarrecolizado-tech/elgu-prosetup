@@ -1,0 +1,58 @@
+{
+  "verified_at": "2026-04-20",
+  "source": "revenue_fees.json / Section 2A.02(a)",
+  "live_app": {
+    "base": "https://elgu-r2-training-core.oueg.info",
+    "page": "/bpls/tax-revenue/license",
+    "ordinance_revision_id": 2,
+    "ordinance_revision_name": "2026 Ordinance",
+    "tax_revenue_id": 94,
+    "system_name": "LICENSE-SAMPLE-S2A02-A"
+  },
+  "fee": {
+    "elgu_system_category": "License fee (Business Tax)",
+    "target_page": "license",
+    "code": "SAMPLE-S2A02-A",
+    "description": "Graduated Tax on Manufacturers, Assemblers, Repackers, Processors, Brewers, Distillers, Rectifiers, and Compounders",
+    "article_section": "Section 2A.02(a)",
+    "rate_structure": "Graduated based on gross sales/receipts",
+    "amount_or_formula": "Less than 10,000: 181.50 PHP; 10,000 to <15,000: 242.00 PHP; 15,000 to <20,000: 332.00 PHP; 20,000 to <30,000: 484.00 PHP; 30,000 to <40,000: 726.00 PHP; 40,000 to <50,000: 907.50 PHP; 50,000 to <75,000: 1,452.00 PHP; 75,000 to <100,000: 1,815.00 PHP; 100,000 to <150,000: 2,420.00 PHP; 150,000 to <200,000: 3,025.00 PHP; 200,000 to <300,000: 4,235.00 PHP; 300,000 to <500,000: 6,050.00 PHP; 500,000 to <750,000: 8,800.00 PHP; 750,000 to <1,000,000: 11,000.00 PHP; 1,000,000 to <2,000,000: 15,125.00 PHP; 2,000,000 to <3,000,000: 18,150.00 PHP; 3,000,000 to <4,000,000: 21,750.00 PHP; 4,000,000 to <5,000,000: 25,410.00 PHP; 5,000,000 to <6,500,000: 26,812.00 PHP; 6,500,000 or more: 41 1/4% of 1%"
+  },
+  "calculation": {
+    "type": "Gross Range",
+    "api_type": "AMOUNT_RANGE",
+    "multiplier": "gross_amount",
+    "with_essential_computation": false,
+    "include_for_higher_value_comparison": false,
+    "for_new": true,
+    "for_renewal": true,
+    "for_retirement": true
+  },
+  "ranges": [
+    { "from": 0.01, "to": 9999.99, "amount": 181.5, "rate": 0, "for_excess_computation": false },
+    { "from": 10000, "to": 14999.99, "amount": 242, "rate": 0, "for_excess_computation": false },
+    { "from": 15000, "to": 19999.99, "amount": 332, "rate": 0, "for_excess_computation": false },
+    { "from": 20000, "to": 29999.99, "amount": 484, "rate": 0, "for_excess_computation": false },
+    { "from": 30000, "to": 39999.99, "amount": 726, "rate": 0, "for_excess_computation": false },
+    { "from": 40000, "to": 49999.99, "amount": 907.5, "rate": 0, "for_excess_computation": false },
+    { "from": 50000, "to": 74999.99, "amount": 1452, "rate": 0, "for_excess_computation": false },
+    { "from": 75000, "to": 99999.99, "amount": 1815, "rate": 0, "for_excess_computation": false },
+    { "from": 100000, "to": 149999.99, "amount": 2420, "rate": 0, "for_excess_computation": false },
+    { "from": 150000, "to": 199999.99, "amount": 3025, "rate": 0, "for_excess_computation": false },
+    { "from": 200000, "to": 299999.99, "amount": 4235, "rate": 0, "for_excess_computation": false },
+    { "from": 300000, "to": 499999.99, "amount": 6050, "rate": 0, "for_excess_computation": false },
+    { "from": 500000, "to": 749999.99, "amount": 8800, "rate": 0, "for_excess_computation": false },
+    { "from": 750000, "to": 999999.99, "amount": 11000, "rate": 0, "for_excess_computation": false },
+    { "from": 1000000, "to": 1999999.99, "amount": 15125, "rate": 0, "for_excess_computation": false },
+    { "from": 2000000, "to": 2999999.99, "amount": 18150, "rate": 0, "for_excess_computation": false },
+    { "from": 3000000, "to": 3999999.99, "amount": 21750, "rate": 0, "for_excess_computation": false },
+    { "from": 4000000, "to": 4999999.99, "amount": 25410, "rate": 0, "for_excess_computation": false },
+    { "from": 5000000, "to": 6499999.99, "amount": 26812, "rate": 0, "for_excess_computation": false },
+    { "from": 6500000, "to": 99999999999, "amount": 26812, "rate": 0.004125, "for_excess_computation": true }
+  ],
+  "notes": [
+    "Code SAMPLE-S2A02-A was chosen so the live sample is easy to find/delete; production codes should follow section naming without SAMPLE-.",
+    "Top bracket '41 1/4% of 1%' parsed as rate 0.004125 with for_excess_computation=true and base amount = previous bracket (26812).",
+    "Creating a Gross Range calculation auto-creates a placeholder 0-1000 row; edit that into bracket 1, then Add the rest."
+  ]
+}

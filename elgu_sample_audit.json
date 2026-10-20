@@ -1,0 +1,1138 @@
+{
+  "verifiedAt": "2026-10-20T14:46:59.365Z",
+  "tax": [
+    {
+      "page": "license",
+      "id": "119",
+      "code": "SAMPLE-S2A02-D",
+      "name": "LICENSE-SAMPLE-S2A02-D",
+      "description": "Tax on Retailers",
+      "calculations": [
+        {
+          "type": "AMOUNT_RANGE",
+          "label": "Gross Range",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": "gross_amount",
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "0.01",
+              "to": "400000.00",
+              "rate": "0.024000",
+              "for_excess_computation": 0,
+              "amount": "0.00",
+              "from_human": "0.01",
+              "to_human": "400,000.00",
+              "amount_human": "0.00",
+              "rate_human": "0.024000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "400000.01",
+              "to": "99999999999.00",
+              "rate": "0.012000",
+              "for_excess_computation": 1,
+              "amount": "9600.00",
+              "from_human": "400,000.01",
+              "to_human": "99,999,999,999.00",
+              "amount_human": "9,600.00",
+              "rate_human": "0.012000",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": [
+            {
+              "from": "0.01",
+              "to": "400000.00",
+              "rate": "0.024000",
+              "for_excess_computation": 0,
+              "amount": "0.00",
+              "from_human": "0.01",
+              "to_human": "400,000.00",
+              "amount_human": "0.00",
+              "rate_human": "0.024000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "400000.01",
+              "to": "99999999999.00",
+              "rate": "0.012000",
+              "for_excess_computation": 1,
+              "amount": "9600.00",
+              "from_human": "400,000.01",
+              "to_human": "99,999,999,999.00",
+              "amount_human": "9,600.00",
+              "rate_human": "0.012000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "0.01",
+              "to": "400000.00",
+              "rate": "0.024000",
+              "for_excess_computation": 0,
+              "amount": "0.00",
+              "from_human": "0.01",
+              "to_human": "400,000.00",
+              "amount_human": "0.00",
+              "rate_human": "0.024000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "400000.01",
+              "to": "99999999999.00",
+              "rate": "0.012000",
+              "for_excess_computation": 1,
+              "amount": "9600.00",
+              "from_human": "400,000.01",
+              "to_human": "99,999,999,999.00",
+              "amount_human": "9,600.00",
+              "rate_human": "0.012000",
+              "with_essential_computation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "license",
+      "id": "118",
+      "code": "SAMPLE-S2A02-F",
+      "name": "LICENSE-SAMPLE-S2A02-F",
+      "description": "Tax on Banks and Other Financial Institutions",
+      "calculations": [
+        {
+          "type": "BASIC",
+          "label": "Gross Rate",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": "gross_amount",
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_basics",
+              "rate": "0.005500",
+              "amount": "0.00",
+              "rate_human": "0.005500",
+              "amount_human": "0.00",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": [
+            {
+              "rate": "0.005500",
+              "amount": "0.00",
+              "rate_human": "0.005500",
+              "amount_human": "0.00",
+              "with_essential_computation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "license",
+      "id": "94",
+      "code": "SAMPLE-S2A02-A",
+      "name": "LICENSE-SAMPLE-S2A02-A",
+      "description": "Graduated Tax on Manufacturers, Assemblers, Repackers, Processors, Brewers, Distillers, Rectifiers, and Compounders",
+      "calculations": [
+        {
+          "type": "AMOUNT_RANGE",
+          "label": "Gross Range",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": "gross_amount",
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "0.01",
+              "to": "9999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "181.50",
+              "from_human": "0.01",
+              "to_human": "9,999.99",
+              "amount_human": "181.50",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "10000.00",
+              "to": "14999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "242.00",
+              "from_human": "10,000.00",
+              "to_human": "14,999.99",
+              "amount_human": "242.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "15000.00",
+              "to": "19999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "332.00",
+              "from_human": "15,000.00",
+              "to_human": "19,999.99",
+              "amount_human": "332.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "20000.00",
+              "to": "29999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "484.00",
+              "from_human": "20,000.00",
+              "to_human": "29,999.99",
+              "amount_human": "484.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "30000.00",
+              "to": "39999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "726.00",
+              "from_human": "30,000.00",
+              "to_human": "39,999.99",
+              "amount_human": "726.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "40000.00",
+              "to": "49999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "907.50",
+              "from_human": "40,000.00",
+              "to_human": "49,999.99",
+              "amount_human": "907.50",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "50000.00",
+              "to": "74999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "1452.00",
+              "from_human": "50,000.00",
+              "to_human": "74,999.99",
+              "amount_human": "1,452.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "75000.00",
+              "to": "99999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "1815.00",
+              "from_human": "75,000.00",
+              "to_human": "99,999.99",
+              "amount_human": "1,815.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "100000.00",
+              "to": "149999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "2420.00",
+              "from_human": "100,000.00",
+              "to_human": "149,999.99",
+              "amount_human": "2,420.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "150000.00",
+              "to": "199999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "3025.00",
+              "from_human": "150,000.00",
+              "to_human": "199,999.99",
+              "amount_human": "3,025.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "200000.00",
+              "to": "299999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "4235.00",
+              "from_human": "200,000.00",
+              "to_human": "299,999.99",
+              "amount_human": "4,235.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "300000.00",
+              "to": "499999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "6050.00",
+              "from_human": "300,000.00",
+              "to_human": "499,999.99",
+              "amount_human": "6,050.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "500000.00",
+              "to": "749999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "8800.00",
+              "from_human": "500,000.00",
+              "to_human": "749,999.99",
+              "amount_human": "8,800.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "750000.00",
+              "to": "999999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "11000.00",
+              "from_human": "750,000.00",
+              "to_human": "999,999.99",
+              "amount_human": "11,000.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "1000000.00",
+              "to": "1999999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "15125.00",
+              "from_human": "1,000,000.00",
+              "to_human": "1,999,999.99",
+              "amount_human": "15,125.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "2000000.00",
+              "to": "2999999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "18150.00",
+              "from_human": "2,000,000.00",
+              "to_human": "2,999,999.99",
+              "amount_human": "18,150.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "3000000.00",
+              "to": "3999999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "21750.00",
+              "from_human": "3,000,000.00",
+              "to_human": "3,999,999.99",
+              "amount_human": "21,750.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "4000000.00",
+              "to": "4999999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "25410.00",
+              "from_human": "4,000,000.00",
+              "to_human": "4,999,999.99",
+              "amount_human": "25,410.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "5000000.00",
+              "to": "6499999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "26812.00",
+              "from_human": "5,000,000.00",
+              "to_human": "6,499,999.99",
+              "amount_human": "26,812.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "6500000.00",
+              "to": "99999999999.00",
+              "rate": "0.004125",
+              "for_excess_computation": 1,
+              "amount": "26812.00",
+              "from_human": "6,500,000.00",
+              "to_human": "99,999,999,999.00",
+              "amount_human": "26,812.00",
+              "rate_human": "0.004125",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": []
+        }
+      ]
+    },
+    {
+      "page": "permit",
+      "id": "124",
+      "code": "SAMPLE-S3A01-1C",
+      "name": "PERMIT-SAMPLE-S3A01-1C",
+      "description": "Mayor's Permit Fee on Business (capital investment basis)",
+      "calculations": [
+        {
+          "type": "AMOUNT_RANGE",
+          "label": "Capital Range",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": "capital_amount",
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "0.01",
+              "to": "4999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "30.00",
+              "from_human": "0.01",
+              "to_human": "4,999.99",
+              "amount_human": "30.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "5000.00",
+              "to": "9999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "60.00",
+              "from_human": "5,000.00",
+              "to_human": "9,999.99",
+              "amount_human": "60.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "10000.00",
+              "to": "19999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "120.00",
+              "from_human": "10,000.00",
+              "to_human": "19,999.99",
+              "amount_human": "120.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "20000.00",
+              "to": "29999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "200.00",
+              "from_human": "20,000.00",
+              "to_human": "29,999.99",
+              "amount_human": "200.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "30000.00",
+              "to": "99999999999.00",
+              "rate": "0.003000",
+              "for_excess_computation": 1,
+              "amount": "200.00",
+              "from_human": "30,000.00",
+              "to_human": "99,999,999,999.00",
+              "amount_human": "200.00",
+              "rate_human": "0.003000",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": [
+            {
+              "from": "0.01",
+              "to": "4999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "30.00",
+              "from_human": "0.01",
+              "to_human": "4,999.99",
+              "amount_human": "30.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "5000.00",
+              "to": "9999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "60.00",
+              "from_human": "5,000.00",
+              "to_human": "9,999.99",
+              "amount_human": "60.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "10000.00",
+              "to": "19999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "120.00",
+              "from_human": "10,000.00",
+              "to_human": "19,999.99",
+              "amount_human": "120.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "20000.00",
+              "to": "29999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "200.00",
+              "from_human": "20,000.00",
+              "to_human": "29,999.99",
+              "amount_human": "200.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "30000.00",
+              "to": "99999999999.00",
+              "rate": "0.003000",
+              "for_excess_computation": 1,
+              "amount": "200.00",
+              "from_human": "30,000.00",
+              "to_human": "99,999,999,999.00",
+              "amount_human": "200.00",
+              "rate_human": "0.003000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "0.01",
+              "to": "4999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "30.00",
+              "from_human": "0.01",
+              "to_human": "4,999.99",
+              "amount_human": "30.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "5000.00",
+              "to": "9999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "60.00",
+              "from_human": "5,000.00",
+              "to_human": "9,999.99",
+              "amount_human": "60.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "10000.00",
+              "to": "19999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "120.00",
+              "from_human": "10,000.00",
+              "to_human": "19,999.99",
+              "amount_human": "120.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "20000.00",
+              "to": "29999.99",
+              "rate": "0.000000",
+              "for_excess_computation": 0,
+              "amount": "200.00",
+              "from_human": "20,000.00",
+              "to_human": "29,999.99",
+              "amount_human": "200.00",
+              "rate_human": "0.000000",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "30000.00",
+              "to": "99999999999.00",
+              "rate": "0.003000",
+              "for_excess_computation": 1,
+              "amount": "200.00",
+              "from_human": "30,000.00",
+              "to_human": "99,999,999,999.00",
+              "amount_human": "200.00",
+              "rate_human": "0.003000",
+              "with_essential_computation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "permit",
+      "id": "123",
+      "code": "SAMPLE-S3A01-1X",
+      "name": "PERMIT-SAMPLE-S3A01-1X",
+      "description": "Mayor's Permit Fee on Business (excess over 30,000)",
+      "calculations": [
+        {
+          "type": "EXCESS",
+          "label": "Gross Excess",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": "gross_amount",
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_excess",
+              "in_excess_of": "30000.00",
+              "for_every": "5000.00",
+              "amount": "15.00",
+              "in_excess_of_human": "30,000.00",
+              "for_every_human": "5,000.00",
+              "amount_human": "15.00",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": [
+            {
+              "in_excess_of": "30000.00",
+              "for_every": "5000.00",
+              "amount": "15.00",
+              "in_excess_of_human": "30,000.00",
+              "for_every_human": "5,000.00",
+              "amount_human": "15.00",
+              "with_essential_computation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "permit",
+      "id": "122",
+      "code": "SAMPLE-S3G01",
+      "name": "PERMIT-SAMPLE-S3G01",
+      "description": "Permit Fee on Circus and Other Parades (per day)",
+      "calculations": [
+        {
+          "type": "QUANTITY",
+          "label": "Quantity",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": null,
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_quantities",
+              "multiplier": "quantity",
+              "amount": "150.00",
+              "amount_human": "150.00",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": [
+            {
+              "multiplier": "quantity",
+              "amount": "150.00",
+              "amount_human": "150.00",
+              "with_essential_computation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "permit",
+      "id": "120",
+      "code": "SAMPLE-S3A01-2",
+      "name": "PERMIT-SAMPLE-S3A01-2",
+      "description": "Mayor's Permit Fee on Banks and Other Financial Institutions",
+      "calculations": [
+        {
+          "type": "OPTION",
+          "label": "Bank Type",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": "bank_type",
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_options",
+              "multiplier": "commercial_industrial_dev_banks",
+              "amount": "330.00",
+              "amount_human": "330.00",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_options",
+              "multiplier": "rural_thrift_savings_banks",
+              "amount": "220.00",
+              "amount_human": "220.00",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_options",
+              "multiplier": "universal_banks_insurance",
+              "amount": "220.00",
+              "amount_human": "220.00",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_options",
+              "multiplier": "pawnshops_money_shops_lending",
+              "amount": "440.00",
+              "amount_human": "440.00",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": []
+        }
+      ]
+    },
+    {
+      "page": "permit",
+      "id": "115",
+      "code": "SAMPLE-S3A01-6",
+      "name": "PERMIT-SAMPLE-S3A01-6",
+      "description": "Mayor's Permit Fee on All Other Unenumerated Business Establishments",
+      "calculations": [
+        {
+          "type": "FIXED_AMOUNT",
+          "label": "Fixed Amount",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": null,
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_fixed_amounts",
+              "amount": "120.00",
+              "amount_human": "120.00",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": [
+            {
+              "amount": "120.00",
+              "amount_human": "120.00",
+              "with_essential_computation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "sanitary",
+      "id": "121",
+      "code": "SAMPLE-S4D01",
+      "name": "SANITARY-SAMPLE-S4D01",
+      "description": "Sanitary Inspection Fee (Business/industrial/agricultural floor area)",
+      "calculations": [
+        {
+          "type": "OTHER_RANGE",
+          "label": "Sqm Range",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": "sqm",
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "0.01",
+              "to": "24.99",
+              "amount": "100.00",
+              "from_human": "0.01",
+              "to_human": "24.99",
+              "amount_human": "100.00",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "25.00",
+              "to": "49.99",
+              "amount": "150.00",
+              "from_human": "25.00",
+              "to_human": "49.99",
+              "amount_human": "150.00",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "50.00",
+              "to": "99.99",
+              "amount": "200.00",
+              "from_human": "50.00",
+              "to_human": "99.99",
+              "amount_human": "200.00",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "100.00",
+              "to": "199.99",
+              "amount": "250.00",
+              "from_human": "100.00",
+              "to_human": "199.99",
+              "amount_human": "250.00",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "200.00",
+              "to": "499.99",
+              "amount": "300.00",
+              "from_human": "200.00",
+              "to_human": "499.99",
+              "amount_human": "300.00",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "500.00",
+              "to": "999.99",
+              "amount": "400.00",
+              "from_human": "500.00",
+              "to_human": "999.99",
+              "amount_human": "400.00",
+              "with_essential_computation": 0
+            },
+            {
+              "type": "bpls_tax_revenue_calculation_ranges",
+              "from": "1000.00",
+              "to": "99999999999.00",
+              "amount": "500.00",
+              "from_human": "1,000.00",
+              "to_human": "99,999,999,999.00",
+              "amount_human": "500.00",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": [
+            {
+              "from": "0.01",
+              "to": "24.99",
+              "amount": "100.00",
+              "from_human": "0.01",
+              "to_human": "24.99",
+              "amount_human": "100.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "25.00",
+              "to": "49.99",
+              "amount": "150.00",
+              "from_human": "25.00",
+              "to_human": "49.99",
+              "amount_human": "150.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "50.00",
+              "to": "99.99",
+              "amount": "200.00",
+              "from_human": "50.00",
+              "to_human": "99.99",
+              "amount_human": "200.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "100.00",
+              "to": "199.99",
+              "amount": "250.00",
+              "from_human": "100.00",
+              "to_human": "199.99",
+              "amount_human": "250.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "200.00",
+              "to": "499.99",
+              "amount": "300.00",
+              "from_human": "200.00",
+              "to_human": "499.99",
+              "amount_human": "300.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "500.00",
+              "to": "999.99",
+              "amount": "400.00",
+              "from_human": "500.00",
+              "to_human": "999.99",
+              "amount_human": "400.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "1000.00",
+              "to": "99999999999.00",
+              "amount": "500.00",
+              "from_human": "1,000.00",
+              "to_human": "99,999,999,999.00",
+              "amount_human": "500.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "0.01",
+              "to": "24.99",
+              "amount": "100.00",
+              "from_human": "0.01",
+              "to_human": "24.99",
+              "amount_human": "100.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "25.00",
+              "to": "49.99",
+              "amount": "150.00",
+              "from_human": "25.00",
+              "to_human": "49.99",
+              "amount_human": "150.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "50.00",
+              "to": "99.99",
+              "amount": "200.00",
+              "from_human": "50.00",
+              "to_human": "99.99",
+              "amount_human": "200.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "100.00",
+              "to": "199.99",
+              "amount": "250.00",
+              "from_human": "100.00",
+              "to_human": "199.99",
+              "amount_human": "250.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "200.00",
+              "to": "499.99",
+              "amount": "300.00",
+              "from_human": "200.00",
+              "to_human": "499.99",
+              "amount_human": "300.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "500.00",
+              "to": "999.99",
+              "amount": "400.00",
+              "from_human": "500.00",
+              "to_human": "999.99",
+              "amount_human": "400.00",
+              "with_essential_computation": 0
+            },
+            {
+              "from": "1000.00",
+              "to": "99999999999.00",
+              "amount": "500.00",
+              "from_human": "1,000.00",
+              "to_human": "99,999,999,999.00",
+              "amount_human": "500.00",
+              "with_essential_computation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "sanitary",
+      "id": "116",
+      "code": "SAMPLE-S4F01",
+      "name": "SANITARY-SAMPLE-S4F01",
+      "description": "Dog Vaccination Fee",
+      "calculations": [
+        {
+          "type": "FIXED_AMOUNT",
+          "label": "Fixed Amount",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": null,
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_fixed_amounts",
+              "amount": "50.00",
+              "amount_human": "50.00",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": [
+            {
+              "amount": "50.00",
+              "amount_human": "50.00",
+              "with_essential_computation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "garbage",
+      "id": "117",
+      "code": "SAMPLE-S5B01",
+      "name": "GARBAGE-SAMPLE-S5B01",
+      "description": "Service Charge for Garbage Collection (Manufacturers ≤100 sq.m / mo)",
+      "calculations": [
+        {
+          "type": "FIXED_AMOUNT",
+          "label": "Fixed Amount",
+          "for_new": 1,
+          "for_renewal": 1,
+          "for_retirement": 1,
+          "priority": 1,
+          "multiplier": null,
+          "with_essential_computation": 0,
+          "include_for_higher_value_comparison": 0,
+          "included": [
+            {
+              "type": "bpls_tax_revenue_calculation_fixed_amounts",
+              "amount": "420.00",
+              "amount_human": "420.00",
+              "with_essential_computation": 0
+            }
+          ],
+          "detailEndpoints": [
+            {
+              "amount": "420.00",
+              "amount_human": "420.00",
+              "with_essential_computation": 0
+            },
+            {
+              "amount": "420.00",
+              "amount_human": "420.00",
+              "with_essential_computation": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fees": [
+    {
+      "page": "new-fixed-fees",
+      "id": "13",
+      "attrs": {
+        "code": "SAMPLE-S4H01",
+        "name": "FIXED-SAMPLE-S4H01",
+        "description": "Clearance or Certification Fee (Other purposes)",
+        "amount": "50.00",
+        "multiplier": null,
+        "for_new": 1,
+        "for_renewal": 1,
+        "for_retirement": 0,
+        "exclude_delinquent": 0,
+        "amount_human": "50.00"
+      }
+    },
+    {
+      "page": "new-other-fees",
+      "id": "56",
+      "attrs": {
+        "code": "SAMPLE-S3X01",
+        "name": "OTHER-SAMPLE-S3X01",
+        "description": "License Fee on Acquisition of Dogs",
+        "amount": "25.00",
+        "minimum_amount": "0.00",
+        "maximum_amount": "99999999999.00",
+        "percentage": null,
+        "column_property": null,
+        "column_property2": null,
+        "type": "BASIC",
+        "for_new": 1,
+        "for_renewal": 1,
+        "for_retirement": 0,
+        "exclude_delinquent": 0,
+        "endorsing_office": null,
+        "amount_human": "25.00",
+        "minimum_amount_human": "0.00",
+        "maximum_amount_human": "99,999,999,999.00",
+        "fee_type": "COMMON_FEE"
+      }
+    }
+  ]
+}

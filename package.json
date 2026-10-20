@@ -1,0 +1,24 @@
+{
+  "name": "elgu-prosetup",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Playwright automation for ELGU local revenue fee configuration (Chrome Extension-portable DOM layer)",
+  "type": "commonjs",
+  "scripts": {
+    "fees:configure": "node src/run-configure-fees.js",
+    "fees:configure:debug": "cross-env PWDEBUG=1 node src/run-configure-fees.js",
+    "browser:login": "node src/spawn-login-browser.js",
+    "browser:inspect": "node src/inspect-session.js",
+    "postinstall": "npx playwright install chromium"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "playwright": "^1.51.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
