@@ -5,6 +5,8 @@
   "description": "Playwright automation for ELGU local revenue fee configuration (Chrome Extension-portable DOM layer)",
   "type": "commonjs",
   "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "parse": "node src/parser/cli.js",
     "fees:configure": "node src/run-configure-fees.js",
     "fees:configure:debug": "cross-env PWDEBUG=1 node src/run-configure-fees.js",
     "browser:login": "node src/spawn-login-browser.js",
