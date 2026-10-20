@@ -2,520 +2,585 @@
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "MFG-2A02-A",
+    "article_section": "MFG-2A.02(a)",
     "specific_fee_name": "Graduated Tax on Manufacturers, Assemblers, Repackers, Processors, Brewers, Distillers, Rectifiers, and Compounders",
-    "article_section": "Section 2A.02(a)",
     "rate_structure": "Graduated based on gross sales/receipts",
     "amount_or_formula": "Less than 10,000: 181.50 PHP; 10,000 to <15,000: 242.00 PHP; 15,000 to <20,000: 332.00 PHP; 20,000 to <30,000: 484.00 PHP; 30,000 to <40,000: 726.00 PHP; 40,000 to <50,000: 907.50 PHP; 50,000 to <75,000: 1,452.00 PHP; 75,000 to <100,000: 1,815.00 PHP; 100,000 to <150,000: 2,420.00 PHP; 150,000 to <200,000: 3,025.00 PHP; 200,000 to <300,000: 4,235.00 PHP; 300,000 to <500,000: 6,050.00 PHP; 500,000 to <750,000: 8,800.00 PHP; 750,000 to <1,000,000: 11,000.00 PHP; 1,000,000 to <2,000,000: 15,125.00 PHP; 2,000,000 to <3,000,000: 18,150.00 PHP; 3,000,000 to <4,000,000: 21,750.00 PHP; 4,000,000 to <5,000,000: 25,410.00 PHP; 5,000,000 to <6,500,000: 26,812.00 PHP; 6,500,000 or more: 41 1/4% of 1%"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "WHO-2A02-B",
+    "article_section": "WHO-2A.02(b)",
     "specific_fee_name": "Graduated Tax on Wholesalers, Distributors, or Dealers",
-    "article_section": "Section 2A.02(b)",
     "rate_structure": "Graduated based on gross sales/receipts",
     "amount_or_formula": "Less than 1,000: 20.00 PHP; 1,000 to <2,000: 36.00 PHP; 2,000 to <3,000: 55.00 PHP; 3,000 to <4,000: 79.00 PHP; 4,000 to <5,000: 110.00 PHP; 5,000 to <6,000: 133.00 PHP; 6,000 to <7,000: 157.00 PHP; 7,000 to <8,000: 181.50 PHP; 8,000 to <10,000: 205.70 PHP; 10,000 to <15,000: 242.00 PHP; 15,000 to <20,000: 302.50 PHP; 20,000 to <30,000: 363.00 PHP; 30,000 to <40,000: 484.00 PHP; 40,000 to <50,000: 726.00 PHP; 50,000 to <75,000: 1,089.00 PHP; 75,000 to <100,000: 1,452.00 PHP; 100,000 to <150,000: 2,057.00 PHP; 150,000 to <200,000: 2,662.00 PHP; 200,000 to <300,000: 3,630.00 PHP; 300,000 to <500,000: 4,840.00 PHP; 500,000 to <750,000: 7,260.00 PHP; 750,000 to <1,000,000: 9,680.00 PHP; 1,000,000 to <2,000,000: 11,000.00 PHP; 2,000,000 or more: 55% of 1%"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "EXP-2A02-C",
+    "article_section": "EXP-2A.02(c)",
     "specific_fee_name": "Tax on Exporters and Dealers of Essential Commodities",
-    "article_section": "Section 2A.02(c)",
     "rate_structure": "Formula based on 1/2 of prescribed rates",
     "amount_or_formula": "One-half (1/2) of the rates prescribed under subsections (a), (b), and (d)"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "RET-2A02-D",
+    "article_section": "RET-2A.02(d)",
     "specific_fee_name": "Tax on Retailers",
-    "article_section": "Section 2A.02(d)",
     "rate_structure": "Percentage of gross sales/receipts",
     "amount_or_formula": "2.4% per annum on P400,000.00 or less; 1.2% per annum on excess over P400,000.00"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "CON-2A02-E",
+    "article_section": "CON-2A.02(e)",
     "specific_fee_name": "Graduated Tax on Contractors and Other Independent Contractors",
-    "article_section": "Section 2A.02(e)",
     "rate_structure": "Graduated based on gross sales/receipts",
     "amount_or_formula": "Less than 5,000: 30.00 PHP; 5,000 to <10,000: 67.75 PHP; 10,000 to <15,000: 114.75 PHP; 15,000 to <20,000: 181.50 PHP; 20,000 to <30,000: 302.50 PHP; 30,000 to <40,000: 423.50 PHP; 40,000 to <50,000: 605.00 PHP; 50,000 to <75,000: 968.00 PHP; 75,000 to <100,000: 1,452.00 PHP; 100,000 to <150,000: 2,178.00 PHP; 150,000 to <200,000: 2,904.00 PHP; 200,000 to <300,000: 3,993.00 PHP; 300,000 to <400,000: 5,776.00 PHP; 400,000 to <500,000: 9,075.00 PHP; 500,000 to <750,000: 10,175.00 PHP; 750,000 to <1,000,000: 11,275.00 PHP; 1,000,000 to <2,000,000: 12,650.00 PHP; 2,000,000 or more: 55% of 1% (minimum tax P12,650.00)"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "BNK-2A02-F",
+    "article_section": "BNK-2A.02(f)",
     "specific_fee_name": "Tax on Banks and Other Financial Institutions",
-    "article_section": "Section 2A.02(f)",
     "rate_structure": "Percentage of gross receipts",
     "amount_or_formula": "55% of 1% (0.55%) of gross receipts"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "SER-2A02-G",
+    "article_section": "SER-2A.02(g)",
     "specific_fee_name": "Graduated Tax on Service Establishments and Other Businesses",
-    "article_section": "Section 2A.02(g)",
     "rate_structure": "Graduated based on gross sales/receipts",
     "amount_or_formula": "Less than 20,000: 400.00 PHP; 20,000 to <30,000: 440.00 PHP; 30,000 to <40,000: 660.00 PHP; 40,000 to <50,000: 880.00 PHP; 50,000 to <75,000: 1,100.00 PHP; 75,000 to <100,000: 1,650.00 PHP; 100,000 to <150,000: 2,200.00 PHP; 150,000 to <200,000: 3,300.00 PHP; 200,000 to <250,000: 4,400.00 PHP; 250,000 to <300,000: 5,000.00 PHP; 300,000 to <400,000: 6,600.00 PHP; 400,000 to <500,000: 8,800.00 PHP; 500,000 to <750,000: 11,000.00 PHP; 750,000 to <1,000,000: 15,000.00 PHP; 1,000,000 to <2,000,000: 20,000.00 PHP; 2,000,000 or more: 2%"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "PUV-2A02-H",
+    "article_section": "PUV-2A.02(h)",
     "specific_fee_name": "Tax on Operators of Public Utility Vehicles Maintaining Terminal/Booking Office",
-    "article_section": "Section 2A.02(h)",
     "rate_structure": "Flat rate per unit per annum",
     "amount_or_formula": "Air-conditioned buses: 1,000.00 PHP/unit; Buses w/o AC: 750.00 PHP/unit; Mini-buses: 450.00 PHP/unit; Jeepneys/Fieras/Multi-cab: 200.00 PHP/unit; Taxis/Van: 300.00 PHP/unit"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "NEW-2A05",
+    "article_section": "NEW-2A.05",
     "specific_fee_name": "Tax on Newly-Started Business",
-    "article_section": "Section 2A.05",
     "rate_structure": "Percentage based on capital investment",
     "amount_or_formula": "1/4 of 1% (0.25%) of capital investment"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "PED-2D01",
+    "article_section": "PED-2D.01",
     "specific_fee_name": "Tax on Peddlers",
-    "article_section": "Section 2D.01",
     "rate_structure": "Flat rate per annum",
     "amount_or_formula": "In trucks or vehicles: 110.00 PHP; In motorized bicycle/tricycle: 55.00 PHP; Other peddlers: 55.00 PHP"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "AMU-2E01",
+    "article_section": "AMU-2E.01",
     "specific_fee_name": "Tax on Ambulant and Itinerant Amusement Operators",
-    "article_section": "Section 2E.01",
     "rate_structure": "Flat rate per day",
     "amount_or_formula": "Circus/carnivals: 1,000.00 PHP/day; Merry-go-round, ferris wheel, etc.: 500.00 PHP/day; Sports contest/exhibitions: 500.00 PHP/day"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "MIN-2F02",
+    "article_section": "MIN-2F.02",
     "specific_fee_name": "Tax on Mining Operations",
-    "article_section": "Section 2F.02",
     "rate_structure": "Percentage of gross receipts",
     "amount_or_formula": "2% of annual gross receipts"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "FOR-2G02",
+    "article_section": "FOR-2G.02",
     "specific_fee_name": "Tax on Forest Concessions and Forest Products",
-    "article_section": "Section 2G.02",
     "rate_structure": "Percentage of gross receipts",
     "amount_or_formula": "2% of annual gross receipts"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "SIG-2H01",
+    "article_section": "SIG-2H.01",
     "specific_fee_name": "Tax on Signs, Signboards, and Billboards",
-    "article_section": "Section 2H.01",
     "rate_structure": "Rate per sq. m. or display count",
     "amount_or_formula": "Single face: 15.00 PHP/sq.m.; Double face: 25.00 PHP/sq.m.; Professional signs: 15.00 PHP; Movie slide ads: 200.00 PHP; Mass displays: 300.00 to 1,650.00 PHP; Vehicles/Balloons: 44.00 PHP/day, 66.00 PHP/week, 88.00 PHP/month; Handbills: 15.00 PHP/day"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SEC-2I02",
+    "article_section": "SEC-2I.02",
     "specific_fee_name": "Special Levy on Lands",
-    "article_section": "Section 2I.02",
     "rate_structure": "Percentage of actual cost of public works project",
     "amount_or_formula": "Rate not exceeding 60% of actual cost of public works project"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SEC-2J02",
+    "article_section": "SEC-2J.02",
     "specific_fee_name": "Socialized Housing Tax",
-    "article_section": "Section 2J.02",
     "rate_structure": "Percentage of assessed value",
     "amount_or_formula": "1/2 of 1% (0.5%) on assessed value of urban lands in excess of 50,000.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "BUS-3A01-1",
+    "article_section": "BUS-3A.01(1)",
     "specific_fee_name": "Mayor's Permit Fee on Business",
-    "article_section": "Section 3A.01(1)",
     "rate_structure": "Graduated based on gross receipts or capital investment",
     "amount_or_formula": "Less than 5,000: 30.00 PHP; 5,000 to <10,000: 60.00 PHP; 10,000 to <20,000: 120.00 PHP; 20,000 to <30,000: 200.00 PHP; For every 5,000 in excess of 30,000: 15.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "BNK-3A01-2",
+    "article_section": "BNK-3A.01(2)",
     "specific_fee_name": "Mayor's Permit Fee on Banks and Other Financial Institutions",
-    "article_section": "Section 3A.01(2)",
     "rate_structure": "Flat rate per institution type",
     "amount_or_formula": "Rural, Thrift, and Savings Banks: 220.00 PHP; Commercial, Industrial, Dev Banks: 330.00 PHP; Universal Banks/Insurance: 220.00 PHP; Pawnshops/Money Shops/Lending: 440.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "LIQ-3A01-3",
+    "article_section": "LIQ-3A.01(3)",
     "specific_fee_name": "Mayor's Permit Fee on Dealers of Fermented Liquors, Distilled Spirits, or Wines",
-    "article_section": "Section 3A.01(3)",
     "rate_structure": "Flat rate per dealer category",
     "amount_or_formula": "Retailer (domestic liquor): 220.00 PHP; Retailer (tuba/basi/tapuy): 220.00 PHP; Wholesale dealer (fermented liquor): 420.00 PHP; Wholesale dealer (domestic liquor): 420.00 PHP; Wholesale dealer (foreign liquor): 850.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "AMU-3A01-4",
+    "article_section": "AMU-3A.01(4)",
     "specific_fee_name": "Mayor's Permit Fee on Amusement Places",
-    "article_section": "Section 3A.01(4)",
     "rate_structure": "Flat rate based on establishment type/capacity",
     "amount_or_formula": "Day and night club: 3,300.00 PHP; Day or night club: 2,200.00 PHP; Cockpit: 200.00 PHP; Cocktail lounge/bar/cabaret: 2,200.00 PHP; Theater/cinema (orchestra): 1,100.00 PHP; Theater (balcony & orchestra): 1,600.00 PHP; Theater (seating 1,000+): 2,750.00 PHP; Theater (lodge/balcony/orchestra): 3,750.00 PHP; Air-conditioned theater: 5,000.00 PHP; Boxing/skating/resorts: 1,100.00 PHP; Bowling alley: 220.00 PHP; Billiards/pool: 650.00 PHP; Sauna/steam: 650.00 PHP; Circus/carnival: 440.00 PHP; Merry-go-round/ferris wheel: 330.00 PHP; Race track: 220.00 PHP; Boxing contest: 220.00 PHP/night; Itinerant operators: 55.00 PHP/day"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "OTH-3A01-5",
+    "article_section": "OTH-3A.01(5)",
     "specific_fee_name": "Mayor's Permit Fee on Other Businesses",
-    "article_section": "Section 3A.01(5)",
     "rate_structure": "Flat rate per specific business line",
     "amount_or_formula": "Boarding/lodging house: 110.00 PHP; Private cemetery/memorial park: 220.00 PHP; Rice and Corn Mill stationary: 400.00 PHP; Rice and Corn Mill mobile: 500.00 PHP; Subdivision owner/operator: 100.00 PHP/sq.m.; Ice cream/halo-halo/snack stand: 110.00 PHP; Duplicate permit: 50.00 PHP; Retail tobacco dealer: 110.00 PHP; Wholesale tobacco dealer: 330.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "SEC-3A01-6",
+    "article_section": "SEC-3A.01(6)",
     "specific_fee_name": "Mayor's Permit Fee on All Other Unenumerated Business Establishments",
-    "article_section": "Section 3A.01(6)",
     "rate_structure": "Flat rate per annum",
     "amount_or_formula": "120.00 PHP per annum"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "COC-3B02",
+    "article_section": "COC-3B.02",
     "specific_fee_name": "Permit Fee for Cockpit Owners/Operators/Licensees and Personnel",
-    "article_section": "Section 3B.02",
     "rate_structure": "Flat rate per application or role",
     "amount_or_formula": "Application filling fee: 250.00 PHP; Annual franchise/license fee: 2,200.00 PHP; Promoters/Hosts: 250.00 PHP; Pit Manager: 175.00 PHP; Referee: 175.00 PHP; Bet Taker: 125.00 PHP; Bet Manager: 175.00 PHP; Gaffer: 125.00 PHP; Cashier: 175.00 PHP; Derby Matchmaker: 175.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "COC-3C02",
+    "article_section": "COC-3C.02",
     "specific_fee_name": "Permit Fee for Special Cockfighting",
-    "article_section": "Section 3C.02",
     "rate_structure": "Flat rate per day or per derby type",
     "amount_or_formula": "Special Cockfights (Pintakasi/Tupada): 600.00 PHP/day; Two-cock derby: 600.00 PHP/derby; Three-cock derby: 800.00 PHP/derby; Four-cock derby: 1,000.00 PHP/derby; Five-cock derby: 1,250.00 PHP/derby; Six-cock derby and more: 1,500.00 PHP/derby"
   },
   {
     "elgu_system_category": "fixed fees",
     "target_page": "new-fixed-fees",
+    "code": "SEC-3E02",
+    "article_section": "SEC-3E.02",
     "specific_fee_name": "Impounding Fee on Astray Animals",
-    "article_section": "Section 3E.02",
     "rate_structure": "Flat rate per head per day",
     "amount_or_formula": "Large cattle: 400.00 PHP/day; All other animals: 100.00 PHP/day"
   },
   {
     "elgu_system_category": "fixed fees",
     "target_page": "new-fixed-fees",
+    "code": "SEC-3F01",
+    "article_section": "SEC-3F.01",
     "specific_fee_name": "Impounding Fee on Motor Vehicles",
-    "article_section": "Section 3F.01",
     "rate_structure": "Flat rate per vehicle type per day",
     "amount_or_formula": "Motorcycle and motorized tricycle: 50.00 PHP/day; Cars and jeeps: 100.00 PHP/day; Cars and jeeps for public use: 150.00 PHP/day; Trucks and buses: 200.00 PHP/day"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "AMU-3G01",
+    "article_section": "AMU-3G.01",
     "specific_fee_name": "Permit Fee on Circus and Other Parades",
-    "article_section": "Section 3G.01",
     "rate_structure": "Flat rate per day",
     "amount_or_formula": "150.00 PHP per day"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SEC-3H02",
+    "article_section": "SEC-3H.02",
     "specific_fee_name": "Registration and Transfer Fees on Large Cattle",
-    "article_section": "Section 3H.02",
     "rate_structure": "Flat rate per transaction",
     "amount_or_formula": "Verification fee: 20.00 PHP; Brand mark fee: 60.00 PHP; Registration of Large Cattle: 100.00 PHP; Certificate of Transfer: 100.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "SEC-3I01",
+    "article_section": "SEC-3I.01",
     "specific_fee_name": "Permit Fee for Excavation",
-    "article_section": "Section 3I.01",
     "rate_structure": "Flat rate / Per linear meter or square meter",
     "amount_or_formula": "Concrete pavement street crossing min: 100.00 PHP; Concrete boring: 10.00 PHP/linear meter; Asphalt crossing min: 80.00 PHP + 10.00 PHP/linear meter; Gravel crossing min: 60.00 PHP + 5.00 PHP/linear meter; Curbs/gutters damage: 150.00 PHP; Delay fee: 50.00 PHP/day"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SEC-3J03",
+    "article_section": "SEC-3J.03",
     "specific_fee_name": "Fee for Sealing and Licensing of Weights and Measures",
-    "article_section": "Section 3J.03",
     "rate_structure": "Flat rate based on scale type/capacity",
     "amount_or_formula": "Linear measure <=1m: 20.00 PHP, >1m: 40.00 PHP; Capacity <=10L: 20.00 PHP, >10L: 50.00 PHP; Weight <=10kg: 40.00 PHP, 11-59kg: 60.00 PHP, 60-99kg: 80.00 PHP, 100-119kg: 100.00 PHP, 120-300kg: 150.00 PHP, >300kg: 300.00 PHP; Apothecary balance: 75.00 PHP; Truck scale: 1,000.00 PHP; Complete set of weights: 100.00 PHP + 25.00 PHP/extra weight; Re-testing service charge: 25.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "SEC-3K01",
+    "article_section": "SEC-3K.01",
     "specific_fee_name": "Permit Fee on Film-Making",
-    "article_section": "Section 3K.01",
     "rate_structure": "Flat rate per day",
     "amount_or_formula": "Commercial movies: 1,100.00 PHP/day; Commercial advertisement: 1,100.00 PHP/day; Documentary film: 600.00 PHP/day; Videotape coverage: 600.00 PHP/day"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "AGR-3L01",
+    "article_section": "AGR-3L.01",
     "specific_fee_name": "Permit Fee for Agricultural Machinery and Other Heavy Equipment",
-    "article_section": "Section 3L.01",
     "rate_structure": "Flat rate per unit per annum",
     "amount_or_formula": "Mechanical dryers >=100 cavans: 550.00 PHP; Mechanical dryers <100 cavans: 350.00 PHP; Heavy tractors: 275.00 PHP; Hand tractors: 220.00 PHP; Rice threshers/corn shellers/water pumps: 165.00 PHP; Bulldozers: 200.00 PHP; Forklifts: 150.00 PHP; Graders: 150.00 PHP; Payloader: 500.00 PHP; Backhoe: 500.00 PHP; Chainsaw: 250.00 PHP; Other agricultural machinery: 120.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "TRU-3M01",
+    "article_section": "TRU-3M.01",
     "specific_fee_name": "Permit Fee on Hauling and Trucking Services",
-    "article_section": "Section 3M.01",
     "rate_structure": "Flat rate per truck based on gross weight",
     "amount_or_formula": "Gross weight <15 tons: 200.00 PHP/truck; Gross weight 15-25 tons: 300.00 PHP/truck; Gross weight >25 tons: 400.00 PHP/truck"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "OCC-3N01",
+    "article_section": "OCC-3N.01",
     "specific_fee_name": "Permit Fee on Occupation/Calling Not Requiring Government Examination",
-    "article_section": "Section 3N.01",
     "rate_structure": "Flat rate per annum per worker",
     "amount_or_formula": "Offensive and dangerous business employees: 250.00 PHP; Commercial establishment workers: 220.00 PHP; Food/eatery establishment workers: 220.00 PHP; Night/day establishment workers: 220.00 PHP; Occupations subject to periodic inspection: 250.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "SEC-3O01",
+    "article_section": "SEC-3O.01",
     "specific_fee_name": "Building Permit Fee",
-    "article_section": "Section 3O.01",
     "rate_structure": "Pursuant to National Building Code (PD 1096)",
     "amount_or_formula": "Rates pursuant to Department Order 155, Series of 1992 and National Building Code"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "SEC-3P01",
+    "article_section": "SEC-3P.01",
     "specific_fee_name": "Permit Fee for Storage of Flammable and Combustible Materials",
-    "article_section": "Section 3P.01",
     "rate_structure": "Flat rate based on storage capacity",
     "amount_or_formula": "Gasoline/diesel/kerosene: <500L: 50.00 PHP, 500-2000L: 100.00 PHP, 2001-5000L: 1,000.00 PHP, 5001-20000L: 4,000.00 PHP, 20001-50000L: 6,000.00 PHP, 50001-100000L: 12,000.00 PHP, >100000L: 15,000.00 PHP; Cinematographic film: 400.00 PHP; Celluloid: 200.00 PHP; Calcium carbide: <50 cases: 300.00 PHP, 50-99 cases: 500.00 PHP, >=100 cases: 600.00 PHP; Tar/resin: <1000 kl: 500.00 PHP, 1000-2500 kl: 1,000.00 PHP, 2501-5000 kl: 2,000.00 PHP, >5000 kl: 3,000.00 PHP; Coal deposits: <100 tons: 500.00 PHP, >=100 tons: 700.00 PHP; Other combustible/flammable: 500.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "SEC-3Q01",
+    "article_section": "SEC-3Q.01",
     "specific_fee_name": "Permit and Inspection Fee on Machineries and Engines",
-    "article_section": "Section 3Q.01",
     "rate_structure": "Flat rate based on horsepower (HP)",
     "amount_or_formula": "Internal combustion engines: <=2HP: 50.00 PHP, 3-4HP: 100.00 PHP, 5-9HP: 150.00 PHP, 10-14HP: 200.00 PHP, >=15HP: 250.00 PHP; Other stationary engines: <=2HP: 100.00 PHP, 3-4HP: 150.00 PHP, 5-9HP: 200.00 PHP, 10-14HP: 250.00 PHP, >=15HP: 300.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "SEC-3R01",
+    "article_section": "SEC-3R.01",
     "specific_fee_name": "Permit Fee for Inspection and Verification of Subdivision",
-    "article_section": "Section 3R.01",
     "rate_structure": "Flat rate based on area / linear meter",
     "amount_or_formula": "Verification <5 ha: 1,000.00 PHP; 5-10 ha: 1,500.00 PHP; >10 ha: 2,000.00 PHP + 100.00 PHP/ha; Final permit streets: 300.00 PHP first 20m + 500.00 PHP excess meter; Streets first 20 sq.m: 200.00 PHP + 400.00 PHP excess sq.m.; Culvert: 300.00 PHP/meter; Bridge: 500.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "SEC-3S01",
+    "article_section": "SEC-3S.01",
     "specific_fee_name": "Permit Fee for Temporary Use of Roads, Streets, Sidewalks, Alleys, Patios, Plazas, and Playgrounds",
-    "article_section": "Section 3S.01",
     "rate_structure": "Flat rate per sq. m. per day",
     "amount_or_formula": "For construction: 10.00 PHP/sq.m. per day; Others: 5.00 PHP/sq.m. per day"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "SEC-3T01",
+    "article_section": "SEC-3T.01",
     "specific_fee_name": "Permit Fee for the Conduct of Group Activities",
-    "article_section": "Section 3T.01",
     "rate_structure": "Flat rate per occasion",
     "amount_or_formula": "Conferences/meetings/rallies outdoor: 200.00 PHP; Dances: 100.00 PHP; Coronation and ball: 100.00 PHP; Promotional sales: 200.00 PHP; Other group activities: 150.00 PHP"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "SEC-3U02",
+    "article_section": "SEC-3U.02",
     "specific_fee_name": "Permit Fee for the Use of Pogpog or Kuliglig as a Means of Transportation",
-    "article_section": "Section 3U.02",
     "rate_structure": "Flat rate per item/service",
     "amount_or_formula": "Metal plate/Tin plate: 30.00 PHP; Permit fee: 90.00 PHP; Duplicate Certificate of Registration: 25.00 PHP; Amendments: 25.00 PHP"
   },
   {
     "elgu_system_category": "License fee (Business Tax)",
     "target_page": "license",
+    "code": "SEC-3V01",
+    "article_section": "SEC-3V.01",
     "specific_fee_name": "License Fee on Operation of Mahjong Tables",
-    "article_section": "Section 3V.01",
     "rate_structure": "Flat rate per table per annum",
     "amount_or_formula": "500.00 PHP per table"
   },
   {
     "elgu_system_category": "Permit (Mayors permit)",
     "target_page": "permit",
+    "code": "HOG-3W01",
+    "article_section": "HOG-3W.01",
     "specific_fee_name": "Permit Fee on Ambulant Hog Buyers",
-    "article_section": "Section 3W.01",
     "rate_structure": "Flat rate per vehicle type per trip",
     "amount_or_formula": "Forward or similar: 550.00 PHP; Elf or similar: 350.00 PHP; Jeep and other: 250.00 PHP"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SEC-3X01",
+    "article_section": "SEC-3X.01",
     "specific_fee_name": "License Fee on Acquisition of Dogs",
-    "article_section": "Section 3X.01",
     "rate_structure": "Flat rate per dog",
     "amount_or_formula": "25.00 PHP per dog"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SEC-3Y01",
+    "article_section": "SEC-3Y.01",
     "specific_fee_name": "Inspection Fee on Irrigation Pump Built Near Municipal Waters",
-    "article_section": "Section 3Y.01",
     "rate_structure": "Flat rate per irrigation pump per annum",
     "amount_or_formula": "100.00 PHP per irrigation pump"
   },
   {
     "elgu_system_category": "fixed fees",
     "target_page": "new-fixed-fees",
+    "code": "SEC-4A01",
+    "article_section": "SEC-4A.01",
     "specific_fee_name": "Secretary's Fees",
-    "article_section": "Section 4A.01",
     "rate_structure": "Flat rate per page or document",
     "amount_or_formula": "Every page or fraction: 50.00 PHP; Certificate of correctness: 50.00 PHP; Certifying official act of Municipal Judge: 100.00 PHP; Certified copy judicial proceedings: 25.00 PHP/page; Photocopy: 10.00 PHP/page"
   },
   {
     "elgu_system_category": "fixed fees",
     "target_page": "new-fixed-fees",
+    "code": "SEC-4B01",
+    "article_section": "SEC-4B.01",
     "specific_fee_name": "Local Civil Registry Fees",
-    "article_section": "Section 4B.01",
     "rate_structure": "Flat rate per civil registry document/service",
     "amount_or_formula": "Marriage license app: 100.00 PHP; Marriage license fee: 100.00 PHP; Marriage solemnization: 200.00 PHP; Sponsors fee: 100.00 PHP; Legitimation/Adoption/Annulment/Divorce/Naturalization: 200.00 PHP; Change first name: 3,000.00 PHP; Clerical error: 1,000.00 PHP; Migrant petitioner: 500.00 PHP; Affidavit reappearance: 500.00 PHP; Affidavit acknowledgement/AUSF RA9255/Legitimation/Legal capacity: 200.00 PHP; Delayed reg (1mo-5yr: 100.00 PHP, >5-10yr: 200.00 PHP, >10-17yr: 300.00 PHP, 18yr+: 400.00 PHP); Birth/Marriage/Death cert abroad: 100.00 PHP, local: 50.00 PHP; SECPA: 125.00 PHP"
   },
   {
     "elgu_system_category": "fixed fees",
     "target_page": "new-fixed-fees",
+    "code": "SEC-4C01",
+    "article_section": "SEC-4C.01",
     "specific_fee_name": "Police Clearance Fee",
-    "article_section": "Section 4C.01",
     "rate_structure": "Flat rate per clearance type",
     "amount_or_formula": "Employment/scholarship local: 50.00 PHP; Abroad: 100.00 PHP; Change of name: 200.00 PHP; Citizenship: 1,000.00 PHP; Passport/visa: 150.00 PHP; Firearms: 150.00 PHP; PLEB clearance: 200.00 PHP"
   },
   {
     "elgu_system_category": "Sanitary",
     "target_page": "sanitary",
+    "code": "SEC-4D01",
+    "article_section": "SEC-4D.01",
     "specific_fee_name": "Sanitary Inspection Fee",
-    "article_section": "Section 4D.01",
     "rate_structure": "Flat rate based on floor area in sq. m.",
     "amount_or_formula": "House for rent: 200.00 PHP; Business/industrial/agricultural: <25 sq.m.: 100.00 PHP, 25 to <50 sq.m.: 150.00 PHP, 50 to <100 sq.m.: 200.00 PHP, 100 to <200 sq.m.: 250.00 PHP, 200 to <500 sq.m.: 300.00 PHP, 500 to <1000 sq.m.: 400.00 PHP, >=1000 sq.m.: 500.00 PHP"
   },
   {
     "elgu_system_category": "Sanitary",
     "target_page": "sanitary",
+    "code": "SEC-4E01",
+    "article_section": "SEC-4E.01",
     "specific_fee_name": "Service Fees for Health Examination",
-    "article_section": "Section 4E.01",
     "rate_structure": "Flat rate per individual",
     "amount_or_formula": "Physical examination fee: 50.00 PHP; Additional copy of medical certificate: 25.00 PHP"
   },
   {
     "elgu_system_category": "Sanitary",
     "target_page": "sanitary",
+    "code": "SEC-4F01",
+    "article_section": "SEC-4F.01",
     "specific_fee_name": "Dog Vaccination Fee",
-    "article_section": "Section 4F.01",
     "rate_structure": "Flat rate per dog",
     "amount_or_formula": "50.00 PHP per dog"
   },
   {
     "elgu_system_category": "fixed fees",
     "target_page": "new-fixed-fees",
+    "code": "SEC-4G01",
+    "article_section": "SEC-4G.01",
     "specific_fee_name": "Treasurer's and Assessor's Fees",
-    "article_section": "Section 4G.01",
     "rate_structure": "Flat rate per service/document",
     "amount_or_formula": "Treasurer: Cert tax payment: 50.00 PHP; Cert payment other than tax: 50.00 PHP; Cert copy on file: 25.00 PHP/page; Cert xerox copy: 15.00 PHP/page; Cert photo copy: 25.00 PHP/page; Cert tax clearance: 50.00 PHP; Cert clearance money/property: 50.00 PHP. Assessor: Cert true copy tax dec: 75.00 PHP; Cert xerox copy: 15.00 PHP/page; Cert land/improvement: 50.00 PHP; Cert property landholdings: 50.00 PHP; Cert land location: 75.00 PHP; Verification fee: 25.00 PHP; Inspection fee real property reclassification: 100.00 PHP"
   },
   {
     "elgu_system_category": "fixed fees",
     "target_page": "new-fixed-fees",
+    "code": "SEC-4H01",
+    "article_section": "SEC-4H.01",
     "specific_fee_name": "Clearance or Certification Fee",
-    "article_section": "Section 4H.01",
     "rate_structure": "Flat rate per purpose",
     "amount_or_formula": "Driver's license: 50.00 PHP; Passport or visa: 75.00 PHP; Military service: 50.00 PHP; Transferring resident aliens: 50.00 PHP; Firearm license: 100.00 PHP; Other purposes: 50.00 PHP"
   },
   {
     "elgu_system_category": "Sanitary",
     "target_page": "sanitary",
+    "code": "SEC-4I01",
+    "article_section": "SEC-4I.01",
     "specific_fee_name": "Service Fee for Pre-Marriage Family Planning Seminar",
-    "article_section": "Section 4I.01",
     "rate_structure": "Flat rate per couple",
     "amount_or_formula": "75.00 PHP per couple"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SEC-5A01",
+    "article_section": "SEC-5A.01",
     "specific_fee_name": "Rentals of Personal and Real Properties Owned by the Municipality",
-    "article_section": "Section 5A.01",
     "rate_structure": "Rate per sq. m., hour, day, or head",
     "amount_or_formula": "Land commercial: 15.00 PHP/sq.m./mo, residential: 5.00 PHP/sq.m./mo, others: 5.00 PHP/sq.m./mo; Building commercial: 30.00 PHP/sq.m./mo, residential: 15.00 PHP/sq.m./mo, others: 15.00 PHP/sq.m./mo; Loader: 6000.00 PHP/day or 750.00 PHP/hr; Dump truck 10-wheeler: 1000.00 PHP/hr; Dump truck forward: 500.00 PHP/hr; Dump truck elf: 300.00 PHP/hr; Excavator: 1000.00 PHP/hr; Grader: 800.00 PHP/hr or 6400.00 PHP/day; Bulldozer: 10000.00 PHP/day or 1250.00 PHP/hr; Boom truck: 300.00 PHP/day; Low bed trailer: 300.00 PHP/hr; Meat van outside: 5000.00 PHP/day, inside pig: 30.00 PHP/head, cow/carabao: 50.00 PHP/head, others: 20.00 PHP"
   },
   {
     "elgu_system_category": "Garbage",
     "target_page": "garbage",
+    "code": "SEC-5B01",
+    "article_section": "SEC-5B.01",
     "specific_fee_name": "Service Charge for Garbage Collection",
-    "article_section": "Section 5B.01",
     "rate_structure": "Flat rate per month based on floor area / stall type",
     "amount_or_formula": "Manufacturers <=100 sq.m: 420.00 PHP/mo, >100 sq.m: 500.00 PHP/mo; Hotels <=100 sq.m: 220.00 PHP/mo, >100 sq.m: 300.00 PHP/mo; Restaurants <=50 sq.m: 220.00 PHP/mo, >50 sq.m: 300.00 PHP/mo; Hospitals <=10 sq.m: 220.00 PHP/mo, >10 sq.m: 300.00 PHP/mo; Movie houses & retailers <=10 sq.m: 120.00 PHP/mo, >10 sq.m: 200.00 PHP/mo; Market meat: 80.00 PHP/stall/mo, vegetable/fish: 90.00 PHP/stall/mo; Other <=10 sq.m: 120.00 PHP/mo, >10 sq.m: 200.00 PHP/mo; Residential houses: 100.00 PHP/mo"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SEC-5C01",
+    "article_section": "SEC-5C.01",
     "specific_fee_name": "Charges for Parking",
-    "article_section": "Section 5C.01",
     "rate_structure": "Flat rate daily or annually",
     "amount_or_formula": "Day parking: Motorcycle/tricycle: 200.00 PHP annual / 2.00 PHP daily; Cars/service: 500.00 PHP annual / 5.00 PHP daily; Passenger jeepneys: 1,000.00 PHP annual / 10.00 PHP daily; Cargo trucks/delivery vans: 1,500.00 PHP annual / 15.00 PHP daily; Passenger buses: 1,500.00 PHP annual / 15.00 PHP daily; Others: 500.00 PHP annual / 5.00 PHP daily. Overnight parking: 2x day rate"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SEC-5D01",
+    "article_section": "SEC-5D.01",
     "specific_fee_name": "Cemetery Charges",
-    "article_section": "Section 5D.01",
     "rate_structure": "Flat rate per lot, layer, niche, or permit type",
     "amount_or_formula": "Rental fee (5 yrs): Burial lot: 100.00 PHP, Additional layer: 50.00 PHP, Niches: 200.00 PHP. Permit fee: Burial: 50.00 PHP, Exhumation: 75.00 PHP, Disinterment/removal: 150.00 PHP"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "MIN-5E02",
+    "article_section": "MIN-5E.02",
     "specific_fee_name": "Rental Fee on Mineral Lands",
-    "article_section": "Section 5E.02",
     "rate_structure": "Rate per hectare per year",
     "amount_or_formula": "Coal public lands: 10.00 PHP/ha for first 10 yrs, 20.00 PHP/ha thereafter; Quarry public lands: 60.00 PHP/ha; Metallic/non-metallic mineral lands: 25.00 PHP/ha"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "MIN-5F02",
+    "article_section": "MIN-5F.02",
     "specific_fee_name": "Occupation Fee for Mining Claims",
-    "article_section": "Section 5F.02",
     "rate_structure": "Flat rate per hectare per annum",
     "amount_or_formula": "15.00 PHP per hectare or fractional part thereof"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SLA-5G01",
+    "article_section": "SLA-5G.01",
     "specific_fee_name": "Slaughter and Corral Fees",
-    "article_section": "Section 5G.01",
     "rate_structure": "Flat rate per head",
     "amount_or_formula": "Slaughter permit: Large cattle: 37.50 PHP, Hogs: 22.50 PHP, Goat/sheep: 22.50 PHP, Others: 22.50 PHP. Slaughter fee (public): Large cattle: 37.50 PHP, Hogs: 22.50 PHP, Goat/sheep: 15.00 PHP, Others: 15.00 PHP. Slaughter fee (home): Large cattle: 22.50 PHP, Hogs: 15.00 PHP, Goat/sheep: 7.50 PHP, Others: 7.50 PHP. Corral fee/day: Large cattle: 15.00 PHP, Hogs: 7.50 PHP, Goat/sheep: 7.50 PHP, Others: 7.50 PHP. Post mortem fee: 1.50 PHP"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "SEC-5H01",
+    "article_section": "SEC-5H.01",
     "specific_fee_name": "Toll Fees or Charges",
-    "article_section": "Section 5H.01",
     "rate_structure": "Flat rate per utility type",
     "amount_or_formula": "Sewerage commercial: 150.00 PHP; Sewerage residential: 75.00 PHP; Road/bridge: 50.00 PHP; Others: 50.00 PHP"
   },
   {
     "elgu_system_category": "Other Fees",
     "target_page": "new-other-fees",
+    "code": "MAR-5I03",
+    "article_section": "MAR-5I.03",
     "specific_fee_name": "Market Fees",
-    "article_section": "Section 5I.03",
     "rate_structure": "Flat rate per stall/table/sq.m. or entrance fee per quantity/kilo",
     "amount_or_formula": "Stall rental/mo: Fish section: 180.00 PHP/table, Meat section: 220.00 PHP/table, Veg/fruit: 300.00 PHP/table, Dry goods: 60.00 PHP/sq.m., Grocery: 80.00 PHP/sq.m., Eateries: 70.00 PHP/sq.m., Corner/front: 90.00 PHP/sq.m. Non-stall occupants: 10.00 PHP/sq.m./day. Market entrance fees: Sugpo/alimango: 5.00 PHP/kilo, Tahong/clams: 1.00 PHP/kilo, Fresh fish 1st class: 1.00 PHP/kilo, 2nd class: 0.50 PHP/kilo, Dried/salted fish: 0.50 PHP/kilo, Alamang/bagoong: 20.00 PHP/can, Other seafood: 1.00 PHP/kilo, Chicken: 2.00 PHP/kilo; Fruits jeepload: 220.00 PHP, kaing: 25.00 PHP, sack: 15.00 PHP; Vegetables kaing: 30.00 PHP, potatoes/onions sack: 30.00 PHP, garlic 100 cloves: 10.00 PHP; Salt sack: 25.00 PHP, Rice bran sack: 10.00 PHP, Sugar sack: 30.00 PHP, Charcoal sack: 10.00 PHP; Auction market: Fighting cocks: 55.00 PHP/head, Piglet: 35.00 PHP/head, Swine >20kg: 55.00 PHP/head, Goats/dogs: 35.00 PHP/head"
   },
   {
     "elgu_system_category": "fixed fees",
     "target_page": "new-fixed-fees",
+    "code": "IND-602",
+    "article_section": "IND-6.02",
     "specific_fee_name": "Community Tax on Individuals",
-    "article_section": "Section 6.02",
     "rate_structure": "Basic fixed rate plus additional tax based on income/property",
     "amount_or_formula": "Basic: 5.00 PHP; Additional: 1.00 PHP per 1,000.00 PHP gross income or property value (maximum P5,000.00); Non-subject: 1.00 PHP"
   },
   {
     "elgu_system_category": "fixed fees",
     "target_page": "new-fixed-fees",
+    "code": "COR-603",
+    "article_section": "COR-6.03",
     "specific_fee_name": "Community Tax on Juridical Persons",
-    "article_section": "Section 6.03",
     "rate_structure": "Basic fixed rate plus additional tax based on property and gross receipts",
     "amount_or_formula": "Basic: 500.00 PHP; Additional property: 2.00 PHP per 5,000.00 PHP real property; Additional income: 2.00 PHP per 5,000.00 PHP gross receipts (maximum P10,000.00 combined)"
   }

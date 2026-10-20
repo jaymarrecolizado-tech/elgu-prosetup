@@ -33,3 +33,4 @@ _explore_*.js
 
 # Optional: large intermediate automation dump (re-creatable)
 elgu_fee_type_samples.json
+_incoming_fees.json
