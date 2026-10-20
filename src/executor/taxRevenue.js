@@ -4,7 +4,7 @@
  * (skip-if-exists) and dry-run aware (fill → Cancel, zero submits).
  */
 const { gotoSection, expandFee, feeExists, dismissModal } = require('./browser');
-const { typeInto, setCheckbox, selectReact, submitModal, cancelModal, modalFields } = require('./modal');
+const { typeInto, fillInto, setCheckbox, selectReact, submitModal, cancelModal, modalFields, clickAction } = require('./modal');
 const { fillDetails, rangeFields } = require('./details');
 
 /** Create the tax revenue record itself (no calculation yet). */
@@ -14,10 +14,11 @@ async function createFeeRecord(page, config, { dryRun = false } = {}) {
     await expandFee(page, config.code);
     return { status: 'exists' };
   }
-  await page.getByRole('button', { name: /Add Tax Revenue/ }).first().click();
+  await clickAction(page, /Add Tax Revenue/);
   await page.waitForTimeout(800);
-  await typeInto(page, 'code', config.code);
-  await typeInto(page, 'description', config.description);
+  // Add form: fill() is the proven path (typing reverts on these modals).
+  await fillInto(page, 'code', config.code);
+  await fillInto(page, 'description', config.description);
   if (dryRun) {
     await cancelModal(page);
     return { status: 'dry_run' };

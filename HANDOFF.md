@@ -108,13 +108,28 @@ reference — parser refuses to guess).
 ## Critical automation lessons (still enforced in `src/executor/`)
 
 1. Creating a Calculation **auto-creates a placeholder detail** — **Edit** row 1, then Add the rest.
-2. **Masked amount/code fields only save with real keyboard typing** (`pressSequentially` via `typeInto`), never `fill()`.
+2. **fill() vs typing:** Add/Create modals tolerate `fill()` (`fillInto`); Update/Edit modals (masked ₱ fields) silently revert unless keyboard-typed (`typeInto`). Applying typing everywhere made the Other Fee Add form's typed code revert to empty on blur.
 3. Options/Other Range need a **multiplier code at creation** (`bank_type`/`sqm` proven; others unverified → parser flags `needs_ai`).
 4. Option detail multipliers must be **code-style** (`rural_thrift_savings_banks`).
 5. Detail rows: target `tr:has(button)`; **never click delete**.
 6. Verify via toast after every submit; Escape lingering modals on error.
-7. React-Select: `input[id^="react-select"]` inside the open modal.
+7. React-Select: `input[id^="react-select"]` inside the open modal, plus:
+   - pick options via `[class*="-option"]` (emotion classes), never `getByText` (list rows contain look-alike text like `<b>BASIC</b>`);
+   - after a selection the modal remounts its selects (Other Fee grows an "Endorsing Office" search) — target by control placeholder (`{ controlText: 'Select Fee Type' }`), never a saved index;
+   - §5 code-style values must be spaced for UI text (`COMMON_FEE` → "COMMON FEE");
+   - a prior tax-revenue page visit leaves SPA select state stale — `gotoSection(slug, { fresh: true })` (reload) before Fixed/Other Fee pages.
 8. `networkidle` + settle delay after every navigation/submit.
+9. **Modal selector composition:** never interpolate `'.modal.show, [role=dialog]'` into `${MODAL} input[name=x]` — the bare `.modal.show` alternative matches the modal div itself and `.first()` targets the div (fields silently receive no input). All helpers use `:is(.modal.show, [role=dialog])`.
+10. Keep the persistent profile: `.auth/chrome-profile`; never commit `.auth/`.
+
+## Dry-run status (2026-10-21, training app)
+
+Full sweep of all runnable configs: **41 → 36 dry_run (fill+cancel, zero
+submits) + 5 refused (fixed-fee lists awaiting human split) + 0 errors**.
+Verified via API afterwards that no records were created. The 24 `needs_human`
+fees never reach the executor. Submit of a 5-fee subset (Plan#2 acceptance)
+awaits the human: `npm run app` → pick revision → select fees → Submit (types
+SUBMIT).
 
 ---
 

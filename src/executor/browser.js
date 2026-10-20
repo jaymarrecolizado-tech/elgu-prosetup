@@ -36,10 +36,19 @@ async function launch({ headless = false, pattern = /tax_revenue|fixed_fees|othe
   return { context, page, api };
 }
 
-/** Navigate to a tax-revenue section and settle (PLAN §7.8: networkidle + delay). */
-async function gotoSection(page, slug) {
+/**
+ * Navigate to a tax-revenue section and settle (PLAN §7.8: networkidle + delay).
+ * `fresh` reloads once after navigation — required before the Fixed/Other Fee
+ * pages' react-selects: a prior visit to a tax-revenue page leaves the SPA's
+ * dropdown state stale and the Add-modal react-select menus never open.
+ */
+async function gotoSection(page, slug, { fresh = false } = {}) {
   await page.goto(`${BASE_URL}/bpls/tax-revenue/${slug}`, { waitUntil: 'domcontentloaded', timeout: 60_000 });
   await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
+  if (fresh) {
+    await page.reload({ waitUntil: 'domcontentloaded', timeout: 60_000 });
+    await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
+  }
   await page.waitForTimeout(800);
 }
 

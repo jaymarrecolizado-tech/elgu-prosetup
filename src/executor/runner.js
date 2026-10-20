@@ -66,8 +66,13 @@ async function runConfigs({ configs, mode = 'dry-run', revision = null, onEvent 
   const { context, page, api } = await launch({ headless });
   try {
     onEvent({ type: 'info', message: `browser up (${mode})` });
+    await gotoSection(page, 'license');
+    const guarded = await checkLoggedIn(page);
+    if (!guarded.ok) {
+      throw new Error(`not logged in (${guarded.hint}) — run "npm run browser:login" and re-try`);
+    }
+    onEvent({ type: 'info', message: 'session OK' });
     if (revision) {
-      await gotoSection(page, 'license');
       const sel = await selectRevision(page, api, revision);
       runLog.revision_selection = sel;
       onEvent({ type: 'info', message: `revision: ${sel.message}` });
@@ -83,15 +88,18 @@ async function runConfigs({ configs, mode = 'dry-run', revision = null, onEvent 
         if (config.confidence === 'needs_human') {
           entry.status = 'refused';
           entry.reason = 'needs_human — parser flagged this fee; encode it manually';
-        } else if (config.kind === 'tax_revenue' && !config.calculation) {
+        } else if (!config.calculation && config.amount === undefined) {
           entry.status = 'refused';
-          entry.reason = 'no calculation to encode';
+          entry.reason = config.kind === 'fixed_fee'
+            ? 'fixed-fee list awaiting human split into one fee per item'
+            : 'no calculation or amount to encode';
         } else {
           const steps = config.kind === 'tax_revenue'
             ? await executeTaxRevenue(page, config, { dryRun: mode === 'dry-run' })
             : await executeSimpleFee(page, config, { dryRun: mode === 'dry-run' });
           entry.steps = steps;
-          const statuses = Object.values(steps).map((s) => s?.status).filter(Boolean);
+          // tax steps: {fee:{status},…}; simple-fee steps: {status} flat.
+          const statuses = Object.values(steps).map((s) => (s && typeof s === 'object' ? s?.status : s)).filter(Boolean);
           entry.status = statuses.includes('dry_run') ? 'dry_run'
             : statuses.every((s) => s === 'exists') ? 'exists'
             : 'created';
@@ -128,6 +136,19 @@ async function runConfigs({ configs, mode = 'dry-run', revision = null, onEvent 
   return runLog;
 }
 
+/** True when the browser shows the app (not a login redirect). */
+async function checkLoggedIn(page) {
+  const url = page.url();
+  if (/login|signin|auth/i.test(url)) {
+    return { ok: false, hint: `redirected to ${url}` };
+  }
+  const body = await page.evaluate(() => document.body.innerText.slice(0, 4000));
+  if (/log\s*in|sign\s*in/i.test(body) && !/tax revenue/i.test(body)) {
+    return { ok: false, hint: 'login form visible' };
+  }
+  return { ok: true };
+}
+
 /** CLI confirmation for --submit: require typing SUBMIT (PLAN §6 Plan#2). */
 function cliConfirm() {
   return new Promise((resolve) => {
@@ -142,4 +163,4 @@ function cliConfirm() {
   });
 }
 
-module.exports = { runConfigs, cliConfirm, selectRevision };
+module.exports = { runConfigs, cliConfirm, selectRevision, checkLoggedIn };
