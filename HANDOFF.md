@@ -20,19 +20,22 @@ Training app used for samples:
 
 ---
 
-## Plan status (verified 2026-10-21 by inspection + tests)
+## Plan status (verified 2026-10-21 by inspection + tests + live dry-run)
 
 | Plan | Status | Evidence |
 |------|--------|----------|
 | Plan#1 Consolidate | ✅ **Complete** | `src/parser/`, `src/executor/`, `scripts/archive/`; `npm test` = **34 pass / 0 fail** |
-| Plan#2 Runner + web UI + audit | 🟡 **Code complete; live acceptance incomplete** | `elgu_config.json` (65: 19 high / 22 needs_ai / 24 needs_human); web UI serves HTTP 200 at 127.0.0.1:8765; audit diff regression-tested vs 13 samples. Tax-revenue dry-run 33/41 passed. **Fixed/Other Fees dry-run still failing** (react-select / fill errors, see `logs/`); **5-fee submit + audit not yet done** |
+| Plan#2 Runner + web UI + audit | 🟡 **Complete except human-gated submit** | `elgu_config.json` (65: 19 high / 22 needs_ai / 24 needs_human); web UI at 127.0.0.1:8765; audit diff regression-tested vs 13 samples. **Live dry-run sweep: 41 runnable → 36 dry_run + 5 refused + 0 errors** (API-verified zero records created). Remaining acceptance: human-approved 5-fee submit in training + audit PASS |
 | Plan#3 AI assist (Ollama) | ❌ Not started | No `src/ai/`, no Ollama integration, no Excel import |
 | Plan#4 Chrome extension | ❌ Not started | No `extension/` directory |
 | Plan#5 Fine-tune | ❌ Not started (also gated on Plan#3) | No `training/` directory |
 
-> **Do not claim Plan#2–#5 are "done" from code presence alone.** Plan#2 acceptance still requires: Fixed/Other dry-run green, then a 5-fee **submit** in training followed by audit PASS.
->
-> ⚠️ **Uncommitted WIP:** `src/executor/{browser,modal,runner,simpleFees,taxRevenue}.js` have uncommitted debugging changes (fill vs typing split, react-select retry, fresh-reload for Fixed/Other pages, login guard). Latest local logs still show errors on Other Fees, so this WIP was **left uncommitted** — review/fix before committing. Committed code is at the Plan#2 commit.
+> **Do not claim Plan#3–#5 are "done" from code presence alone.** Plan#2's last
+> acceptance step is a **human-approved submit** (core principle: AI never
+> submits autonomously): `npm run app` → revision → select 5 fees → Submit
+> (types SUBMIT) → Audit. The earlier executor WIP referenced here previously
+> has been fixed and committed (`:is()` modal selectors, fill-vs-typing split,
+> react-select placeholder targeting, fresh reload, runner status fix).
 
 ## Done
 
@@ -51,8 +54,8 @@ Training app used for samples:
 
 ## What is NOT done yet (needs the human / next session)
 
-- **Finish Plan#2 acceptance:** fix Fixed/Other Fees dry-run (start from the uncommitted WIP + latest `logs/run-*.json` errors), re-run dry-run, then 5-fee submit in training + audit PASS. Requires manual login (`.env` + `npm run browser:login`).
-- Plan#3 (Ollama AI assist), Plan#4 (Chrome extension), Plan#5 (fine-tune) — not started.
+- **Plan#2 final acceptance:** human-approved 5-fee submit in training + audit PASS (dry-run is green; executor and login verified). In the web UI: pick revision → select fees → Submit (types SUBMIT) → Audit.
+- Plan#3 (Ollama AI assist), Plan#4 (Chrome extension), Plan#5 (fine-tune) — not started; Plan#3 also needs Ollama + Qwen3-4B installed locally.
 
 ---
 
