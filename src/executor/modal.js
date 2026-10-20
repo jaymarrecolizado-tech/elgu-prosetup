@@ -1,5 +1,5 @@
 /**
- * Modal form helpers — consolidated from the proven make-*/fix-* scripts.
+ * Modal form helpers — consolidated from the proven sample scripts.
  * Implements the hard-won PLAN §7 lessons:
  *   §7.2 masked amount/code fields only persist with real keyboard typing
  *   §7.6 verify via toast after every submit; Escape lingers away

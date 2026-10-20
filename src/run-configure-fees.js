@@ -1,75 +1,69 @@
 /**
- * ELGU Local Revenue Fee Configuration — Playwright runner
+ * Thin CLI for the deterministic runner (PLAN §6 Plan#2).
  *
- * Steps implemented now:
- *   1. Launch visible Chromium (non-headless)
- *   2. Open login page → page.pause() for manual login / CAPTCHA
- *
- * Later (Steps 3–4):
- *   - Navigate to Fee Configuration with resilient locators
- *   - Loop revenue_fees.json and fill/submit via portable DOM helpers
- *
- * Chrome Extension note:
- *   Form injection lives in src/form/domInject.js (vanilla DOM).
- *   Playwright will call those helpers via page.evaluate when we add Step 4.
+ *   node src/run-configure-fees.js --dry-run [--confidence high] [--codes A,B]
+ *   node src/run-configure-fees.js --submit --revision 2 --codes A,B   (types SUBMIT to confirm)
  */
+const fs = require('fs');
+const path = require('path');
+const { parseAll } = require('./parser');
+const { runConfigs, cliConfirm } = require('./executor/runner');
 
-const { chromium } = require('playwright');
-const { LOGIN_URL, SLOW_MO_MS } = require('./config');
+const ROOT = path.join(__dirname, '..');
+const args = process.argv.slice(2);
+const has = (flag) => args.includes(flag);
+const val = (flag, def = null) => {
+  const i = args.indexOf(flag);
+  return i >= 0 ? args[i + 1] : def;
+};
 
 async function main() {
-  console.log('[elgu] Starting Chromium (headed)...');
-  console.log(`[elgu] Login URL: ${LOGIN_URL}`);
+  const mode = has('--submit') ? 'submit' : 'dry-run';
+  const revision = val('--revision');
+  const codes = val('--codes') ? val('--codes').split(',').map((s) => s.trim()).filter(Boolean) : null;
+  const confidence = val('--confidence', 'high'); // which confidences to include
 
-  // Step 1 — visible browser on your desktop
-  const browser = await chromium.launch({
-    headless: false,
-    slowMo: SLOW_MO_MS,
-    // Keep DevTools closed by default; Inspector opens on pause()
+  const inPath = path.join(ROOT, val('--in', 'elgu_config.json'));
+  let configs;
+  if (fs.existsSync(inPath)) {
+    configs = JSON.parse(fs.readFileSync(inPath, 'utf8')).configs;
+  } else {
+    const fees = JSON.parse(fs.readFileSync(path.join(ROOT, 'revenue_fees.json'), 'utf8'));
+    configs = parseAll(fees).configs;
+    console.log('[runner] elgu_config.json not found — parsed revenue_fees.json directly');
+  }
+
+  let selected = configs;
+  if (codes) selected = selected.filter((c) => codes.includes(c.code));
+  else if (confidence) {
+    const allow = confidence.split(',');
+    selected = selected.filter((c) => allow.includes(c.confidence));
+  }
+  console.log(`[runner] ${selected.length} config(s) selected | mode=${mode} revision=${revision || '(none)'}`);
+
+  let confirmed = false;
+  if (mode === 'submit') {
+    confirmed = await cliConfirm();
+    if (!confirmed) {
+      console.log('[runner] not confirmed — aborting (nothing was submitted)');
+      process.exit(0);
+    }
+  }
+
+  const log = await runConfigs({
+    configs: selected,
+    mode,
+    revision,
+    confirmSubmit: confirmed,
+    onEvent: (e) => {
+      if (e.type === 'start') console.log(`  → ${e.code}`);
+      else if (e.type === 'done') console.log(`  ✓ ${e.code}: ${e.status}${e.reason ? ' — ' + e.reason : ''}`);
+      else if (e.type === 'error') console.log(`  ✗ ${e.code}: ${e.error}`);
+      else if (e.type === 'info') console.log(`[i] ${e.message}`);
+    },
   });
-
-  const context = await browser.newContext({
-    viewport: { width: 1366, height: 900 },
-    // Persist nothing yet — after login flow is stable we can add storageState
-  });
-
-  const page = await context.newPage();
-
-  // Step 2 — open login, then freeze for manual auth
-  console.log('[elgu] Navigating to login page...');
-  await page.goto(LOGIN_URL, {
-    waitUntil: 'domcontentloaded',
-    timeout: 60_000,
-  });
-
-  console.log(`
-============================================================
-  MANUAL LOGIN PAUSE
-============================================================
-  1. In the opened browser, enter your credentials.
-  2. Solve CAPTCHA / MFA if prompted.
-  3. Wait until you land on the ELGU dashboard.
-  4. In the Playwright Inspector, click Resume (▶).
-
-  Tip: If Inspector did not open, re-run with:
-       npm run fees:configure:debug
-============================================================
-`);
-
-  // Freezes the script until you click Resume in Playwright Inspector
-  await page.pause();
-
-  console.log('[elgu] Resume detected. Session is ready.');
-  console.log('[elgu] Steps 3–4 (Fee Configuration + data loop) not wired yet.');
-  console.log('[elgu] Leaving the browser open for 10s so you can confirm the dashboard...');
-
-  await page.waitForTimeout(10_000);
-
-  await browser.close();
-  console.log('[elgu] Browser closed. Steps 1–2 OK.');
+  console.log('\n[runner] summary:', JSON.stringify(log.summary));
+  console.log('[runner] log:', log.log_file);
 }
 
-main().catch((err) => {
-  console.error('[elgu] Fatal:', err);
-  process.exit(1);
-});
+main().catch((e) => { console.error('[runner] fatal:', e); process.exit(1); });

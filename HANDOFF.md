@@ -4,121 +4,124 @@ Continue from here on any machine after cloning:
 
 `https://github.com/jaymarrecolizado-tech/elgu-prosetup`
 
-Same Cursor account does **not** sync Agent chat history. Open this file in a new chat and say: *continue from HANDOFF.md*.
+Open this file in a new chat and say: *continue from HANDOFF.md*.
 
 ---
 
 ## Goal
 
-Automate configuring LGU revenue fees into eLGU BPLS **Tax Revenue** (License / Permit / Sanitary / Garbage / Fixed Fees / Other Fees), driven by `revenue_fees.json`, with DOM helpers portable later to a Chrome Extension.
+Automate configuring LGU revenue fees into eLGU BPLS **Tax Revenue** (License / Permit / Sanitary / Garbage / Fixed Fees / Other Fees), driven by `revenue_fees.json`, human-approved before any submit. Follow `PLAN.md` (Plan#1–Plan#5).
 
 Training app used for samples:
 
 - UI: `https://elgu-r2-training-core.oueg.info`
 - API: `https://elgu-r2-training-ws.oueg.info/api/v1/bpls/administrator/...`
-- Active ordinance UI filter: revision id `2` (“2026 Ordinance”, YEAR 2026–2027)
+- Active ordinance UI filter: revision id `2` (“2026 Ordinance”, YEAR 2026–2027); revisions 1 (2019), 3 (2027), 4 (2028) also exist.
 
 ---
 
 ## Done
 
-1. **Toolchain:** RTK, Graphify (project rule), Kodelyth ECC (Cursor project install). Prefer English ECC rules if reinstall overwrites with Chinese.
-2. **Playwright scaffold:** persistent Chromium profile at `.auth/chrome-profile` (local only — **never commit**). Login once via `npm run browser:login` / `src/spawn-login-browser.js`.
-3. **System model observed (API + UI):**
-   - Tax revenues (types 1–4): code + description → **Calculations** → detail rows (ranges / rate / options / quantity / excess / fixed amount).
-   - Fixed Fees / Other Fees: separate endpoints (`tax_revenue/fixed_fees`, `tax_revenue/other_fees`).
-4. **Verified SAMPLE entries** live in training (API-checked). Report: `elgu_sample_verification.json`, audit dump: `elgu_sample_audit.json`.
-5. **`revenue_fees.json` updated** (65 fees) with production-style codes, e.g. `MFG-2A.02(a)` → code `MFG-2A02-A`. Importer: `src/import-updated-fees.js`.
-6. **Repo pushed** (secrets excluded): `main` @ GitHub.
+1. **Plan#1 (consolidate) — COMPLETE.** Deterministic parser in `src/parser/`
+   (§5 rules: graduated brackets, `% of 1%` top brackets, excess clauses,
+   retailer two-tier, sqm tiers, options lists, flats), executor helpers in
+   `src/executor/` (typing §7.2, placeholder-edit §7.1, multiplier codes §7.3,
+   toast verification §7.6), one-off probes archived to `scripts/archive/`.
+   `npm test` → 34 tests green (parser + audit-diff vs the 13 verified samples).
+2. **Plan#2 (runner + web UI) — COMPLETE (code).**
+   - `npm run parse` → `elgu_config.json` (65 fees: **19 high / 22 needs_ai / 24 needs_human**, report embedded).
+   - `npm run fees:configure -- --dry-run` / `--submit --revision N` (CLI types `SUBMIT` to confirm); idempotent skip-if-exists; per-run log `logs/run-*.json` (gitignored).
+   - **Web UI:** `npm run app` → http://127.0.0.1:8765 — preview table (editable details), revision selector (required for submit), dry-run/submit (typed `SUBMIT` confirmation dialog)/audit buttons, live log.
+   - **Audit mode v1:** `npm run audit [-- --codes A,B]` re-reads live config via API capture and diffs PASS/PARTIAL/FAIL (regression-tested against `elgu_sample_audit.json`: all 13 verified samples reproduce their verdicts).
+3. Prior work: Playwright scaffold + persistent profile (`.auth/chrome-profile`), 13 verified SAMPLE fees (report: `elgu_sample_verification.json`), `revenue_fees.json` (65 fees, sanitized codes), repo on GitHub `main`.
 
-### Sample patterns proven (by calculation type)
+## What is NOT done yet (needs the human / next session)
 
-| Type | Example SAMPLE code | Source |
-|------|---------------------|--------|
-| Gross Range (graduated amounts) | LICENSE-SAMPLE-S2A02-A | §2A.02(a) |
-| Gross Range (rate tiers) | LICENSE-SAMPLE-S2A02-D | §2A.02(d) |
-| Gross Rate | LICENSE-SAMPLE-S2A02-F | §2A.02(f) |
-| Capital Range | PERMIT-SAMPLE-S3A01-1C | §3A.01(1) |
-| Gross Excess | PERMIT-SAMPLE-S3A01-1X | §3A.01(1) excess |
-| Options | PERMIT-SAMPLE-S3A01-2 | §3A.01(2) banks |
-| Other Range (sqm) | SANITARY-SAMPLE-S4D01 | §4D.01 |
-| Quantity | PERMIT-SAMPLE-S3G01 | §3G.01 |
-| Fixed Amount | PERMIT-SAMPLE-S3A01-6, SANITARY-SAMPLE-S4F01, GARBAGE-SAMPLE-S5B01 | flat fees |
-| Fixed Fee page | FIXED-SAMPLE-S4H01 | §4H.01 |
-| Other Fee BASIC | OTHER-SAMPLE-S3X01 | §3X.01 |
-
-**PARTIAL (not full ordinance):** Garbage SAMPLE = one tier (₱420) only; Sanitary dog / Other dog = amount OK but “per dog” not encoded unless Quantity.
+- **Live dry-run + 5-fee submit in training** (Plan#2 acceptance): requires
+  manual login (`.env` + `npm run browser:login`) and a human clicking through
+  the web UI. Everything is wired for it.
+- Plan#3 (Ollama AI assist), Plan#4 (Chrome extension), Plan#5 (fine-tune).
 
 ---
 
-## Critical automation lessons
-
-1. Creating a Calculation **auto-creates a placeholder detail** (e.g. `0–1000` / `option` / `quantity`). **Edit** that row first, then Add the rest.
-2. **Masked amount fields (`₱`)** and some code fields only save reliably with **keyboard typing** (`pressSequentially`), not `fill` / native setter — especially on **Update** modals.
-3. **Options / Other Range** need a Multiplier **code** when creating the calculation (`bank_type` → label “Bank Type”, `sqm` → “Sqm Range”). Option detail multipliers must be code-style (`rural_thrift_savings_banks`), not display labels.
-4. **Gross Excess** fields are `in_excess_of`, `for_every`, `amount` — **no rate field**.
-5. Table rows often include an empty spacer `<tr>` — target `tr:has(button)` for edit/delete.
-6. After Submit, detail panels may collapse — re-expand the fee item before the next Add.
-
----
-
-## Secrets / local-only (never commit or copy to GitHub)
-
-| Path | Why |
-|------|-----|
-| `.env` | Login URL / env secrets |
-| `.auth/` | Browser cookies / logged-in profile |
-| `session-*.json`, `browser-status.json` | Live page dumps |
-| `node_modules/`, `graphify-out/`, `.cursor/` | Local tooling |
-| `_incoming_fees.json`, `elgu_fee_type_samples.json` | Scratch / large dumps |
-
-Safe to commit: `revenue_fees.json`, `elgu_sample*.json`, `src/`, `package.json`, `.env.example`, this handoff.
-
-On the laptop after clone:
+## How to run (after clone)
 
 ```bash
 npm install
-copy .env.example .env   # set ELGU_LOGIN_URL
-# Windows: set PLAYWRIGHT_BROWSERS_PATH=%LOCALAPPDATA%\ms-playwright
-npm run browser:login    # log in manually; profile saved under .auth/
+copy .env.example .env        # set ELGU_LOGIN_URL
+npm test                      # 34 tests
+npm run parse                 # revenue_fees.json → elgu_config.json
+npm run browser:login         # manual login once; profile saved under .auth/
+npm run app                   # open http://127.0.0.1:8765
+# pick revision → select fees → Dry-run → review log → Submit (types SUBMIT) → Audit
 ```
 
----
-
-## Next work (recommended order)
-
-1. **Confirm** target ordinance revision for real data (training default is id `2`; Maddela revisions 3/4 also exist — avoid colliding with seed codes).
-2. **Build modular runner** (dry-run first: fill → Cancel, no Submit):
-   - Parse `revenue_fees.json` → typed config (Gross Range / Rate / Options / Other Range / Quantity / Excess / Fixed / Other Fee).
-   - Use `code` field from JSON (e.g. `MFG-2A02-A`), description = `specific_fee_name`.
-   - Per-fee log: success / fail / skip.
-   - Fold one-off scripts (`fix-fee-type-details*.js`, `make-*.js`) into `src/form/` + `src/run-configure-fees.js`.
-3. **Expand PARTIAL fees** (Garbage §5B.01, multi-tier Fixed/Other) into Options / Other Range rows, not one flat amount.
-4. Only after dry-run OK: Submit mode with explicit user confirmation.
-5. Later: Chrome Extension port of `src/form/domInject.js`.
-
----
-
-## Useful commands
+CLI equivalents:
 
 ```bash
-npm run browser:login
-npm run fees:configure          # scaffold — not full 65 yet
-node src/import-updated-fees.js # regenerate revenue_fees.json from _incoming_fees.json
-node src/verify-all-samples.js  # API audit of SAMPLE-* records (needs .auth login)
+node src/run-configure-fees.js --dry-run                       # all high-confidence
+node src/run-configure-fees.js --dry-run --codes MFG-2A02-A,RET-2A02-D
+node src/run-configure-fees.js --submit --revision 2 --codes ...   # types SUBMIT to confirm
+node src/audit/cli.js --codes MFG-2A02-A,RET-2A02-D,BNK-3A01-2
 ```
 
-Project rule: run `graphify query "..."` before broad codebase exploration; `graphify update .` after code changes.
+---
+
+## Architecture (post-Plan#2)
+
+| Path | Role |
+|------|------|
+| `src/parser/` | Deterministic §5 rules → `elgu_config.json` (`index.js` orchestrates; `graduated.js`, `lists.js`, `formulas.js`, `classify.js`, `sanitize.js`, `validate.js`) |
+| `src/executor/` | `browser.js` (persistent profile + API capture), `modal.js` (typed input §7.2), `details.js` (placeholder edit §7.1), `taxRevenue.js`, `simpleFees.js`, `runner.js` (dry-run/submit, revision check, run logs) |
+| `src/audit/` | `diff.js` (pure PASS/PARTIAL/FAIL engine), `audit.js` (live API re-read), `cli.js` |
+| `src/server/` + `public/` | localhost web UI (127.0.0.1:8765), no framework |
+| `elgu_config.json` | The §5 contract between parser/UI/executor/audit (committed) |
+| `logs/` | Run + audit logs (gitignored) |
+| `scripts/archive/` | Old one-off probes (reference only) |
+
+Confidence levels: `high` (deterministic, verified pattern) · `needs_ai`
+(parseable but a choice is unproven — multiplier dimension, plain-`%` top
+bracket, fixed-fee list split) · `needs_human` (multi-concept/external
+reference — parser refuses to guess).
+
+### API facts learned (beyond earlier lessons)
+
+- Tax-revenue list URLs: `.../tax_revenues?q=&sort_by=desc&tax_revenue_type_id=<1-4>&ordinance_revision_id=<n>` (1=license, 2=permit, 3=sanitary, 4=garbage).
+- Calc internal types: Gross/Capital Range=`AMOUNT_RANGE` (multiplier `gross_amount`/`capital_amount`), Gross/Capital Rate=`BASIC`, Gross Excess=`EXCESS`, Options=`OPTION`, Other Range=`OTHER_RANGE` (multiplier `sqm`), Quantity=`QUANTITY` (calc multiplier **null**; detail row carries `multiplier:"quantity"`), Fixed Amount=`FIXED_AMOUNT`.
+- Live API shows `for_retirement=1` even when the creation checkbox was unchecked — parser defaults all three flags true.
+- Ordinance revisions API: `bpls_ordinance_revisions` (ids 1–4 in training).
 
 ---
 
-## Open questions for the human
+## Critical automation lessons (still enforced in `src/executor/`)
 
-1. Top bracket “41¼% of 1%”: keep base+excess (as SAMPLE-S2A02-A) or pure % of gross?
-2. With Essential Rate flag for exporters / essential commodities (§2A.02(c))?
-3. Production codes: use sanitized `code` as-is (`MFG-2A02-A`), or keep punctuation in UI?
-4. Delete training `SAMPLE-*` records before loading real codes?
+1. Creating a Calculation **auto-creates a placeholder detail** — **Edit** row 1, then Add the rest.
+2. **Masked amount/code fields only save with real keyboard typing** (`pressSequentially` via `typeInto`), never `fill()`.
+3. Options/Other Range need a **multiplier code at creation** (`bank_type`/`sqm` proven; others unverified → parser flags `needs_ai`).
+4. Option detail multipliers must be **code-style** (`rural_thrift_savings_banks`).
+5. Detail rows: target `tr:has(button)`; **never click delete**.
+6. Verify via toast after every submit; Escape lingering modals on error.
+7. React-Select: `input[id^="react-select"]` inside the open modal.
+8. `networkidle` + settle delay after every navigation/submit.
 
 ---
 
-*Last updated for handoff after revenue_fees code update (65 fees) and GitHub push.*
+## Secrets / local-only (never commit)
+
+`.env`, `.auth/`, `session-*.json`, `browser-status.json`, `node_modules/`,
+`graphify-out/`, `.cursor/`, `_incoming_fees.json`, `elgu_fee_type_samples.json`,
+`logs/`, `_tmp_*` — all in `.gitignore`.
+
+---
+
+## Open questions for the human (unchanged from PLAN §12)
+
+1. Top bracket “41¼% of 1%”: keep base+excess (current) or pure % of gross?
+2. `with_essential_computation` for §2A.02(c) essential commodities?
+3. Production target ordinance revision id (training default `2`)?
+4. Delete training `SAMPLE-*` records before real loads?
+5. First real input beyond JSON: Excel or ordinance PDF?
+
+---
+
+*Last updated after Plan#2 (runner + web UI + audit v1) — 2026-10-21.*

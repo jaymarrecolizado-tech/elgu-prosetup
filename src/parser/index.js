@@ -31,9 +31,11 @@ function calcDefaults(fee, type, extra = {}) {
   return {
     type,
     multiplier_code: null,
+    // All 13 verified samples show for_retirement=1 in the API even when the
+    // checkbox was left unchecked — default true to match live behavior.
     for_new: true,
     for_renewal: true,
-    for_retirement: fee.target_page === 'license',
+    for_retirement: true,
     with_essential_computation: false,
     include_for_higher_value_comparison: false,
     details: [],
@@ -105,6 +107,7 @@ function parseFee(fee) {
         multiplier_code: multiplier,
         details: tiered.tiers,
       });
+      config.partial_semantics = tiered.excluded.length > 0;
       for (const f of tiered.excluded) {
         config.notes.push(`excluded from this calculation: "${f.label}" ${f.amount} (needs its own fee/option — verified subset behavior, S4D01)`);
       }
@@ -137,6 +140,7 @@ function parseFee(fee) {
         details: options.details.map(({ multiplier: m, amount }) => ({ multiplier: m, amount })),
       });
       config.notes.push(...options.notes);
+      config.partial_semantics = options.notes.length > 0;
       if (!multiplier) {
         config.confidence = 'needs_ai';
         config.notes.push('options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation');
@@ -161,14 +165,20 @@ function finishFlat(config, fee, flat) {
   if (config.kind === 'fixed_fee') {
     config.amount = flat.amount;
     config.multiplier = null;
-    if (q) config.notes.push(`qualifier "${flat.qualifier}" not encoded on Fixed Fee page (single amount field)`);
+    if (q) {
+      config.partial_semantics = true;
+      config.notes.push(`qualifier "${flat.qualifier}" not encoded on Fixed Fee page (single amount field)`);
+    }
     return finish(config, fee);
   }
   if (config.kind === 'other_fee') {
     config.fee_type = 'BASIC';
     config.fee_class = 'COMMON_FEE';
     config.amount = flat.amount;
-    if (q) config.notes.push(`qualifier "${flat.qualifier}" not encoded in Other Fee BASIC (verified S3X01 partial-semantics pattern)`);
+    if (q) {
+      config.partial_semantics = true;
+      config.notes.push(`qualifier "${flat.qualifier}" not encoded in Other Fee BASIC (verified S3X01 partial-semantics pattern)`);
+    }
     return finish(config, fee);
   }
   // tax_revenue: per day → Quantity (verified S3G01); other units → Fixed Amount (verified S4F01)
@@ -178,10 +188,20 @@ function finishFlat(config, fee, flat) {
       details: [{ amount: flat.amount }],
     });
     config.notes.push(`per-unit basis "${flat.qualifier}" encoded as Quantity (verified S3G01)`);
+    // Quantity encodes per-unit semantics fully — not partial.
   } else {
     config.calculation = calcDefaults(fee, 'Fixed Amount', { details: [{ amount: flat.amount }] });
     if (q) {
-      config.notes.push(`qualifier "${flat.qualifier}" encoded as Fixed Amount (verified S4F01 pattern); switch to Quantity if per-unit charging is required`);
+      // Period qualifiers (per annum/year) are fully encoded by a fixed amount
+      // (verified S3A01-6 = PASS); countable units (per dog/couple/table) are
+      // not (verified S4F01 = PARTIAL semantics).
+      const countable = !/per annum|per year|yearly|annually/i.test(flat.qualifier);
+      config.partial_semantics = countable;
+      config.notes.push(
+        countable
+          ? `qualifier "${flat.qualifier}" encoded as Fixed Amount (verified S4F01 pattern); switch to Quantity if per-unit charging is required`
+          : `period qualifier "${flat.qualifier}" fully encoded as Fixed Amount (verified S3A01-6)`,
+      );
     }
   }
   return finish(config, fee);

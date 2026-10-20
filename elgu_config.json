@@ -1,0 +1,2508 @@
+{
+  "generated_at": "2026-10-20T21:21:23.252Z",
+  "report": {
+    "source_count": 65,
+    "config_count": 65,
+    "by_confidence": {
+      "high": 19,
+      "needs_ai": 22,
+      "needs_human": 24
+    },
+    "by_type": {
+      "Gross Range": 5,
+      "(none)": 9,
+      "Gross Rate": 3,
+      "Options": 16,
+      "Capital Rate": 1,
+      "Other Fee": 11,
+      "Capital Range": 1,
+      "Fixed Amount": 4,
+      "Fixed Fee": 9,
+      "Quantity": 1,
+      "Other Range": 2,
+      "Other Fee BASIC": 3
+    },
+    "set_errors": []
+  },
+  "configs": [
+    {
+      "code": "MFG-2A02-A",
+      "article_section": "MFG-2A.02(a)",
+      "target_page": "license",
+      "description": "Graduated Tax on Manufacturers, Assemblers, Repackers, Processors, Brewers, Distillers, Rectifiers, and Compounders",
+      "source": {
+        "article_section": "MFG-2A.02(a)",
+        "rate_structure": "Graduated based on gross sales/receipts",
+        "amount_or_formula": "Less than 10,000: 181.50 PHP; 10,000 to <15,000: 242.00 PHP; 15,000 to <20,000: 332.00 PHP; 20,000 to <30,000: 484.00 PHP; 30,000 to <40,000: 726.00 PHP; 40,000 to <50,000: 907.50 PHP; 50,000 to <75,000: 1,452.00 PHP; 75,000 to <100,000: 1,815.00 PHP; 100,000 to <150,000: 2,420.00 PHP; 150,000 to <200,000: 3,025.00 PHP; 200,000 to <300,000: 4,235.00 PHP; 300,000 to <500,000: 6,050.00 PHP; 500,000 to <750,000: 8,800.00 PHP; 750,000 to <1,000,000: 11,000.00 PHP; 1,000,000 to <2,000,000: 15,125.00 PHP; 2,000,000 to <3,000,000: 18,150.00 PHP; 3,000,000 to <4,000,000: 21,750.00 PHP; 4,000,000 to <5,000,000: 25,410.00 PHP; 5,000,000 to <6,500,000: 26,812.00 PHP; 6,500,000 or more: 41 1/4% of 1%"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [],
+      "calculation": {
+        "type": "Gross Range",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "from": 0.01,
+            "to": 9999.99,
+            "amount": 181.5,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 10000,
+            "to": 14999.99,
+            "amount": 242,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 15000,
+            "to": 19999.99,
+            "amount": 332,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 20000,
+            "to": 29999.99,
+            "amount": 484,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 30000,
+            "to": 39999.99,
+            "amount": 726,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 40000,
+            "to": 49999.99,
+            "amount": 907.5,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 50000,
+            "to": 74999.99,
+            "amount": 1452,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 75000,
+            "to": 99999.99,
+            "amount": 1815,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 100000,
+            "to": 149999.99,
+            "amount": 2420,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 150000,
+            "to": 199999.99,
+            "amount": 3025,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 200000,
+            "to": 299999.99,
+            "amount": 4235,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 300000,
+            "to": 499999.99,
+            "amount": 6050,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 500000,
+            "to": 749999.99,
+            "amount": 8800,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 750000,
+            "to": 999999.99,
+            "amount": 11000,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 1000000,
+            "to": 1999999.99,
+            "amount": 15125,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 2000000,
+            "to": 2999999.99,
+            "amount": 18150,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 3000000,
+            "to": 3999999.99,
+            "amount": 21750,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 4000000,
+            "to": 4999999.99,
+            "amount": 25410,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 5000000,
+            "to": 6499999.99,
+            "amount": 26812,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 6500000,
+            "to": 99999999999,
+            "amount": 26812,
+            "rate": 0.004125,
+            "for_excess_computation": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "WHO-2A02-B",
+      "article_section": "WHO-2A.02(b)",
+      "target_page": "license",
+      "description": "Graduated Tax on Wholesalers, Distributors, or Dealers",
+      "source": {
+        "article_section": "WHO-2A.02(b)",
+        "rate_structure": "Graduated based on gross sales/receipts",
+        "amount_or_formula": "Less than 1,000: 20.00 PHP; 1,000 to <2,000: 36.00 PHP; 2,000 to <3,000: 55.00 PHP; 3,000 to <4,000: 79.00 PHP; 4,000 to <5,000: 110.00 PHP; 5,000 to <6,000: 133.00 PHP; 6,000 to <7,000: 157.00 PHP; 7,000 to <8,000: 181.50 PHP; 8,000 to <10,000: 205.70 PHP; 10,000 to <15,000: 242.00 PHP; 15,000 to <20,000: 302.50 PHP; 20,000 to <30,000: 363.00 PHP; 30,000 to <40,000: 484.00 PHP; 40,000 to <50,000: 726.00 PHP; 50,000 to <75,000: 1,089.00 PHP; 75,000 to <100,000: 1,452.00 PHP; 100,000 to <150,000: 2,057.00 PHP; 150,000 to <200,000: 2,662.00 PHP; 200,000 to <300,000: 3,630.00 PHP; 300,000 to <500,000: 4,840.00 PHP; 500,000 to <750,000: 7,260.00 PHP; 750,000 to <1,000,000: 9,680.00 PHP; 1,000,000 to <2,000,000: 11,000.00 PHP; 2,000,000 or more: 55% of 1%"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [],
+      "calculation": {
+        "type": "Gross Range",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "from": 0.01,
+            "to": 999.99,
+            "amount": 20,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 1000,
+            "to": 1999.99,
+            "amount": 36,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 2000,
+            "to": 2999.99,
+            "amount": 55,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 3000,
+            "to": 3999.99,
+            "amount": 79,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 4000,
+            "to": 4999.99,
+            "amount": 110,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 5000,
+            "to": 5999.99,
+            "amount": 133,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 6000,
+            "to": 6999.99,
+            "amount": 157,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 7000,
+            "to": 7999.99,
+            "amount": 181.5,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 8000,
+            "to": 9999.99,
+            "amount": 205.7,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 10000,
+            "to": 14999.99,
+            "amount": 242,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 15000,
+            "to": 19999.99,
+            "amount": 302.5,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 20000,
+            "to": 29999.99,
+            "amount": 363,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 30000,
+            "to": 39999.99,
+            "amount": 484,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 40000,
+            "to": 49999.99,
+            "amount": 726,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 50000,
+            "to": 74999.99,
+            "amount": 1089,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 75000,
+            "to": 99999.99,
+            "amount": 1452,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 100000,
+            "to": 149999.99,
+            "amount": 2057,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 150000,
+            "to": 199999.99,
+            "amount": 2662,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 200000,
+            "to": 299999.99,
+            "amount": 3630,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 300000,
+            "to": 499999.99,
+            "amount": 4840,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 500000,
+            "to": 749999.99,
+            "amount": 7260,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 750000,
+            "to": 999999.99,
+            "amount": 9680,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 1000000,
+            "to": 1999999.99,
+            "amount": 11000,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 2000000,
+            "to": 99999999999,
+            "amount": 11000,
+            "rate": 0.0055,
+            "for_excess_computation": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "EXP-2A02-C",
+      "article_section": "EXP-2A.02(c)",
+      "target_page": "license",
+      "description": "Tax on Exporters and Dealers of Essential Commodities",
+      "source": {
+        "article_section": "EXP-2A.02(c)",
+        "rate_structure": "Formula based on 1/2 of prescribed rates",
+        "amount_or_formula": "One-half (1/2) of the rates prescribed under subsections (a), (b), and (d)"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "RET-2A02-D",
+      "article_section": "RET-2A.02(d)",
+      "target_page": "license",
+      "description": "Tax on Retailers",
+      "source": {
+        "article_section": "RET-2A.02(d)",
+        "rate_structure": "Percentage of gross sales/receipts",
+        "amount_or_formula": "2.4% per annum on P400,000.00 or less; 1.2% per annum on excess over P400,000.00"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [
+        "tier-2 base amount 9600 = 400000 × 2.4% (verified S2A02-D)"
+      ],
+      "calculation": {
+        "type": "Gross Range",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "from": 0.01,
+            "to": 400000,
+            "amount": 0,
+            "rate": 0.024,
+            "for_excess_computation": false
+          },
+          {
+            "from": 400000.01,
+            "to": 99999999999,
+            "amount": 9600,
+            "rate": 0.012,
+            "for_excess_computation": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "CON-2A02-E",
+      "article_section": "CON-2A.02(e)",
+      "target_page": "license",
+      "description": "Graduated Tax on Contractors and Other Independent Contractors",
+      "source": {
+        "article_section": "CON-2A.02(e)",
+        "rate_structure": "Graduated based on gross sales/receipts",
+        "amount_or_formula": "Less than 5,000: 30.00 PHP; 5,000 to <10,000: 67.75 PHP; 10,000 to <15,000: 114.75 PHP; 15,000 to <20,000: 181.50 PHP; 20,000 to <30,000: 302.50 PHP; 30,000 to <40,000: 423.50 PHP; 40,000 to <50,000: 605.00 PHP; 50,000 to <75,000: 968.00 PHP; 75,000 to <100,000: 1,452.00 PHP; 100,000 to <150,000: 2,178.00 PHP; 150,000 to <200,000: 2,904.00 PHP; 200,000 to <300,000: 3,993.00 PHP; 300,000 to <400,000: 5,776.00 PHP; 400,000 to <500,000: 9,075.00 PHP; 500,000 to <750,000: 10,175.00 PHP; 750,000 to <1,000,000: 11,275.00 PHP; 1,000,000 to <2,000,000: 12,650.00 PHP; 2,000,000 or more: 55% of 1% (minimum tax P12,650.00)"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [
+        "top bracket: minimum tax P12,650.00"
+      ],
+      "calculation": {
+        "type": "Gross Range",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "from": 0.01,
+            "to": 4999.99,
+            "amount": 30,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 5000,
+            "to": 9999.99,
+            "amount": 67.75,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 10000,
+            "to": 14999.99,
+            "amount": 114.75,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 15000,
+            "to": 19999.99,
+            "amount": 181.5,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 20000,
+            "to": 29999.99,
+            "amount": 302.5,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 30000,
+            "to": 39999.99,
+            "amount": 423.5,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 40000,
+            "to": 49999.99,
+            "amount": 605,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 50000,
+            "to": 74999.99,
+            "amount": 968,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 75000,
+            "to": 99999.99,
+            "amount": 1452,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 100000,
+            "to": 149999.99,
+            "amount": 2178,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 150000,
+            "to": 199999.99,
+            "amount": 2904,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 200000,
+            "to": 299999.99,
+            "amount": 3993,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 300000,
+            "to": 399999.99,
+            "amount": 5776,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 400000,
+            "to": 499999.99,
+            "amount": 9075,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 500000,
+            "to": 749999.99,
+            "amount": 10175,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 750000,
+            "to": 999999.99,
+            "amount": 11275,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 1000000,
+            "to": 1999999.99,
+            "amount": 12650,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 2000000,
+            "to": 99999999999,
+            "amount": 12650,
+            "rate": 0.0055,
+            "for_excess_computation": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "BNK-2A02-F",
+      "article_section": "BNK-2A.02(f)",
+      "target_page": "license",
+      "description": "Tax on Banks and Other Financial Institutions",
+      "source": {
+        "article_section": "BNK-2A.02(f)",
+        "rate_structure": "Percentage of gross receipts",
+        "amount_or_formula": "55% of 1% (0.55%) of gross receipts"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [],
+      "calculation": {
+        "type": "Gross Rate",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "amount": 0,
+            "rate": 0.0055
+          }
+        ]
+      }
+    },
+    {
+      "code": "SER-2A02-G",
+      "article_section": "SER-2A.02(g)",
+      "target_page": "license",
+      "description": "Graduated Tax on Service Establishments and Other Businesses",
+      "source": {
+        "article_section": "SER-2A.02(g)",
+        "rate_structure": "Graduated based on gross sales/receipts",
+        "amount_or_formula": "Less than 20,000: 400.00 PHP; 20,000 to <30,000: 440.00 PHP; 30,000 to <40,000: 660.00 PHP; 40,000 to <50,000: 880.00 PHP; 50,000 to <75,000: 1,100.00 PHP; 75,000 to <100,000: 1,650.00 PHP; 100,000 to <150,000: 2,200.00 PHP; 150,000 to <200,000: 3,300.00 PHP; 200,000 to <250,000: 4,400.00 PHP; 250,000 to <300,000: 5,000.00 PHP; 300,000 to <400,000: 6,600.00 PHP; 400,000 to <500,000: 8,800.00 PHP; 500,000 to <750,000: 11,000.00 PHP; 750,000 to <1,000,000: 15,000.00 PHP; 1,000,000 to <2,000,000: 20,000.00 PHP; 2,000,000 or more: 2%"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "top bracket \"2%\" read as base amount + 2% on excess (same encoding as \"% of 1%\" brackets); confirm this reading before submit"
+      ],
+      "calculation": {
+        "type": "Gross Range",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "from": 0.01,
+            "to": 19999.99,
+            "amount": 400,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 20000,
+            "to": 29999.99,
+            "amount": 440,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 30000,
+            "to": 39999.99,
+            "amount": 660,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 40000,
+            "to": 49999.99,
+            "amount": 880,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 50000,
+            "to": 74999.99,
+            "amount": 1100,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 75000,
+            "to": 99999.99,
+            "amount": 1650,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 100000,
+            "to": 149999.99,
+            "amount": 2200,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 150000,
+            "to": 199999.99,
+            "amount": 3300,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 200000,
+            "to": 249999.99,
+            "amount": 4400,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 250000,
+            "to": 299999.99,
+            "amount": 5000,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 300000,
+            "to": 399999.99,
+            "amount": 6600,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 400000,
+            "to": 499999.99,
+            "amount": 8800,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 500000,
+            "to": 749999.99,
+            "amount": 11000,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 750000,
+            "to": 999999.99,
+            "amount": 15000,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 1000000,
+            "to": 1999999.99,
+            "amount": 20000,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 2000000,
+            "to": 99999999999,
+            "amount": 20000,
+            "rate": 0.02,
+            "for_excess_computation": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "PUV-2A02-H",
+      "article_section": "PUV-2A.02(h)",
+      "target_page": "license",
+      "description": "Tax on Operators of Public Utility Vehicles Maintaining Terminal/Booking Office",
+      "source": {
+        "article_section": "PUV-2A.02(h)",
+        "rate_structure": "Flat rate per unit per annum",
+        "amount_or_formula": "Air-conditioned buses: 1,000.00 PHP/unit; Buses w/o AC: 750.00 PHP/unit; Mini-buses: 450.00 PHP/unit; Jeepneys/Fieras/Multi-cab: 200.00 PHP/unit; Taxis/Van: 300.00 PHP/unit"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "option \"Air-conditioned buses\" has unit qualifier \"/unit\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Buses w/o AC\" has unit qualifier \"/unit\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Mini-buses\" has unit qualifier \"/unit\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Jeepneys/Fieras/Multi-cab\" has unit qualifier \"/unit\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Taxis/Van\" has unit qualifier \"/unit\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "air_conditioned_buses",
+            "amount": 1000
+          },
+          {
+            "multiplier": "buses_w_o_ac",
+            "amount": 750
+          },
+          {
+            "multiplier": "mini_buses",
+            "amount": 450
+          },
+          {
+            "multiplier": "jeepneys_fieras_multi_cab",
+            "amount": 200
+          },
+          {
+            "multiplier": "taxis_van",
+            "amount": 300
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "NEW-2A05",
+      "article_section": "NEW-2A.05",
+      "target_page": "license",
+      "description": "Tax on Newly-Started Business",
+      "source": {
+        "article_section": "NEW-2A.05",
+        "rate_structure": "Percentage based on capital investment",
+        "amount_or_formula": "1/4 of 1% (0.25%) of capital investment"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [],
+      "calculation": {
+        "type": "Capital Rate",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "amount": 0,
+            "rate": 0.0025
+          }
+        ]
+      }
+    },
+    {
+      "code": "PED-2D01",
+      "article_section": "PED-2D.01",
+      "target_page": "license",
+      "description": "Tax on Peddlers",
+      "source": {
+        "article_section": "PED-2D.01",
+        "rate_structure": "Flat rate per annum",
+        "amount_or_formula": "In trucks or vehicles: 110.00 PHP; In motorized bicycle/tricycle: 55.00 PHP; Other peddlers: 55.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "in_trucks_or_vehicles",
+            "amount": 110
+          },
+          {
+            "multiplier": "in_motorized_bicycle_tricycle",
+            "amount": 55
+          },
+          {
+            "multiplier": "other_peddlers",
+            "amount": 55
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "AMU-2E01",
+      "article_section": "AMU-2E.01",
+      "target_page": "license",
+      "description": "Tax on Ambulant and Itinerant Amusement Operators",
+      "source": {
+        "article_section": "AMU-2E.01",
+        "rate_structure": "Flat rate per day",
+        "amount_or_formula": "Circus/carnivals: 1,000.00 PHP/day; Merry-go-round, ferris wheel, etc.: 500.00 PHP/day; Sports contest/exhibitions: 500.00 PHP/day"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "option \"Circus/carnivals\" has unit qualifier \"/day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Merry-go-round, ferris wheel, etc.\" has unit qualifier \"/day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Sports contest/exhibitions\" has unit qualifier \"/day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "circus_carnivals",
+            "amount": 1000
+          },
+          {
+            "multiplier": "merry_go_round_ferris_wheel_etc",
+            "amount": 500
+          },
+          {
+            "multiplier": "sports_contest_exhibitions",
+            "amount": 500
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "MIN-2F02",
+      "article_section": "MIN-2F.02",
+      "target_page": "license",
+      "description": "Tax on Mining Operations",
+      "source": {
+        "article_section": "MIN-2F.02",
+        "rate_structure": "Percentage of gross receipts",
+        "amount_or_formula": "2% of annual gross receipts"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [],
+      "calculation": {
+        "type": "Gross Rate",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "amount": 0,
+            "rate": 0.02
+          }
+        ]
+      }
+    },
+    {
+      "code": "FOR-2G02",
+      "article_section": "FOR-2G.02",
+      "target_page": "license",
+      "description": "Tax on Forest Concessions and Forest Products",
+      "source": {
+        "article_section": "FOR-2G.02",
+        "rate_structure": "Percentage of gross receipts",
+        "amount_or_formula": "2% of annual gross receipts"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [],
+      "calculation": {
+        "type": "Gross Rate",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "amount": 0,
+            "rate": 0.02
+          }
+        ]
+      }
+    },
+    {
+      "code": "SIG-2H01",
+      "article_section": "SIG-2H.01",
+      "target_page": "license",
+      "description": "Tax on Signs, Signboards, and Billboards",
+      "source": {
+        "article_section": "SIG-2H.01",
+        "rate_structure": "Rate per sq. m. or display count",
+        "amount_or_formula": "Single face: 15.00 PHP/sq.m.; Double face: 25.00 PHP/sq.m.; Professional signs: 15.00 PHP; Movie slide ads: 200.00 PHP; Mass displays: 300.00 to 1,650.00 PHP; Vehicles/Balloons: 44.00 PHP/day, 66.00 PHP/week, 88.00 PHP/month; Handbills: 15.00 PHP/day"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-2I02",
+      "article_section": "SEC-2I.02",
+      "target_page": "new-other-fees",
+      "description": "Special Levy on Lands",
+      "source": {
+        "article_section": "SEC-2I.02",
+        "rate_structure": "Percentage of actual cost of public works project",
+        "amount_or_formula": "Rate not exceeding 60% of actual cost of public works project"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-2J02",
+      "article_section": "SEC-2J.02",
+      "target_page": "new-other-fees",
+      "description": "Socialized Housing Tax",
+      "source": {
+        "article_section": "SEC-2J.02",
+        "rate_structure": "Percentage of assessed value",
+        "amount_or_formula": "1/2 of 1% (0.5%) on assessed value of urban lands in excess of 50,000.00 PHP"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "BUS-3A01-1",
+      "article_section": "BUS-3A.01(1)",
+      "target_page": "permit",
+      "description": "Mayor's Permit Fee on Business",
+      "source": {
+        "article_section": "BUS-3A.01(1)",
+        "rate_structure": "Graduated based on gross receipts or capital investment",
+        "amount_or_formula": "Less than 5,000: 30.00 PHP; 5,000 to <10,000: 60.00 PHP; 10,000 to <20,000: 120.00 PHP; 20,000 to <30,000: 200.00 PHP; For every 5,000 in excess of 30,000: 15.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [
+        "excess clause encoded as top-bracket rate 0.003 (verified S3A01-1C); alternative: separate Gross Excess calculation {in_excess_of 30000, for_every 5000, amount 15}"
+      ],
+      "calculation": {
+        "type": "Capital Range",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "from": 0.01,
+            "to": 4999.99,
+            "amount": 30,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 5000,
+            "to": 9999.99,
+            "amount": 60,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 10000,
+            "to": 19999.99,
+            "amount": 120,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 20000,
+            "to": 29999.99,
+            "amount": 200,
+            "rate": 0,
+            "for_excess_computation": false
+          },
+          {
+            "from": 30000,
+            "to": 99999999999,
+            "amount": 200,
+            "rate": 0.003,
+            "for_excess_computation": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "BNK-3A01-2",
+      "article_section": "BNK-3A.01(2)",
+      "target_page": "permit",
+      "description": "Mayor's Permit Fee on Banks and Other Financial Institutions",
+      "source": {
+        "article_section": "BNK-3A.01(2)",
+        "rate_structure": "Flat rate per institution type",
+        "amount_or_formula": "Rural, Thrift, and Savings Banks: 220.00 PHP; Commercial, Industrial, Dev Banks: 330.00 PHP; Universal Banks/Insurance: 220.00 PHP; Pawnshops/Money Shops/Lending: 440.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": "bank_type",
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "rural_thrift_savings_banks",
+            "amount": 220
+          },
+          {
+            "multiplier": "commercial_industrial_dev_banks",
+            "amount": 330
+          },
+          {
+            "multiplier": "universal_banks_insurance",
+            "amount": 220
+          },
+          {
+            "multiplier": "pawnshops_money_shops_lending",
+            "amount": 440
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "LIQ-3A01-3",
+      "article_section": "LIQ-3A.01(3)",
+      "target_page": "permit",
+      "description": "Mayor's Permit Fee on Dealers of Fermented Liquors, Distilled Spirits, or Wines",
+      "source": {
+        "article_section": "LIQ-3A.01(3)",
+        "rate_structure": "Flat rate per dealer category",
+        "amount_or_formula": "Retailer (domestic liquor): 220.00 PHP; Retailer (tuba/basi/tapuy): 220.00 PHP; Wholesale dealer (fermented liquor): 420.00 PHP; Wholesale dealer (domestic liquor): 420.00 PHP; Wholesale dealer (foreign liquor): 850.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "retailer_domestic_liquor",
+            "amount": 220
+          },
+          {
+            "multiplier": "retailer_tuba_basi_tapuy",
+            "amount": 220
+          },
+          {
+            "multiplier": "wholesale_dealer_fermented_liquor",
+            "amount": 420
+          },
+          {
+            "multiplier": "wholesale_dealer_domestic_liquor",
+            "amount": 420
+          },
+          {
+            "multiplier": "wholesale_dealer_foreign_liquor",
+            "amount": 850
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "AMU-3A01-4",
+      "article_section": "AMU-3A.01(4)",
+      "target_page": "permit",
+      "description": "Mayor's Permit Fee on Amusement Places",
+      "source": {
+        "article_section": "AMU-3A.01(4)",
+        "rate_structure": "Flat rate based on establishment type/capacity",
+        "amount_or_formula": "Day and night club: 3,300.00 PHP; Day or night club: 2,200.00 PHP; Cockpit: 200.00 PHP; Cocktail lounge/bar/cabaret: 2,200.00 PHP; Theater/cinema (orchestra): 1,100.00 PHP; Theater (balcony & orchestra): 1,600.00 PHP; Theater (seating 1,000+): 2,750.00 PHP; Theater (lodge/balcony/orchestra): 3,750.00 PHP; Air-conditioned theater: 5,000.00 PHP; Boxing/skating/resorts: 1,100.00 PHP; Bowling alley: 220.00 PHP; Billiards/pool: 650.00 PHP; Sauna/steam: 650.00 PHP; Circus/carnival: 440.00 PHP; Merry-go-round/ferris wheel: 330.00 PHP; Race track: 220.00 PHP; Boxing contest: 220.00 PHP/night; Itinerant operators: 55.00 PHP/day"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "option \"Boxing contest\" has unit qualifier \"/night\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Itinerant operators\" has unit qualifier \"/day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "day_night_club",
+            "amount": 3300
+          },
+          {
+            "multiplier": "day_or_night_club",
+            "amount": 2200
+          },
+          {
+            "multiplier": "cockpit",
+            "amount": 200
+          },
+          {
+            "multiplier": "cocktail_lounge_bar_cabaret",
+            "amount": 2200
+          },
+          {
+            "multiplier": "theater_cinema_orchestra",
+            "amount": 1100
+          },
+          {
+            "multiplier": "theater_balcony_orchestra",
+            "amount": 1600
+          },
+          {
+            "multiplier": "theater_seating_1_000",
+            "amount": 2750
+          },
+          {
+            "multiplier": "theater_lodge_balcony_orchestra",
+            "amount": 3750
+          },
+          {
+            "multiplier": "air_conditioned_theater",
+            "amount": 5000
+          },
+          {
+            "multiplier": "boxing_skating_resorts",
+            "amount": 1100
+          },
+          {
+            "multiplier": "bowling_alley",
+            "amount": 220
+          },
+          {
+            "multiplier": "billiards_pool",
+            "amount": 650
+          },
+          {
+            "multiplier": "sauna_steam",
+            "amount": 650
+          },
+          {
+            "multiplier": "circus_carnival",
+            "amount": 440
+          },
+          {
+            "multiplier": "merry_go_round_ferris_wheel",
+            "amount": 330
+          },
+          {
+            "multiplier": "race_track",
+            "amount": 220
+          },
+          {
+            "multiplier": "boxing_contest",
+            "amount": 220
+          },
+          {
+            "multiplier": "itinerant_operators",
+            "amount": 55
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "OTH-3A01-5",
+      "article_section": "OTH-3A.01(5)",
+      "target_page": "permit",
+      "description": "Mayor's Permit Fee on Other Businesses",
+      "source": {
+        "article_section": "OTH-3A.01(5)",
+        "rate_structure": "Flat rate per specific business line",
+        "amount_or_formula": "Boarding/lodging house: 110.00 PHP; Private cemetery/memorial park: 220.00 PHP; Rice and Corn Mill stationary: 400.00 PHP; Rice and Corn Mill mobile: 500.00 PHP; Subdivision owner/operator: 100.00 PHP/sq.m.; Ice cream/halo-halo/snack stand: 110.00 PHP; Duplicate permit: 50.00 PHP; Retail tobacco dealer: 110.00 PHP; Wholesale tobacco dealer: 330.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "option \"Subdivision owner/operator\" has unit qualifier \"/sq.m.\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "boarding_lodging_house",
+            "amount": 110
+          },
+          {
+            "multiplier": "private_cemetery_memorial_park",
+            "amount": 220
+          },
+          {
+            "multiplier": "rice_corn_mill_stationary",
+            "amount": 400
+          },
+          {
+            "multiplier": "rice_corn_mill_mobile",
+            "amount": 500
+          },
+          {
+            "multiplier": "subdivision_owner_operator",
+            "amount": 100
+          },
+          {
+            "multiplier": "ice_cream_halo_halo_snack_stand",
+            "amount": 110
+          },
+          {
+            "multiplier": "duplicate_permit",
+            "amount": 50
+          },
+          {
+            "multiplier": "retail_tobacco_dealer",
+            "amount": 110
+          },
+          {
+            "multiplier": "wholesale_tobacco_dealer",
+            "amount": 330
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "SEC-3A01-6",
+      "article_section": "SEC-3A.01(6)",
+      "target_page": "permit",
+      "description": "Mayor's Permit Fee on All Other Unenumerated Business Establishments",
+      "source": {
+        "article_section": "SEC-3A.01(6)",
+        "rate_structure": "Flat rate per annum",
+        "amount_or_formula": "120.00 PHP per annum"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [
+        "period qualifier \"per annum\" fully encoded as Fixed Amount (verified S3A01-6)"
+      ],
+      "calculation": {
+        "type": "Fixed Amount",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "amount": 120
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "COC-3B02",
+      "article_section": "COC-3B.02",
+      "target_page": "permit",
+      "description": "Permit Fee for Cockpit Owners/Operators/Licensees and Personnel",
+      "source": {
+        "article_section": "COC-3B.02",
+        "rate_structure": "Flat rate per application or role",
+        "amount_or_formula": "Application filling fee: 250.00 PHP; Annual franchise/license fee: 2,200.00 PHP; Promoters/Hosts: 250.00 PHP; Pit Manager: 175.00 PHP; Referee: 175.00 PHP; Bet Taker: 125.00 PHP; Bet Manager: 175.00 PHP; Gaffer: 125.00 PHP; Cashier: 175.00 PHP; Derby Matchmaker: 175.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "application_filling_fee",
+            "amount": 250
+          },
+          {
+            "multiplier": "annual_franchise_license_fee",
+            "amount": 2200
+          },
+          {
+            "multiplier": "promoters_hosts",
+            "amount": 250
+          },
+          {
+            "multiplier": "pit_manager",
+            "amount": 175
+          },
+          {
+            "multiplier": "referee",
+            "amount": 175
+          },
+          {
+            "multiplier": "bet_taker",
+            "amount": 125
+          },
+          {
+            "multiplier": "bet_manager",
+            "amount": 175
+          },
+          {
+            "multiplier": "gaffer",
+            "amount": 125
+          },
+          {
+            "multiplier": "cashier",
+            "amount": 175
+          },
+          {
+            "multiplier": "derby_matchmaker",
+            "amount": 175
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "COC-3C02",
+      "article_section": "COC-3C.02",
+      "target_page": "permit",
+      "description": "Permit Fee for Special Cockfighting",
+      "source": {
+        "article_section": "COC-3C.02",
+        "rate_structure": "Flat rate per day or per derby type",
+        "amount_or_formula": "Special Cockfights (Pintakasi/Tupada): 600.00 PHP/day; Two-cock derby: 600.00 PHP/derby; Three-cock derby: 800.00 PHP/derby; Four-cock derby: 1,000.00 PHP/derby; Five-cock derby: 1,250.00 PHP/derby; Six-cock derby and more: 1,500.00 PHP/derby"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "option \"Special Cockfights (Pintakasi/Tupada)\" has unit qualifier \"/day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Two-cock derby\" has unit qualifier \"/derby\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Three-cock derby\" has unit qualifier \"/derby\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Four-cock derby\" has unit qualifier \"/derby\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Five-cock derby\" has unit qualifier \"/derby\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Six-cock derby and more\" has unit qualifier \"/derby\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "special_cockfights_pintakasi_tupada",
+            "amount": 600
+          },
+          {
+            "multiplier": "two_cock_derby",
+            "amount": 600
+          },
+          {
+            "multiplier": "three_cock_derby",
+            "amount": 800
+          },
+          {
+            "multiplier": "four_cock_derby",
+            "amount": 1000
+          },
+          {
+            "multiplier": "five_cock_derby",
+            "amount": 1250
+          },
+          {
+            "multiplier": "six_cock_derby_more",
+            "amount": 1500
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "SEC-3E02",
+      "article_section": "SEC-3E.02",
+      "target_page": "new-fixed-fees",
+      "description": "Impounding Fee on Astray Animals",
+      "source": {
+        "article_section": "SEC-3E.02",
+        "rate_structure": "Flat rate per head per day",
+        "amount_or_formula": "Large cattle: 400.00 PHP/day; All other animals: 100.00 PHP/day"
+      },
+      "kind": "fixed_fee",
+      "confidence": "needs_ai",
+      "notes": [
+        "Fixed Fee page holds one amount per code; this list of 2 items needs one fee per item (codes could be SEC-3E02-1…SEC-3E02-2) — confirm the split before submit",
+        "items: Large cattle=400; All other animals=100"
+      ]
+    },
+    {
+      "code": "SEC-3F01",
+      "article_section": "SEC-3F.01",
+      "target_page": "new-fixed-fees",
+      "description": "Impounding Fee on Motor Vehicles",
+      "source": {
+        "article_section": "SEC-3F.01",
+        "rate_structure": "Flat rate per vehicle type per day",
+        "amount_or_formula": "Motorcycle and motorized tricycle: 50.00 PHP/day; Cars and jeeps: 100.00 PHP/day; Cars and jeeps for public use: 150.00 PHP/day; Trucks and buses: 200.00 PHP/day"
+      },
+      "kind": "fixed_fee",
+      "confidence": "needs_ai",
+      "notes": [
+        "Fixed Fee page holds one amount per code; this list of 4 items needs one fee per item (codes could be SEC-3F01-1…SEC-3F01-4) — confirm the split before submit",
+        "items: Motorcycle and motorized tricycle=50; Cars and jeeps=100; Cars and jeeps for public use=150; Trucks and buses=200"
+      ]
+    },
+    {
+      "code": "AMU-3G01",
+      "article_section": "AMU-3G.01",
+      "target_page": "permit",
+      "description": "Permit Fee on Circus and Other Parades",
+      "source": {
+        "article_section": "AMU-3G.01",
+        "rate_structure": "Flat rate per day",
+        "amount_or_formula": "150.00 PHP per day"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [
+        "per-unit basis \"per day\" encoded as Quantity (verified S3G01)"
+      ],
+      "calculation": {
+        "type": "Quantity",
+        "multiplier_code": "quantity",
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "amount": 150
+          }
+        ]
+      }
+    },
+    {
+      "code": "SEC-3H02",
+      "article_section": "SEC-3H.02",
+      "target_page": "new-other-fees",
+      "description": "Registration and Transfer Fees on Large Cattle",
+      "source": {
+        "article_section": "SEC-3H.02",
+        "rate_structure": "Flat rate per transaction",
+        "amount_or_formula": "Verification fee: 20.00 PHP; Brand mark fee: 60.00 PHP; Registration of Large Cattle: 100.00 PHP; Certificate of Transfer: 100.00 PHP"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "detected 4-item options list, but Other Fee page OPTION subtype is unsampled — encode manually after sampling"
+      ]
+    },
+    {
+      "code": "SEC-3I01",
+      "article_section": "SEC-3I.01",
+      "target_page": "permit",
+      "description": "Permit Fee for Excavation",
+      "source": {
+        "article_section": "SEC-3I.01",
+        "rate_structure": "Flat rate / Per linear meter or square meter",
+        "amount_or_formula": "Concrete pavement street crossing min: 100.00 PHP; Concrete boring: 10.00 PHP/linear meter; Asphalt crossing min: 80.00 PHP + 10.00 PHP/linear meter; Gravel crossing min: 60.00 PHP + 5.00 PHP/linear meter; Curbs/gutters damage: 150.00 PHP; Delay fee: 50.00 PHP/day"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-3J03",
+      "article_section": "SEC-3J.03",
+      "target_page": "new-other-fees",
+      "description": "Fee for Sealing and Licensing of Weights and Measures",
+      "source": {
+        "article_section": "SEC-3J.03",
+        "rate_structure": "Flat rate based on scale type/capacity",
+        "amount_or_formula": "Linear measure <=1m: 20.00 PHP, >1m: 40.00 PHP; Capacity <=10L: 20.00 PHP, >10L: 50.00 PHP; Weight <=10kg: 40.00 PHP, 11-59kg: 60.00 PHP, 60-99kg: 80.00 PHP, 100-119kg: 100.00 PHP, 120-300kg: 150.00 PHP, >300kg: 300.00 PHP; Apothecary balance: 75.00 PHP; Truck scale: 1,000.00 PHP; Complete set of weights: 100.00 PHP + 25.00 PHP/extra weight; Re-testing service charge: 25.00 PHP"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-3K01",
+      "article_section": "SEC-3K.01",
+      "target_page": "permit",
+      "description": "Permit Fee on Film-Making",
+      "source": {
+        "article_section": "SEC-3K.01",
+        "rate_structure": "Flat rate per day",
+        "amount_or_formula": "Commercial movies: 1,100.00 PHP/day; Commercial advertisement: 1,100.00 PHP/day; Documentary film: 600.00 PHP/day; Videotape coverage: 600.00 PHP/day"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "option \"Commercial movies\" has unit qualifier \"/day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Commercial advertisement\" has unit qualifier \"/day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Documentary film\" has unit qualifier \"/day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Videotape coverage\" has unit qualifier \"/day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "commercial_movies",
+            "amount": 1100
+          },
+          {
+            "multiplier": "commercial_advertisement",
+            "amount": 1100
+          },
+          {
+            "multiplier": "documentary_film",
+            "amount": 600
+          },
+          {
+            "multiplier": "videotape_coverage",
+            "amount": 600
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "AGR-3L01",
+      "article_section": "AGR-3L.01",
+      "target_page": "permit",
+      "description": "Permit Fee for Agricultural Machinery and Other Heavy Equipment",
+      "source": {
+        "article_section": "AGR-3L.01",
+        "rate_structure": "Flat rate per unit per annum",
+        "amount_or_formula": "Mechanical dryers >=100 cavans: 550.00 PHP; Mechanical dryers <100 cavans: 350.00 PHP; Heavy tractors: 275.00 PHP; Hand tractors: 220.00 PHP; Rice threshers/corn shellers/water pumps: 165.00 PHP; Bulldozers: 200.00 PHP; Forklifts: 150.00 PHP; Graders: 150.00 PHP; Payloader: 500.00 PHP; Backhoe: 500.00 PHP; Chainsaw: 250.00 PHP; Other agricultural machinery: 120.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_human",
+      "notes": [
+        "multi-concept tiered fee (tier and flat segments mixed in one fee) — split ordinance sections before encoding"
+      ]
+    },
+    {
+      "code": "TRU-3M01",
+      "article_section": "TRU-3M.01",
+      "target_page": "permit",
+      "description": "Permit Fee on Hauling and Trucking Services",
+      "source": {
+        "article_section": "TRU-3M.01",
+        "rate_structure": "Flat rate per truck based on gross weight",
+        "amount_or_formula": "Gross weight <15 tons: 200.00 PHP/truck; Gross weight 15-25 tons: 300.00 PHP/truck; Gross weight >25 tons: 400.00 PHP/truck"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "tier unit \"tons\" has no proven multiplier code (sqm is the only verified one) — pick the multiplier at creation"
+      ],
+      "calculation": {
+        "type": "Other Range",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "from": 0.01,
+            "to": 14.99,
+            "amount": 200
+          },
+          {
+            "from": 15,
+            "to": 24.99,
+            "amount": 300
+          },
+          {
+            "from": 25,
+            "to": 99999999999,
+            "amount": 400
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "OCC-3N01",
+      "article_section": "OCC-3N.01",
+      "target_page": "permit",
+      "description": "Permit Fee on Occupation/Calling Not Requiring Government Examination",
+      "source": {
+        "article_section": "OCC-3N.01",
+        "rate_structure": "Flat rate per annum per worker",
+        "amount_or_formula": "Offensive and dangerous business employees: 250.00 PHP; Commercial establishment workers: 220.00 PHP; Food/eatery establishment workers: 220.00 PHP; Night/day establishment workers: 220.00 PHP; Occupations subject to periodic inspection: 250.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "offensive_dangerous_business_employees",
+            "amount": 250
+          },
+          {
+            "multiplier": "commercial_establishment_workers",
+            "amount": 220
+          },
+          {
+            "multiplier": "food_eatery_establishment_workers",
+            "amount": 220
+          },
+          {
+            "multiplier": "night_day_establishment_workers",
+            "amount": 220
+          },
+          {
+            "multiplier": "occupations_subject_to_periodic_inspection",
+            "amount": 250
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "SEC-3O01",
+      "article_section": "SEC-3O.01",
+      "target_page": "permit",
+      "description": "Building Permit Fee",
+      "source": {
+        "article_section": "SEC-3O.01",
+        "rate_structure": "Pursuant to National Building Code (PD 1096)",
+        "amount_or_formula": "Rates pursuant to Department Order 155, Series of 1992 and National Building Code"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-3P01",
+      "article_section": "SEC-3P.01",
+      "target_page": "permit",
+      "description": "Permit Fee for Storage of Flammable and Combustible Materials",
+      "source": {
+        "article_section": "SEC-3P.01",
+        "rate_structure": "Flat rate based on storage capacity",
+        "amount_or_formula": "Gasoline/diesel/kerosene: <500L: 50.00 PHP, 500-2000L: 100.00 PHP, 2001-5000L: 1,000.00 PHP, 5001-20000L: 4,000.00 PHP, 20001-50000L: 6,000.00 PHP, 50001-100000L: 12,000.00 PHP, >100000L: 15,000.00 PHP; Cinematographic film: 400.00 PHP; Celluloid: 200.00 PHP; Calcium carbide: <50 cases: 300.00 PHP, 50-99 cases: 500.00 PHP, >=100 cases: 600.00 PHP; Tar/resin: <1000 kl: 500.00 PHP, 1000-2500 kl: 1,000.00 PHP, 2501-5000 kl: 2,000.00 PHP, >5000 kl: 3,000.00 PHP; Coal deposits: <100 tons: 500.00 PHP, >=100 tons: 700.00 PHP; Other combustible/flammable: 500.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-3Q01",
+      "article_section": "SEC-3Q.01",
+      "target_page": "permit",
+      "description": "Permit and Inspection Fee on Machineries and Engines",
+      "source": {
+        "article_section": "SEC-3Q.01",
+        "rate_structure": "Flat rate based on horsepower (HP)",
+        "amount_or_formula": "Internal combustion engines: <=2HP: 50.00 PHP, 3-4HP: 100.00 PHP, 5-9HP: 150.00 PHP, 10-14HP: 200.00 PHP, >=15HP: 250.00 PHP; Other stationary engines: <=2HP: 100.00 PHP, 3-4HP: 150.00 PHP, 5-9HP: 200.00 PHP, 10-14HP: 250.00 PHP, >=15HP: 300.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_human",
+      "notes": [
+        "multi-concept tiered fee (tier and flat segments mixed in one fee) — split ordinance sections before encoding"
+      ]
+    },
+    {
+      "code": "SEC-3R01",
+      "article_section": "SEC-3R.01",
+      "target_page": "permit",
+      "description": "Permit Fee for Inspection and Verification of Subdivision",
+      "source": {
+        "article_section": "SEC-3R.01",
+        "rate_structure": "Flat rate based on area / linear meter",
+        "amount_or_formula": "Verification <5 ha: 1,000.00 PHP; 5-10 ha: 1,500.00 PHP; >10 ha: 2,000.00 PHP + 100.00 PHP/ha; Final permit streets: 300.00 PHP first 20m + 500.00 PHP excess meter; Streets first 20 sq.m: 200.00 PHP + 400.00 PHP excess sq.m.; Culvert: 300.00 PHP/meter; Bridge: 500.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-3S01",
+      "article_section": "SEC-3S.01",
+      "target_page": "permit",
+      "description": "Permit Fee for Temporary Use of Roads, Streets, Sidewalks, Alleys, Patios, Plazas, and Playgrounds",
+      "source": {
+        "article_section": "SEC-3S.01",
+        "rate_structure": "Flat rate per sq. m. per day",
+        "amount_or_formula": "For construction: 10.00 PHP/sq.m. per day; Others: 5.00 PHP/sq.m. per day"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "option \"For construction\" has unit qualifier \"/sq.m. per day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "option \"Others\" has unit qualifier \"/sq.m. per day\" — Options details carry amount only; per-unit semantics will not be encoded",
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "for_construction",
+            "amount": 10
+          },
+          {
+            "multiplier": "others",
+            "amount": 5
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "SEC-3T01",
+      "article_section": "SEC-3T.01",
+      "target_page": "permit",
+      "description": "Permit Fee for the Conduct of Group Activities",
+      "source": {
+        "article_section": "SEC-3T.01",
+        "rate_structure": "Flat rate per occasion",
+        "amount_or_formula": "Conferences/meetings/rallies outdoor: 200.00 PHP; Dances: 100.00 PHP; Coronation and ball: 100.00 PHP; Promotional sales: 200.00 PHP; Other group activities: 150.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "conferences_meetings_rallies_outdoor",
+            "amount": 200
+          },
+          {
+            "multiplier": "dances",
+            "amount": 100
+          },
+          {
+            "multiplier": "coronation_ball",
+            "amount": 100
+          },
+          {
+            "multiplier": "promotional_sales",
+            "amount": 200
+          },
+          {
+            "multiplier": "other_group_activities",
+            "amount": 150
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "SEC-3U02",
+      "article_section": "SEC-3U.02",
+      "target_page": "permit",
+      "description": "Permit Fee for the Use of Pogpog or Kuliglig as a Means of Transportation",
+      "source": {
+        "article_section": "SEC-3U.02",
+        "rate_structure": "Flat rate per item/service",
+        "amount_or_formula": "Metal plate/Tin plate: 30.00 PHP; Permit fee: 90.00 PHP; Duplicate Certificate of Registration: 25.00 PHP; Amendments: 25.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "metal_plate_tin_plate",
+            "amount": 30
+          },
+          {
+            "multiplier": "permit_fee",
+            "amount": 90
+          },
+          {
+            "multiplier": "duplicate_certificate_of_registration",
+            "amount": 25
+          },
+          {
+            "multiplier": "amendments",
+            "amount": 25
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "SEC-3V01",
+      "article_section": "SEC-3V.01",
+      "target_page": "license",
+      "description": "License Fee on Operation of Mahjong Tables",
+      "source": {
+        "article_section": "SEC-3V.01",
+        "rate_structure": "Flat rate per table per annum",
+        "amount_or_formula": "500.00 PHP per table"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [
+        "qualifier \"per table\" encoded as Fixed Amount (verified S4F01 pattern); switch to Quantity if per-unit charging is required"
+      ],
+      "calculation": {
+        "type": "Fixed Amount",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "amount": 500
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "HOG-3W01",
+      "article_section": "HOG-3W.01",
+      "target_page": "permit",
+      "description": "Permit Fee on Ambulant Hog Buyers",
+      "source": {
+        "article_section": "HOG-3W.01",
+        "rate_structure": "Flat rate per vehicle type per trip",
+        "amount_or_formula": "Forward or similar: 550.00 PHP; Elf or similar: 350.00 PHP; Jeep and other: 250.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "forward_or_similar",
+            "amount": 550
+          },
+          {
+            "multiplier": "elf_or_similar",
+            "amount": 350
+          },
+          {
+            "multiplier": "jeep_other",
+            "amount": 250
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "SEC-3X01",
+      "article_section": "SEC-3X.01",
+      "target_page": "new-other-fees",
+      "description": "License Fee on Acquisition of Dogs",
+      "source": {
+        "article_section": "SEC-3X.01",
+        "rate_structure": "Flat rate per dog",
+        "amount_or_formula": "25.00 PHP per dog"
+      },
+      "kind": "other_fee",
+      "confidence": "high",
+      "notes": [
+        "qualifier \"per dog\" not encoded in Other Fee BASIC (verified S3X01 partial-semantics pattern)"
+      ],
+      "fee_type": "BASIC",
+      "fee_class": "COMMON_FEE",
+      "amount": 25,
+      "partial_semantics": true
+    },
+    {
+      "code": "SEC-3Y01",
+      "article_section": "SEC-3Y.01",
+      "target_page": "new-other-fees",
+      "description": "Inspection Fee on Irrigation Pump Built Near Municipal Waters",
+      "source": {
+        "article_section": "SEC-3Y.01",
+        "rate_structure": "Flat rate per irrigation pump per annum",
+        "amount_or_formula": "100.00 PHP per irrigation pump"
+      },
+      "kind": "other_fee",
+      "confidence": "high",
+      "notes": [
+        "qualifier \"per irrigation pump\" not encoded in Other Fee BASIC (verified S3X01 partial-semantics pattern)"
+      ],
+      "fee_type": "BASIC",
+      "fee_class": "COMMON_FEE",
+      "amount": 100,
+      "partial_semantics": true
+    },
+    {
+      "code": "SEC-4A01",
+      "article_section": "SEC-4A.01",
+      "target_page": "new-fixed-fees",
+      "description": "Secretary's Fees",
+      "source": {
+        "article_section": "SEC-4A.01",
+        "rate_structure": "Flat rate per page or document",
+        "amount_or_formula": "Every page or fraction: 50.00 PHP; Certificate of correctness: 50.00 PHP; Certifying official act of Municipal Judge: 100.00 PHP; Certified copy judicial proceedings: 25.00 PHP/page; Photocopy: 10.00 PHP/page"
+      },
+      "kind": "fixed_fee",
+      "confidence": "needs_ai",
+      "notes": [
+        "Fixed Fee page holds one amount per code; this list of 5 items needs one fee per item (codes could be SEC-4A01-1…SEC-4A01-5) — confirm the split before submit",
+        "items: Every page or fraction=50; Certificate of correctness=50; Certifying official act of Municipal Judge=100; Certified copy judicial proceedings=25; Photocopy=10"
+      ]
+    },
+    {
+      "code": "SEC-4B01",
+      "article_section": "SEC-4B.01",
+      "target_page": "new-fixed-fees",
+      "description": "Local Civil Registry Fees",
+      "source": {
+        "article_section": "SEC-4B.01",
+        "rate_structure": "Flat rate per civil registry document/service",
+        "amount_or_formula": "Marriage license app: 100.00 PHP; Marriage license fee: 100.00 PHP; Marriage solemnization: 200.00 PHP; Sponsors fee: 100.00 PHP; Legitimation/Adoption/Annulment/Divorce/Naturalization: 200.00 PHP; Change first name: 3,000.00 PHP; Clerical error: 1,000.00 PHP; Migrant petitioner: 500.00 PHP; Affidavit reappearance: 500.00 PHP; Affidavit acknowledgement/AUSF RA9255/Legitimation/Legal capacity: 200.00 PHP; Delayed reg (1mo-5yr: 100.00 PHP, >5-10yr: 200.00 PHP, >10-17yr: 300.00 PHP, 18yr+: 400.00 PHP); Birth/Marriage/Death cert abroad: 100.00 PHP, local: 50.00 PHP; SECPA: 125.00 PHP"
+      },
+      "kind": "fixed_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-4C01",
+      "article_section": "SEC-4C.01",
+      "target_page": "new-fixed-fees",
+      "description": "Police Clearance Fee",
+      "source": {
+        "article_section": "SEC-4C.01",
+        "rate_structure": "Flat rate per clearance type",
+        "amount_or_formula": "Employment/scholarship local: 50.00 PHP; Abroad: 100.00 PHP; Change of name: 200.00 PHP; Citizenship: 1,000.00 PHP; Passport/visa: 150.00 PHP; Firearms: 150.00 PHP; PLEB clearance: 200.00 PHP"
+      },
+      "kind": "fixed_fee",
+      "confidence": "needs_ai",
+      "notes": [
+        "Fixed Fee page holds one amount per code; this list of 7 items needs one fee per item (codes could be SEC-4C01-1…SEC-4C01-7) — confirm the split before submit",
+        "items: Employment/scholarship local=50; Abroad=100; Change of name=200; Citizenship=1000; Passport/visa=150; Firearms=150; PLEB clearance=200"
+      ]
+    },
+    {
+      "code": "SEC-4D01",
+      "article_section": "SEC-4D.01",
+      "target_page": "sanitary",
+      "description": "Sanitary Inspection Fee",
+      "source": {
+        "article_section": "SEC-4D.01",
+        "rate_structure": "Flat rate based on floor area in sq. m.",
+        "amount_or_formula": "House for rent: 200.00 PHP; Business/industrial/agricultural: <25 sq.m.: 100.00 PHP, 25 to <50 sq.m.: 150.00 PHP, 50 to <100 sq.m.: 200.00 PHP, 100 to <200 sq.m.: 250.00 PHP, 200 to <500 sq.m.: 300.00 PHP, 500 to <1000 sq.m.: 400.00 PHP, >=1000 sq.m.: 500.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [
+        "excluded from this calculation: \"House for rent\" 200 (needs its own fee/option — verified subset behavior, S4D01)"
+      ],
+      "calculation": {
+        "type": "Other Range",
+        "multiplier_code": "sqm",
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "from": 0.01,
+            "to": 24.99,
+            "amount": 100
+          },
+          {
+            "from": 25,
+            "to": 49.99,
+            "amount": 150
+          },
+          {
+            "from": 50,
+            "to": 99.99,
+            "amount": 200
+          },
+          {
+            "from": 100,
+            "to": 199.99,
+            "amount": 250
+          },
+          {
+            "from": 200,
+            "to": 499.99,
+            "amount": 300
+          },
+          {
+            "from": 500,
+            "to": 999.99,
+            "amount": 400
+          },
+          {
+            "from": 1000,
+            "to": 99999999999,
+            "amount": 500
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "SEC-4E01",
+      "article_section": "SEC-4E.01",
+      "target_page": "sanitary",
+      "description": "Service Fees for Health Examination",
+      "source": {
+        "article_section": "SEC-4E.01",
+        "rate_structure": "Flat rate per individual",
+        "amount_or_formula": "Physical examination fee: 50.00 PHP; Additional copy of medical certificate: 25.00 PHP"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_ai",
+      "notes": [
+        "options multiplier dimension unverified (bank_type/sqm/quantity are the proven codes) — select at calculation creation"
+      ],
+      "calculation": {
+        "type": "Options",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "multiplier": "physical_examination_fee",
+            "amount": 50
+          },
+          {
+            "multiplier": "additional_copy_of_medical_certificate",
+            "amount": 25
+          }
+        ]
+      },
+      "partial_semantics": false
+    },
+    {
+      "code": "SEC-4F01",
+      "article_section": "SEC-4F.01",
+      "target_page": "sanitary",
+      "description": "Dog Vaccination Fee",
+      "source": {
+        "article_section": "SEC-4F.01",
+        "rate_structure": "Flat rate per dog",
+        "amount_or_formula": "50.00 PHP per dog"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [
+        "qualifier \"per dog\" encoded as Fixed Amount (verified S4F01 pattern); switch to Quantity if per-unit charging is required"
+      ],
+      "calculation": {
+        "type": "Fixed Amount",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "amount": 50
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "SEC-4G01",
+      "article_section": "SEC-4G.01",
+      "target_page": "new-fixed-fees",
+      "description": "Treasurer's and Assessor's Fees",
+      "source": {
+        "article_section": "SEC-4G.01",
+        "rate_structure": "Flat rate per service/document",
+        "amount_or_formula": "Treasurer: Cert tax payment: 50.00 PHP; Cert payment other than tax: 50.00 PHP; Cert copy on file: 25.00 PHP/page; Cert xerox copy: 15.00 PHP/page; Cert photo copy: 25.00 PHP/page; Cert tax clearance: 50.00 PHP; Cert clearance money/property: 50.00 PHP. Assessor: Cert true copy tax dec: 75.00 PHP; Cert xerox copy: 15.00 PHP/page; Cert land/improvement: 50.00 PHP; Cert property landholdings: 50.00 PHP; Cert land location: 75.00 PHP; Verification fee: 25.00 PHP; Inspection fee real property reclassification: 100.00 PHP"
+      },
+      "kind": "fixed_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-4H01",
+      "article_section": "SEC-4H.01",
+      "target_page": "new-fixed-fees",
+      "description": "Clearance or Certification Fee",
+      "source": {
+        "article_section": "SEC-4H.01",
+        "rate_structure": "Flat rate per purpose",
+        "amount_or_formula": "Driver's license: 50.00 PHP; Passport or visa: 75.00 PHP; Military service: 50.00 PHP; Transferring resident aliens: 50.00 PHP; Firearm license: 100.00 PHP; Other purposes: 50.00 PHP"
+      },
+      "kind": "fixed_fee",
+      "confidence": "needs_ai",
+      "notes": [
+        "Fixed Fee page holds one amount per code; this list of 6 items needs one fee per item (codes could be SEC-4H01-1…SEC-4H01-6) — confirm the split before submit",
+        "items: Driver's license=50; Passport or visa=75; Military service=50; Transferring resident aliens=50; Firearm license=100; Other purposes=50"
+      ]
+    },
+    {
+      "code": "SEC-4I01",
+      "article_section": "SEC-4I.01",
+      "target_page": "sanitary",
+      "description": "Service Fee for Pre-Marriage Family Planning Seminar",
+      "source": {
+        "article_section": "SEC-4I.01",
+        "rate_structure": "Flat rate per couple",
+        "amount_or_formula": "75.00 PHP per couple"
+      },
+      "kind": "tax_revenue",
+      "confidence": "high",
+      "notes": [
+        "qualifier \"per couple\" encoded as Fixed Amount (verified S4F01 pattern); switch to Quantity if per-unit charging is required"
+      ],
+      "calculation": {
+        "type": "Fixed Amount",
+        "multiplier_code": null,
+        "for_new": true,
+        "for_renewal": true,
+        "for_retirement": true,
+        "with_essential_computation": false,
+        "include_for_higher_value_comparison": false,
+        "details": [
+          {
+            "amount": 75
+          }
+        ]
+      },
+      "partial_semantics": true
+    },
+    {
+      "code": "SEC-5A01",
+      "article_section": "SEC-5A.01",
+      "target_page": "new-other-fees",
+      "description": "Rentals of Personal and Real Properties Owned by the Municipality",
+      "source": {
+        "article_section": "SEC-5A.01",
+        "rate_structure": "Rate per sq. m., hour, day, or head",
+        "amount_or_formula": "Land commercial: 15.00 PHP/sq.m./mo, residential: 5.00 PHP/sq.m./mo, others: 5.00 PHP/sq.m./mo; Building commercial: 30.00 PHP/sq.m./mo, residential: 15.00 PHP/sq.m./mo, others: 15.00 PHP/sq.m./mo; Loader: 6000.00 PHP/day or 750.00 PHP/hr; Dump truck 10-wheeler: 1000.00 PHP/hr; Dump truck forward: 500.00 PHP/hr; Dump truck elf: 300.00 PHP/hr; Excavator: 1000.00 PHP/hr; Grader: 800.00 PHP/hr or 6400.00 PHP/day; Bulldozer: 10000.00 PHP/day or 1250.00 PHP/hr; Boom truck: 300.00 PHP/day; Low bed trailer: 300.00 PHP/hr; Meat van outside: 5000.00 PHP/day, inside pig: 30.00 PHP/head, cow/carabao: 50.00 PHP/head, others: 20.00 PHP"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-5B01",
+      "article_section": "SEC-5B.01",
+      "target_page": "garbage",
+      "description": "Service Charge for Garbage Collection",
+      "source": {
+        "article_section": "SEC-5B.01",
+        "rate_structure": "Flat rate per month based on floor area / stall type",
+        "amount_or_formula": "Manufacturers <=100 sq.m: 420.00 PHP/mo, >100 sq.m: 500.00 PHP/mo; Hotels <=100 sq.m: 220.00 PHP/mo, >100 sq.m: 300.00 PHP/mo; Restaurants <=50 sq.m: 220.00 PHP/mo, >50 sq.m: 300.00 PHP/mo; Hospitals <=10 sq.m: 220.00 PHP/mo, >10 sq.m: 300.00 PHP/mo; Movie houses & retailers <=10 sq.m: 120.00 PHP/mo, >10 sq.m: 200.00 PHP/mo; Market meat: 80.00 PHP/stall/mo, vegetable/fish: 90.00 PHP/stall/mo; Other <=10 sq.m: 120.00 PHP/mo, >10 sq.m: 200.00 PHP/mo; Residential houses: 100.00 PHP/mo"
+      },
+      "kind": "tax_revenue",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-5C01",
+      "article_section": "SEC-5C.01",
+      "target_page": "new-other-fees",
+      "description": "Charges for Parking",
+      "source": {
+        "article_section": "SEC-5C.01",
+        "rate_structure": "Flat rate daily or annually",
+        "amount_or_formula": "Day parking: Motorcycle/tricycle: 200.00 PHP annual / 2.00 PHP daily; Cars/service: 500.00 PHP annual / 5.00 PHP daily; Passenger jeepneys: 1,000.00 PHP annual / 10.00 PHP daily; Cargo trucks/delivery vans: 1,500.00 PHP annual / 15.00 PHP daily; Passenger buses: 1,500.00 PHP annual / 15.00 PHP daily; Others: 500.00 PHP annual / 5.00 PHP daily. Overnight parking: 2x day rate"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-5D01",
+      "article_section": "SEC-5D.01",
+      "target_page": "new-other-fees",
+      "description": "Cemetery Charges",
+      "source": {
+        "article_section": "SEC-5D.01",
+        "rate_structure": "Flat rate per lot, layer, niche, or permit type",
+        "amount_or_formula": "Rental fee (5 yrs): Burial lot: 100.00 PHP, Additional layer: 50.00 PHP, Niches: 200.00 PHP. Permit fee: Burial: 50.00 PHP, Exhumation: 75.00 PHP, Disinterment/removal: 150.00 PHP"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "MIN-5E02",
+      "article_section": "MIN-5E.02",
+      "target_page": "new-other-fees",
+      "description": "Rental Fee on Mineral Lands",
+      "source": {
+        "article_section": "MIN-5E.02",
+        "rate_structure": "Rate per hectare per year",
+        "amount_or_formula": "Coal public lands: 10.00 PHP/ha for first 10 yrs, 20.00 PHP/ha thereafter; Quarry public lands: 60.00 PHP/ha; Metallic/non-metallic mineral lands: 25.00 PHP/ha"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "MIN-5F02",
+      "article_section": "MIN-5F.02",
+      "target_page": "new-other-fees",
+      "description": "Occupation Fee for Mining Claims",
+      "source": {
+        "article_section": "MIN-5F.02",
+        "rate_structure": "Flat rate per hectare per annum",
+        "amount_or_formula": "15.00 PHP per hectare or fractional part thereof"
+      },
+      "kind": "other_fee",
+      "confidence": "high",
+      "notes": [
+        "qualifier \"per hectare or fractional part thereof\" not encoded in Other Fee BASIC (verified S3X01 partial-semantics pattern)"
+      ],
+      "fee_type": "BASIC",
+      "fee_class": "COMMON_FEE",
+      "amount": 15,
+      "partial_semantics": true
+    },
+    {
+      "code": "SLA-5G01",
+      "article_section": "SLA-5G.01",
+      "target_page": "new-other-fees",
+      "description": "Slaughter and Corral Fees",
+      "source": {
+        "article_section": "SLA-5G.01",
+        "rate_structure": "Flat rate per head",
+        "amount_or_formula": "Slaughter permit: Large cattle: 37.50 PHP, Hogs: 22.50 PHP, Goat/sheep: 22.50 PHP, Others: 22.50 PHP. Slaughter fee (public): Large cattle: 37.50 PHP, Hogs: 22.50 PHP, Goat/sheep: 15.00 PHP, Others: 15.00 PHP. Slaughter fee (home): Large cattle: 22.50 PHP, Hogs: 15.00 PHP, Goat/sheep: 7.50 PHP, Others: 7.50 PHP. Corral fee/day: Large cattle: 15.00 PHP, Hogs: 7.50 PHP, Goat/sheep: 7.50 PHP, Others: 7.50 PHP. Post mortem fee: 1.50 PHP"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "SEC-5H01",
+      "article_section": "SEC-5H.01",
+      "target_page": "new-other-fees",
+      "description": "Toll Fees or Charges",
+      "source": {
+        "article_section": "SEC-5H.01",
+        "rate_structure": "Flat rate per utility type",
+        "amount_or_formula": "Sewerage commercial: 150.00 PHP; Sewerage residential: 75.00 PHP; Road/bridge: 50.00 PHP; Others: 50.00 PHP"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "detected 4-item options list, but Other Fee page OPTION subtype is unsampled — encode manually after sampling"
+      ]
+    },
+    {
+      "code": "MAR-5I03",
+      "article_section": "MAR-5I.03",
+      "target_page": "new-other-fees",
+      "description": "Market Fees",
+      "source": {
+        "article_section": "MAR-5I.03",
+        "rate_structure": "Flat rate per stall/table/sq.m. or entrance fee per quantity/kilo",
+        "amount_or_formula": "Stall rental/mo: Fish section: 180.00 PHP/table, Meat section: 220.00 PHP/table, Veg/fruit: 300.00 PHP/table, Dry goods: 60.00 PHP/sq.m., Grocery: 80.00 PHP/sq.m., Eateries: 70.00 PHP/sq.m., Corner/front: 90.00 PHP/sq.m. Non-stall occupants: 10.00 PHP/sq.m./day. Market entrance fees: Sugpo/alimango: 5.00 PHP/kilo, Tahong/clams: 1.00 PHP/kilo, Fresh fish 1st class: 1.00 PHP/kilo, 2nd class: 0.50 PHP/kilo, Dried/salted fish: 0.50 PHP/kilo, Alamang/bagoong: 20.00 PHP/can, Other seafood: 1.00 PHP/kilo, Chicken: 2.00 PHP/kilo; Fruits jeepload: 220.00 PHP, kaing: 25.00 PHP, sack: 15.00 PHP; Vegetables kaing: 30.00 PHP, potatoes/onions sack: 30.00 PHP, garlic 100 cloves: 10.00 PHP; Salt sack: 25.00 PHP, Rice bran sack: 10.00 PHP, Sugar sack: 30.00 PHP, Charcoal sack: 10.00 PHP; Auction market: Fighting cocks: 55.00 PHP/head, Piglet: 35.00 PHP/head, Swine >20kg: 55.00 PHP/head, Goats/dogs: 35.00 PHP/head"
+      },
+      "kind": "other_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "IND-602",
+      "article_section": "IND-6.02",
+      "target_page": "new-fixed-fees",
+      "description": "Community Tax on Individuals",
+      "source": {
+        "article_section": "IND-6.02",
+        "rate_structure": "Basic fixed rate plus additional tax based on income/property",
+        "amount_or_formula": "Basic: 5.00 PHP; Additional: 1.00 PHP per 1,000.00 PHP gross income or property value (maximum P5,000.00); Non-subject: 1.00 PHP"
+      },
+      "kind": "fixed_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    },
+    {
+      "code": "COR-603",
+      "article_section": "COR-6.03",
+      "target_page": "new-fixed-fees",
+      "description": "Community Tax on Juridical Persons",
+      "source": {
+        "article_section": "COR-6.03",
+        "rate_structure": "Basic fixed rate plus additional tax based on property and gross receipts",
+        "amount_or_formula": "Basic: 500.00 PHP; Additional property: 2.00 PHP per 5,000.00 PHP real property; Additional income: 2.00 PHP per 5,000.00 PHP gross receipts (maximum P10,000.00 combined)"
+      },
+      "kind": "fixed_fee",
+      "confidence": "needs_human",
+      "notes": [
+        "formula does not match any deterministic rule (external reference, cap, or compound wording)"
+      ]
+    }
+  ]
+}

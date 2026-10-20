@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ELGU Fee Setup Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ELGU Fee Setup Assistant</h1>
+    <div class="subtitle">deterministic parser → human approval → executor · local only</div>
+    <div class="controls">
+      <label>Ordinance revision
+        <select id="revision">
+          <option value="">— select —</option>
+          <option value="1">1 · 2019 Ordinance</option>
+          <option value="2">2 · 2026 Ordinance (training default)</option>
+          <option value="3">3 · LGU Maddela 2027</option>
+          <option value="4">4 · Updated Revenue Code 2028</option>
+        </select>
+      </label>
+      <button id="btn-reparse" class="secondary">Re-parse</button>
+      <button id="btn-dryrun" class="primary" disabled>Dry-run selected</button>
+      <button id="btn-submit" class="danger" disabled>Submit selected…</button>
+      <button id="btn-audit" class="secondary" disabled>Audit selected</button>
+      <span id="job-badge" class="badge idle">idle</span>
+    </div>
+  </header>
+
+  <section id="report"></section>
+
+  <section>
+    <div class="table-tools">
+      <input id="filter" type="search" placeholder="filter by code / name / type…">
+      <label><input type="checkbox" id="only-high"> high confidence only</label>
+      <button id="sel-high" class="linkish">select all high</button>
+      <button id="sel-none" class="linkish">clear</button>
+    </div>
+    <table id="fees">
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="check-all"></th>
+          <th>Code</th><th>Page</th><th>Fee</th><th>Calculation</th>
+          <th>Details</th><th>Confidence</th><th>Audit</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="log-panel">
+    <h2>Run log</h2>
+    <pre id="log"></pre>
+  </section>
+
+  <dialog id="confirm-submit">
+    <form method="dialog">
+      <h3>Submit mode</h3>
+      <p>This will <b>create or modify real records</b> in eLGU for the selected fees
+         under revision <b id="confirm-revision"></b>.</p>
+      <p>Type <code>SUBMIT</code> to confirm:</p>
+      <input id="confirm-input" autocomplete="off">
+      <menu>
+        <button value="cancel" class="secondary">Cancel</button>
+        <button value="ok" id="confirm-ok" class="danger" disabled>Submit</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
