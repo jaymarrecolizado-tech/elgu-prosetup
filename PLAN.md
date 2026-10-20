@@ -1,6 +1,6 @@
 # PLAN — ELGU Fee Setup Assistant
 
-> **For the executing agent:** Read this file top to bottom first, then `HANDOFF.md`. This plan is self-contained. Work phase by phase; do not skip acceptance criteria. Ask the human only for items listed under [§12 Open Decisions](#12-open-decisions-for-the-human). All other choices are already decided in [§3 Defaults](#3-locked-defaults-do-not-relitigate).
+> **For the executing agent:** Read this file top to bottom first, then `HANDOFF.md`. This plan is self-contained. Work Plan# by Plan# in order; do not skip acceptance criteria. Ask the human only for items listed under [§12 Open Decisions](#12-open-decisions-for-the-human). All other choices are already decided in [§3 Defaults](#3-locked-defaults-do-not-relitigate).
 
 ---
 
@@ -51,15 +51,15 @@ Why this shape: most ordinance fees are rule-based (graduated brackets, % rates,
 
 | Decision | Default |
 |----------|---------|
-| Form factor order | **Local web app first** (Phase 1–2), **Chrome Extension second** (Phase 3) |
-| Execution (Phase 1) | Playwright with `.auth/` persistent profile (existing pattern) |
-| Execution (Phase 3) | Extension content script inside the user's already-logged-in eLGU tab |
+| Form factor order | **Local web app first** (Plan#2–Plan#3), **Chrome Extension second** (Plan#4) |
+| Execution (Plan#2) | Playwright with `.auth/` persistent profile (existing pattern) |
+| Execution (Plan#4) | Extension content script inside the user's already-logged-in eLGU tab |
 | AI runtime | **Ollama** on localhost (free, offline, no data leaves the machine) |
 | AI model (primary) | **Qwen3-4B-Instruct** GGUF Q4_K_M (~2.5 GB) — fits RTX 4050 6 GB VRAM |
 | AI model (optional alternate) | Qwen2.5-7B-Instruct Q4_K_M if 4B underperforms on classification |
 | AI role | Suggest mapping + confidence + explanation for ambiguous fees only; structured JSON output validated against schema |
-| Fine-tuning | **Later** (Phase 4), QLoRA on Qwen3-4B only after a reviewed dataset exists |
-| First input format | `revenue_fees.json` (Excel import Phase 2, PDF/OCR later) |
+| Fine-tuning | **Later** (Plan#5), QLoRA on Qwen3-4B only after a reviewed dataset exists |
+| First input format | `revenue_fees.json` (Excel import Plan#3, PDF/OCR later) |
 | Backend language | Keep Node.js (existing codebase); Python only for fine-tuning notebooks/scripts in `training/` |
 | Target revision handling | Explicit selector in UI; never assume. Training default observed: revision id `2` |
 | Submit policy | Dry-run default; Submit requires explicit per-run human confirmation |
@@ -92,7 +92,7 @@ flowchart LR
 4. **Executor (`src/executor/`)** — Playwright driver implementing §7 lessons; one function per page kind (tax revenue, fixed fee, other fee). Idempotent: skip if code already exists.
 5. **AI service (`src/ai/`)** — Ollama client (`http://127.0.0.1:11434`), few-shot prompt from verified samples, JSON-schema validation, confidence + rationale. Disabled gracefully if Ollama absent.
 6. **Audit (`src/audit/`)** — read live config via the same API-capture pattern as `src/verify-all-samples.js`; diff vs expected config; JSON + UI report.
-7. **Extension (`extension/`, Phase 3)** — MV3, side panel UI, content script reusing `src/form/domInject.js` logic; talks to the local web app (native `fetch` to localhost) for parsing/AI. Host permissions restricted to eLGU domains only.
+7. **Extension (`extension/`, Plan#4)** — MV3, side panel UI, content script reusing `src/form/domInject.js` logic; talks to the local web app (native `fetch` to localhost) for parsing/AI. Host permissions restricted to eLGU domains only.
 
 ---
 
@@ -142,9 +142,9 @@ Fixed Fee variant: `{ kind: "fixed_fee", amount, multiplier }`. Other Fee varian
 
 ---
 
-## 6. Phases & tasks
+## 6. Plans & tasks (execute in order: Plan#1 → Plan#5)
 
-### Phase 0 — Consolidate (½ day)
+### Plan#1 — Consolidate (½ day)
 
 - [ ] Move proven helpers from `make-*.js` / `fix-*.js` into `src/parser/`, `src/executor/`, `src/form/`; keep CLI entrypoints thin.
 - [ ] Delete or move one-off probes to `scripts/archive/` (`debug-expand`, `probe-multiplier`, `test-option-detail`, `fix-fee-type-details*`).
@@ -153,7 +153,7 @@ Fixed Fee variant: `{ kind: "fixed_fee", amount, multiplier }`. Other Fee varian
 
 **Accept:** repo has no duplicated fill/submit logic; parser tests green.
 
-### Phase 1 — Deterministic runner + local web UI (core MVP)
+### Plan#2 — Deterministic runner + local web UI (core MVP)
 
 - [ ] Parser: `revenue_fees.json` → `elgu_config.json` for all 65 fees; report counts by `confidence`.
 - [ ] Executor: create fee + calculation + all details per config; idempotent skip-if-exists; per-fee structured log (`logs/run-*.json`, gitignored).
@@ -163,16 +163,16 @@ Fixed Fee variant: `{ kind: "fixed_fee", amount, multiplier }`. Other Fee varian
 
 **Accept:** dry-run over all 65 configs completes with a report; submit of a 5-fee subset in training verifies PASS via audit; no fee is submitted without confirmation.
 
-### Phase 2 — AI assist (Ollama)
+### Plan#3 — AI assist (Ollama)
 
 - [ ] `src/ai/suggest.js`: for `needs_ai` rows only, prompt Qwen3-4B with few-shot examples from `elgu_sample_verification.json`; require JSON matching §5 schema; validate + re-ask once on invalid JSON.
 - [ ] UI shows suggestion, confidence, one-line rationale, and diff vs rule-based guess; human accepts/edits/rejects. Accepted suggestions are logged as future training pairs (`training/pairs.jsonl`, gitignored until reviewed).
 - [ ] Excel import (`.xlsx` → same fields as `revenue_fees.json`) using a maintained lib; PDF text extraction later only if needed.
 - [ ] Graceful offline behavior: if Ollama/model missing, UI still fully works rule-based.
 
-**Accept:** with Ollama running, ambiguous rows get schema-valid suggestions; with Ollama stopped, Phase 1 flow is unaffected.
+**Accept:** with Ollama running, ambiguous rows get schema-valid suggestions; with Ollama stopped, Plan#2 flow is unaffected.
 
-### Phase 3 — Chrome Extension executor
+### Plan#4 — Chrome Extension executor
 
 - [ ] MV3 extension in `extension/`: side panel (Load config → preview → Execute in current tab), content script from `domInject.js` + executor DOM logic, background service worker minimal.
 - [ ] Permissions: only eLGU hosts (`https://*.oueg.info/*` plus configurable LGU host in options). No `<all_urls>`.
@@ -181,9 +181,9 @@ Fixed Fee variant: `{ kind: "fixed_fee", amount, multiplier }`. Other Fee varian
 
 **Accept:** on a logged-in eLGU tab, extension dry-runs and then submits one test fee that audit-verifies; Playwright path still works.
 
-### Phase 4 — Fine-tune (only if Phase 2 data justifies it)
+### Plan#5 — Fine-tune (only if Plan#3 data justifies it)
 
-- [ ] Dataset: reviewed pairs from Phase 2 + the 13 verified samples + synthetic bracket variations; split train/held-out by fee (not by row).
+- [ ] Dataset: reviewed pairs from Plan#3 + the 13 verified samples + synthetic bracket variations; split train/held-out by fee (not by row).
 - [ ] QLoRA fine-tune Qwen3-4B via Unsloth in `training/` (Python); 6 GB VRAM budget: 4-bit, gradient checkpointing, seq ≤ 2048.
 - [ ] Eval gate: held-out exact-match on amounts/rates/brackets must be 100% to promote; otherwise model stays advisory.
 - [ ] Publish as local Ollama model (`ollama create elgu-mapper -f Modelfile`); document rollback to base model.
@@ -241,9 +241,9 @@ Fixed Fee variant: `{ kind: "fixed_fee", amount, multiplier }`. Other Fee varian
 1. Run `graphify query "fee parser executor tax revenue"` before exploring code (project rule); `graphify update .` after code changes.
 2. Prefer the existing patterns in `src/make-sample-fee.js` (create/fill/check flow) and `src/verify-all-samples.js` (API audit) over inventing new ones.
 3. Keep files < ~300 lines; split parser/executor/UI/AI into modules. No duplicated fill/submit helpers.
-4. Commit per phase with clear messages; review `git status` and unstage anything local-only before committing. Push only when the human asks.
+4. Commit per Plan# with clear messages; review `git status` and unstage anything local-only before committing. Push only when the human asks.
 5. If a fee's mapping is genuinely ambiguous, mark `needs_human` and move on — do not improvise amounts.
-6. Update `HANDOFF.md` at the end of each phase (what changed, how to run, what's next).
+6. Update `HANDOFF.md` at the end of each Plan# (what changed, how to run, what's next).
 
 ---
 
@@ -255,4 +255,4 @@ Fixed Fee variant: `{ kind: "fixed_fee", amount, multiplier }`. Other Fee varian
 4. Delete training `SAMPLE-*` records before real loads, or leave as reference?
 5. First *real* input beyond JSON: Excel or ordinance PDF?
 
-*Defaults in §3 apply until the human answers; Phase 0–1 can proceed without blocking on these, except real (non-training) submits.*
+*Defaults in §3 apply until the human answers; Plan#1–Plan#2 can proceed without blocking on these, except real (non-training) submits.*
