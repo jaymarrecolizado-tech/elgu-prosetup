@@ -20,8 +20,19 @@ const ROOT = path.join(__dirname, '..', '..');
  * then verify the next list fetch actually used the wanted id. Selection is
  * *reported*, never silently assumed (PLAN §3 "never assume").
  */
+function listFetchForRevision(api, revisionId) {
+  const wanted = String(revisionId);
+  return [...api].reverse().find((a) => /tax_revenues\?/.test(a.url) && a.url.includes(`ordinance_revision_id=${wanted}`));
+}
+
 async function selectRevision(page, api, revisionId) {
   const wanted = String(revisionId);
+  // Training (and most LGUs) filter YEAR via react-select, not a native <select>.
+  // After gotoSection the list request already carries ordinance_revision_id.
+  if (listFetchForRevision(api, wanted)) {
+    return { ok: true, message: `revision ${wanted} active (list requests already filtered)` };
+  }
+
   const picked = await page.evaluate((rid) => {
     for (const sel of document.querySelectorAll('select')) {
       const opt = [...sel.options].find((o) => o.value === rid);
@@ -32,11 +43,33 @@ async function selectRevision(page, api, revisionId) {
     }
     return null;
   }, wanted);
-  if (!picked) return { ok: false, message: `no <select> offers revision id ${wanted} — pick it manually in the UI before running` };
+
+  if (!picked) {
+    const yearInput = page.locator('input[id^="react-select"]').first();
+    if (await yearInput.count()) {
+      await yearInput.click({ force: true });
+      await page.waitForTimeout(500);
+      const yearHint = { 1: '2019', 2: '2026', 3: '2027', 4: '2028' }[wanted] || wanted;
+      const option = page.locator('[class*="-option"]:visible').filter({ hasText: yearHint }).first();
+      if (await option.count()) {
+        await option.click();
+        await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => {});
+        await page.waitForTimeout(800);
+        const ok = !!listFetchForRevision(api, wanted);
+        return {
+          ok,
+          message: ok
+            ? `revision ${wanted} active (YEAR "${yearHint}" → list filtered)`
+            : `YEAR control set to "${yearHint}" but list requests did not include ordinance_revision_id=${wanted}`,
+        };
+      }
+    }
+    return { ok: false, message: `no YEAR/revision control offers id ${wanted} — pick it manually in the UI before running` };
+  }
+
   await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => {});
   await page.waitForTimeout(800);
-  const listFetch = [...api].reverse().find((a) => /tax_revenues\?/.test(a.url) || /ordinance_revision_id=/.test(a.url));
-  const ok = listFetch ? listFetch.url.includes(`ordinance_revision_id=${wanted}`) : false;
+  const ok = !!listFetchForRevision(api, wanted);
   return {
     ok,
     message: ok

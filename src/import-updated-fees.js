@@ -38,7 +38,19 @@ function toCode(article) {
     .toUpperCase();
 }
 
-const raw = JSON.parse(fs.readFileSync(incomingPath, 'utf8'));
+/** Accept a flat array or NotebookLM grouped `{ groups: [{ fees }] }`. */
+function flattenIncoming(raw) {
+  if (Array.isArray(raw)) return raw;
+  if (raw && Array.isArray(raw.groups)) {
+    return raw.groups.flatMap((g) => (g.fees || []).map((f) => ({
+      elgu_system_category: f.elgu_system_category || g.elgu_system_category,
+      ...f,
+    })));
+  }
+  throw new Error('incoming JSON must be an array or { groups: [{ fees }] } (see notebooklm_prompt.md)');
+}
+
+const raw = flattenIncoming(JSON.parse(fs.readFileSync(incomingPath, 'utf8')));
 const fees = raw.map((f) => {
   const category = decode(f.elgu_system_category).trim();
   const page = PAGE[category];

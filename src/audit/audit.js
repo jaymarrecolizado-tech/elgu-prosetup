@@ -32,16 +32,32 @@ async function captureLive(page, api, configs) {
       const item = (list?.body?.data || []).find((d) => d.attributes.code === c.code);
       if (!item) { live[c.code] = { found: false }; continue; }
       api.length = 0;
-      await expandFee(page, c.code);
-      const calcEntry = api.find((a) => a.url.includes(`tax_revenues/${item.id}/calculations?`));
+      // Direct item URL: clicking the list item toggles the auto-expanded
+      // first (newest) fee shut and no calculations fetch is captured.
+      await page.goto(`${BASE_URL}/bpls/tax-revenue/${slug}/${item.id}`, { waitUntil: 'domcontentloaded', timeout: 60_000 });
+      await page.waitForLoadState('networkidle', { timeout: 12_000 }).catch(() => {});
+      await page.waitForTimeout(700);
+      let calcEntry = api.find((a) => a.url.includes(`tax_revenues/${item.id}/calculations?`));
+      if (!calcEntry) {
+        await expandFee(page, c.code);
+        calcEntry = api.find((a) => a.url.includes(`tax_revenues/${item.id}/calculations?`));
+      }
       const calculations = (calcEntry?.body?.data || []).map((calc) => {
         const includedRows = (calcEntry.body.included || [])
           .filter((i) => i.type.startsWith('bpls_tax_revenue_calculation_') && !i.type.includes('calculation_types'));
         // Details arrive via included rows; group by matching detail endpoints when present.
         const detailUrls = api.filter((a) => a.url.includes(`/calculations/${calc.id}/details`));
-        const details = detailUrls.length
-          ? [...new Map(detailUrls.flatMap((a) => (Array.isArray(a.body?.data) ? a.body.data : [a.body?.data]).filter(Boolean).map((d) => [JSON.stringify(d.attributes), d.attributes])).values()).map(([, v]) => v)]
-          : includedRows.map((i) => i.attributes);
+        let details;
+        if (detailUrls.length) {
+          const byKey = new Map();
+          for (const a of detailUrls) {
+            const rows = Array.isArray(a.body?.data) ? a.body.data : [a.body?.data];
+            for (const d of rows.filter(Boolean)) byKey.set(JSON.stringify(d.attributes), d.attributes);
+          }
+          details = [...byKey.values()];
+        } else {
+          details = includedRows.map((i) => i.attributes);
+        }
         return {
           type: calc.attributes.type,
           label: calc.attributes.label,

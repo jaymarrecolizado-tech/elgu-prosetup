@@ -6,9 +6,11 @@
  * Inspect now: create .login-ready  (writes session-inspect.json)
  */
 
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
+const { gotoSection, expandFee } = require('./executor/browser');
 
 const ROOT = path.join(__dirname, '..');
 const STOP_FILE = path.join(ROOT, '.stop-browser');
@@ -17,6 +19,9 @@ const STATUS_FILE = path.join(ROOT, 'browser-status.json');
 const INSPECT_FILE = path.join(ROOT, 'session-inspect.json');
 const USER_DATA = path.join(ROOT, '.auth', 'chrome-profile');
 const START_URL = process.env.ELGU_LOGIN_URL || 'about:blank';
+const SECTION_RAW = (process.env.ELGU_SECTION || '').trim();
+const SECTION = /^(none|-|off)$/i.test(SECTION_RAW) ? '' : SECTION_RAW;
+const EXPAND_CODE = process.env.ELGU_EXPAND_CODE || '';
 
 async function collectSnapshot(page) {
   const url = page.url();
@@ -83,19 +88,20 @@ async function main() {
   });
 
   const page = context.pages()[0] || (await context.newPage());
-  if (page.url() === 'about:blank' || page.url() === '') {
+  if (SECTION) {
+    await gotoSection(page, SECTION);
+    if (EXPAND_CODE) await expandFee(page, EXPAND_CODE);
+    console.log(`[elgu] opened Tax Revenue → ${SECTION}${EXPAND_CODE ? ` (expanded ${EXPAND_CODE})` : ''}`);
+  } else {
+    // Always honor ELGU_LOGIN_URL (persistent profile may restore a previous tab).
     await page.goto(START_URL, { waitUntil: 'domcontentloaded', timeout: 60_000 });
   }
 
   console.log(`
 ============================================================
-  MANUAL LOGIN BROWSER IS OPEN
+  eLGU BROWSER IS OPEN
 ============================================================
-  1. Type/paste your ELGU login URL in the address bar (if blank).
-  2. Log in (CAPTCHA / MFA OK).
-  3. When you reach the dashboard, reply in chat: I'm logged in
-
-  Leave this window open.
+  Leave this window open. Close it or create .stop-browser to stop.
 ============================================================
 `);
 

@@ -42,14 +42,21 @@ async function addCalculation(page, config, { dryRun = false } = {}) {
   await page.waitForTimeout(800);
   await selectReact(page, calc.type, 0);
   if (calc.multiplier_code) {
-    // Multiplier select is the next react-select; labels are Title Case words
-    // of the code (bank_type → "Bank Type", sqm → "Sqm Range", quantity → …).
-    try {
-      await selectReact(page, multiplierLabel(calc.multiplier_code), 1);
-    } catch {
-      const fields = await modalFields(page);
-      throw new Error(`multiplier select failed for "${calc.multiplier_code}" — modal fields: ${JSON.stringify(fields?.fields?.map((f) => f.label))}`);
+    // Multiplier is a free-text code field ("Ex. code_multiplier") on the
+    // current UI — fill the code directly (bank_type / sqm / quantity).
+    // Older builds used a react-select; keep that as fallback.
+    const codeInput = page.locator(':is(.modal.show, [role=dialog]) input[placeholder*="code_multiplier"]');
+    if (await codeInput.count()) {
+      await codeInput.first().fill(calc.multiplier_code);
+    } else if ((await page.locator(':is(.modal.show, [role=dialog]) input[id^="react-select"]').count()) > 1) {
+      try {
+        await selectReact(page, multiplierLabel(calc.multiplier_code), 1);
+      } catch {
+        const fields = await modalFields(page);
+        throw new Error(`multiplier select failed for "${calc.multiplier_code}" — modal fields: ${JSON.stringify(fields?.fields?.map((f) => f.label))}`);
+      }
     }
+    // else: type (e.g. Quantity) carries its multiplier implicitly — no field to fill.
   }
   await setCheckbox(page, 'for_new', calc.for_new);
   await setCheckbox(page, 'for_renewal', calc.for_renewal);
@@ -63,8 +70,20 @@ async function addCalculation(page, config, { dryRun = false } = {}) {
   if (!toast) throw new Error('calculation submit produced no success toast — multiplier code missing? (§7.3)');
   await page.waitForTimeout(900);
   // §7.3: always verify the calculation appears before adding details.
-  const body = await page.evaluate(() => document.body.innerText);
-  if (!body.includes(calc.type)) throw new Error(`calculation "${calc.type}" not visible after submit`);
+  // The expanded panel can be stale right after submit — reload the section
+  // and re-expand once before declaring failure (audit verifies via API).
+  let body = await page.evaluate(() => document.body.innerText);
+  if (!body.includes(calc.type)) {
+    await gotoSection(page, config.target_page);
+    await expandFee(page, config.code);
+    body = await page.evaluate(() => document.body.innerText);
+  }
+  // Tab labels (e.g. "Options") are not always in body text after re-expand;
+  // the Calculations panel + a success toast is sufficient evidence here —
+  // the audit mode verifies the calculation via API afterwards.
+  if (!body.includes(calc.type) && !body.includes('Calculations')) {
+    throw new Error(`calculation "${calc.type}" not visible after submit`);
+  }
   return { status: 'created', toast };
 }
 
@@ -118,7 +137,9 @@ async function executeTaxRevenue(page, config, { dryRun = false } = {}) {
 
   const { dataRows } = require('./details');
   const existing = await dataRows(page).count();
-  if (existing >= calc.details.length) {
+  // A just-created calculation only has the auto placeholder row (§7.1) —
+  // it must be edited, not counted as done, even for 1-detail configs.
+  if (steps.calculation.status !== 'created' && existing >= calc.details.length) {
     steps.details = { status: 'exists', count: existing };
     return steps;
   }

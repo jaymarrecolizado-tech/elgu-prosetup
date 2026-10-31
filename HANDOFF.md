@@ -55,6 +55,7 @@ Training app used for samples:
 ## What is NOT done yet (needs the human / next session)
 
 - **Plan#2 final acceptance:** human-approved 5-fee submit in training + audit PASS (dry-run is green; executor and login verified). In the web UI: pick revision → select fees → Submit (types SUBMIT) → Audit.
+- **Citizen Options visibility:** admin Options fees only appear as Activity dropdowns after the LGU links the fee to a Line of Business. This repo does not configure that link. Training catalog has no Bank / Liquor / Wholesale LOB.
 - Plan#3 (Ollama AI assist), Plan#4 (Chrome extension), Plan#5 (fine-tune) — not started; Plan#3 also needs Ollama + Qwen3-4B installed locally.
 
 ---
@@ -112,8 +113,8 @@ reference — parser refuses to guess).
 
 1. Creating a Calculation **auto-creates a placeholder detail** — **Edit** row 1, then Add the rest.
 2. **fill() vs typing:** Add/Create modals tolerate `fill()` (`fillInto`); Update/Edit modals (masked ₱ fields) silently revert unless keyboard-typed (`typeInto`). Applying typing everywhere made the Other Fee Add form's typed code revert to empty on blur.
-3. Options/Other Range need a **multiplier code at creation** (`bank_type`/`sqm` proven; others unverified → parser flags `needs_ai`).
-4. Option detail multipliers must be **code-style** (`rural_thrift_savings_banks`).
+3. Options/Other Range need a **multiplier code at creation** (`bank_type`/`sqm` proven; others unverified → parser flags `needs_ai`). Citizen portal uses this code as the extra Activity dropdown label (`bank_type` → **Bank Type**).
+4. Option detail multipliers must be **code-style** (`rural_thrift_savings_banks`). Citizen dropdown values are those codes humanized (underscores → spaces, title case). Example live: `rural_thrift_savings_banks` ≈ “Rural Thrift Savings Bank”.
 5. Detail rows: target `tr:has(button)`; **never click delete**.
 6. Verify via toast after every submit; Escape lingering modals on error.
 7. React-Select: `input[id^="react-select"]` inside the open modal, plus:
@@ -144,6 +145,46 @@ SUBMIT).
 
 ---
 
+## Citizen portal recon (2026-10-31, training, no submit)
+
+Citizen SPA: `https://elgu-r2-training.oueg.info/` (eLGU - DICT R2, City of Cauayan / Isabela, v8.5.1). Login as JUANITO PARITO. New Business wizard: `/create-transaction/e2e-business-permit-new`. Draft exists (RECON TEST STORE, BPLS NEW, Oct 31 2026 ~08:16 PM) — **do not file**; Continue from Drafts if the wizard was left.
+
+Options/Quantity/sqm on **admin Tax Revenue** only become citizen UI when a **Line of Business** is associated to that fee. They are **not** a separate wizard step.
+
+| Wizard step | Fields | Maps to fee config? |
+|-------------|--------|---------------------|
+| 1 Business Information | Business Type (Cooperative / Corporation / OPC / Partnership / Sole Prop), DTI (min 5 alphanumeric), owner, TIN, contacts | **No.** Legal entity, not tax Options. |
+| 2 Business Address | Region/Province/City locked (R2 / ISABELA / CITY OF CAUAYAN), searchable Barangay, ZIP auto, map pin | **No.** |
+| 3 Business Operation | **Total Floor Area (sq.m)**, **Business Area (sq.m)**, employees (area / male / female), van / truck / motorcycle counts, taxpayer address, own/lessor/rental, tax incentives | Always present. These are the citizen-side of `sqm` Other Range and vehicle **Quantity** — not Options dropdowns. |
+| 4 Business Activity | Activity type (Main / Branch / Admin / Warehouse / Others), **Line of Business** (LGU catalog), Products/Services, **No. of Units**, **Total Capitalization (PH)** | Capital/units feed Gross/Capital Range and Quantity. Extra **Options dropdowns appear here only** after a LOB is chosen that is linked to an Options fee. |
+| 5 Business Requirements | Valid ID file upload; Continue disabled until upload | No fee fields. **Do not Continue/file** for recon. |
+
+### Proven Options encoding (live)
+
+Selecting **Recreational Business** on step 4 showed a required **Bank Type** dropdown (leftover training association — this LOB is not a bank). Options:
+
+- Rural Thrift Savings Bank
+- Commercial Industrial Development
+- Universal Banks
+
+(Pawnshops option from `BNK-3A01-2` was **not** in this leftover list.)
+
+Encoding rules for admin entry:
+
+1. `calculation.multiplier_code` (`bank_type`) is the citizen field **label** — eLGU title-cases it (`Bank Type`). Keep using snake_case codes; `multiplierLabel` already maps `bank_type` → `Bank Type`, `sqm` → `Sqm Range`, `quantity` → `Quantity`. Do **not** invent `liquor_dealer_type` until a liquor LOB shows it.
+2. Each option `details[].multiplier` is the citizen dropdown **value**. Enter **code-style** (`rural_thrift_savings_banks`); the portal displays Title Case with spaces. Wording can drop a trailing “s” — match the ordinance phrase, then snake_case it; do not put display punctuation in the code.
+3. A fee with Options **does nothing on the citizen form** until LGU staff attach it to a Line of Business (admin side, not this repo). Catalog on this training LGU is tiny: Carinderia/Eatery, Gasoline Station (dup), hehe, Pharmaceutical products, Recreational Business, ricing start, Sari Sari Store, Water Refilling Station. **BANK / LIQUOR / WHOLESALE are not in the catalog**, so `BNK-3A01-2` / `LIQ-3A01-3` will not appear as dropdowns here until those LOBs exist and are linked.
+4. Sari Sari / Gasoline / Water Refilling showed **no** extra Options — only units + capitalization (Gross/Capital path).
+5. `No. of Units` is always on the activity form. Floor/business area on step 3 is the `sqm` input.
+6. Leftover test LOB **hehe** showed **Bank Type** plus a **Quantity grid** titled “Sample”: columns Unit / Capacity / Number of Units, one row (`asdda` / `asdasd` + numeric input). Quantity calc details become per-unit rows on the Activity form; the detail `multiplier`/`unit` text is the row label. Do not treat this junk LOB as ordinance data.
+
+### Citizen spawn notes
+
+- `npm run browser:login` with persistent `.auth/chrome-profile`. Empty `ELGU_SECTION` (or `none`/`off`/`-`) — `.env` `ELGU_SECTION=permit` otherwise opens admin Tax Revenue, not the citizen portal. Set `START_URL=https://elgu-r2-training.oueg.info/`.
+- Searchable dropdowns: type + Return. Next is the **middle dark bar** (not Save as Draft). DTI: alphanumeric, min 5.
+
+---
+
 ## Open questions for the human (unchanged from PLAN §12)
 
 1. Top bracket “41¼% of 1%”: keep base+excess (current) or pure % of gross?
@@ -154,4 +195,4 @@ SUBMIT).
 
 ---
 
-*Last updated 2026-10-21 — verified: Plan#1 complete; Plan#2 code complete (live Fixed/Other + submit acceptance pending, uncommitted executor WIP); Plan#3–#5 not started.*
+*Last updated 2026-10-31 — citizen portal recon recorded (Options → Activity dropdown via LOB association; no submit). Plan#1 complete; Plan#2 code complete (live Fixed/Other + submit acceptance pending); Plan#3–#5 not started.*
