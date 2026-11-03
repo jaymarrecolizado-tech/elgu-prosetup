@@ -183,6 +183,37 @@ Encoding rules for admin entry:
 - `npm run browser:login` with persistent `.auth/chrome-profile`. Empty `ELGU_SECTION` (or `none`/`off`/`-`) — `.env` `ELGU_SECTION=permit` otherwise opens admin Tax Revenue, not the citizen portal. Set `START_URL=https://elgu-r2-training.oueg.info/`.
 - Searchable dropdowns: type + Return. Next is the **middle dark bar** (not Save as Draft). DTI: alphanumeric, min 5.
 
+### Admin Business Natures recon (2026-10-31, no create/import)
+
+Training YEAR **2026–2027** (revision 2). Admin: `https://elgu-r2-training-core.oueg.info/bpls/new-business/new-business-natures/{id}` (Recreational = `15`, Gasoline = `14`, mining = `6`). Import: `/bpls/new-business/import-csv`. **14 natures** — junk training data, not Claveria PSIC.
+
+**Two-level catalog (matches Claveria Excel):**
+
+| UI | Excel | Fields |
+|----|-------|--------|
+| **Add Business Nature** | NATURE CODE + BUSINESS NATURE | Code (required, `EX. CODE-1234`), Name (required). No fee tags. |
+| **Add Business Line** (under a nature) | LINE CODE + BUSINESS LINE + LICENSE/PERMIT/SANITARY/GARBAGE CODE | Code, Name, four fee **dropdowns** (live Tax Revenue codes), **Other Fees** multi-select. Submit/Cancel. |
+
+Citizen Activity catalog is **lines**, not natures. Recreational line `C2-12345` is tagged **Permit `C3-AA-S18-A02-BANKS`** — that is why citizen Recreational showed **Bank Type**. Gasoline Station `BN-1111` / line `BL-1111`: License `C2-AA-S7-D-RETAILERS`, Permit empty, Sanitary `C4-AE-S4E01-B-OTRMNU`, Garbage `AD-GRBG-001`. mining (`MINING`) has **no lines**.
+
+License dropdown (live codes seen): `EXPORTERS-S1-C`, `WHOLESALE-S1-B`, `MANU-S1-A`, `ASDF`, `C2-AA-S7-D-RETAILERS`, `C2-S2A02-D-RETAIL`, `2023`. Dropdowns are populated from fees already created in Tax Revenue — **no Excel tagging needed** if we resolve codes from the live API after fee create.
+
+**Import CSV** (developer migrate UI — do **not** upload Claveria here): inner tabs Business / **Business Activity** / Application / Fees. Business Activity history uses files like `CSV File BPLS(TEMPLATE) - Business Activity.csv`, `ba.csv`. Fees tab had one `Application-Fee.csv` (6 failed). Prefer Playwright/API write of natures+lines over CSV upload.
+
+Natures spotted: Recreational Business (`C2-12345`), Gasoline Station (`BN-1111`), test, retail naa, Diffun Only, Snatcher's Academy, Pick-Pocket, mining (`MINING`), business nature. `hehe` is **not** a nature (search empty); it is a line on some other nature.
+
+**Do not** import 1360 Claveria LOB rows into Cauayan training. Proof later: one nature + one line (e.g. `64192` Commercial Banking) tagged to a live training Permit with `bank_type` Options.
+
+### (F) CONSTRUCTION migrate (2026-10-31, training)
+
+Visible Playwright `src/migrate-construction-natures.js` (no CSV). YEAR **2026–2027**.
+
+- Nature **2019-F / (F) CONSTRUCTION** — id **16**, Is Active **Yes**, URL `/bpls/new-business/new-business-natures/16`.
+- **18 lines** from Claveria Excel (skipped inactive **42203**): `41001`, `41002`, `42100`, `42201`, `42202`, `42204`, `42209`, `42900`, `43110`, `43120`, `43210`, `43220`, `43290`, `43301`, `43302`, `43303`, `43309`, `43900`. First-pass ids **45–62**. POST `.../business/natures/16/lines` with `ordinance_revision_id: 2`.
+- Tax Revenue (revision 2 submit 2026-10-31): **CON-2A02-E** created (Gross Range + all details); **BUS-3A01-1** already existed; **SEC-4D01** fee/calc error on a detail toast (code may still exist); **SEC-5B01** not submitted (`needs_human`).
+- All **18** rev-2 lines (ids **45–62**) tagged via `PUT .../natures/16/lines/{id}` with License `CON-2A02-E`, Permit `BUS-3A01-1`, Sanitary `SEC-4D01`, Garbage `AD-GRBG-001` (live Gasoline garbage stand-in). Then `PUT .../lines/{id}/activate` **200** `Business line successfully activated.` Script: `src/tag-activate-construction.js`. GET lines is paginated (page 1+2).
+- Side effect: a rerun with YEAR not settled posted `41001`/`41002` again as ids **63–64** with `ordinance_revision_id: 1`. Do not keep duplicating.
+
 ---
 
 ## Open questions for the human (unchanged from PLAN §12)
@@ -195,4 +226,4 @@ Encoding rules for admin entry:
 
 ---
 
-*Last updated 2026-10-31 — citizen portal recon recorded (Options → Activity dropdown via LOB association; no submit). Plan#1 complete; Plan#2 code complete (live Fixed/Other + submit acceptance pending); Plan#3–#5 not started.*
+*Last updated 2026-10-31 — (F) CONSTRUCTION 18 lines tagged + activated in training (CON-2A02-E / BUS-3A01-1 / SEC-4D01 / AD-GRBG-001). Plan#1 complete; Plan#2 code complete (5-fee human submit still pending); Plan#3–#5 not started.*
